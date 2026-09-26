@@ -2,11 +2,20 @@ extends Node
 
 var selected_guard: Gaurd = null
 	
-func set_selected_target(target: Vector2):
+func set_selected_target(target: MoveTarget):
 	if selected_guard != null:
-		selected_guard.set_movement_target(target)
-		print("set target:", target)
-#
+		if selected_guard.current_node.connections.find(target) != -1:
+			selected_guard.set_movement_target(target)
+			selected_guard = null
+		else:
+			print("cannot set this target")
+
+func in_selected_range(t: MoveTarget):
+	if selected_guard and selected_guard.current_node.connections.find(t) != -1 and t != selected_guard.current_node:
+		return true
+	return false
+	
+
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
 	#pass # Replace with function body.

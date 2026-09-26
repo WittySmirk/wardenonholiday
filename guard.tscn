@@ -13,27 +13,29 @@ script/source = "extends Area2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqdw"]
 size = Vector2(8, 8)
 
-[node name="guard" type="CharacterBody2D" unique_id=1635901800 node_paths=PackedStringArray("nav_agent")]
+[node name="guard" type="CharacterBody2D" unique_id=1635901800 node_paths=PackedStringArray("nav_agent", "cooldown_timer")]
 script = ExtResource("1_dk1vv")
 nav_agent = NodePath("NavigationAgent2D")
+cooldown_timer = NodePath("Timer")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=585143583]
 debug_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1577002716]
-position = Vector2(1, 0)
 texture = ExtResource("2_dk1vv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235998446]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_51px8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=580569208]
 script = SubResource("GDScript_14olt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2078153663]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ujqdw")
+
+[node name="Timer" type="Timer" parent="." unique_id=565907661]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
