@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://llu5idf2echd"]
+
+[ext_resource type="PackedScene" uid="uid://ce63bjaf43uhq" path="res://monitor_1.tscn" id="1_g3mwp"]
+[ext_resource type="Material" uid="uid://dt38t1tinb7rp" path="res://wall_material.tres" id="1_u8nhc"]
+[ext_resource type="ArrayMesh" uid="uid://bpo7ey7gglxrr" path="res://Desk.obj" id="2_ei2s5"]
+[ext_resource type="PackedScene" uid="uid://c5uf1757t7yb3" path="res://ceiling_light.tscn" id="4_43ocd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ke0wg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxpdj"]
+albedo_color = Color(0.4849202, 0.4849202, 0.4849202, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquvc"]
+albedo_color = Color(0.6190818, 0.6190819, 0.6190818, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43ocd"]
+albedo_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8nhc"]
+albedo_color = Color(0.30752695, 0.1792975, 2.4065375e-08, 1)
+roughness = 0.75
+
+[node name="Office" type="Node3D" unique_id=974422131]
+
+[node name="floor" type="MeshInstance3D" parent="." unique_id=1186551643]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_ke0wg")
+surface_material_override/0 = SubResource("StandardMaterial3D_xxpdj")
+
+[node name="ceiling" type="MeshInstance3D" parent="." unique_id=1423618429]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 2.6, 0)
+mesh = SubResource("BoxMesh_ke0wg")
+surface_material_override/0 = SubResource("StandardMaterial3D_lquvc")
+
+[node name="wall" type="MeshInstance3D" parent="." unique_id=1050696130]
+transform = Transform3D(0.1, 0, 0, 0, 2.7, 0, 0, 0, 5.1, 2, 1.3, 0)
+mesh = SubResource("BoxMesh_ke0wg")
+surface_material_override/0 = SubResource("StandardMaterial3D_43ocd")
+
+[node name="wall2" type="MeshInstance3D" parent="." unique_id=2138017506]
+transform = Transform3D(0.1, 0, 0, 0, 2.7, 0, 0, 0, 5, -2, 1.3, 0)
+material_override = ExtResource("1_u8nhc")
+mesh = SubResource("BoxMesh_ke0wg")
+
+[node name="wall3" type="MeshInstance3D" parent="." unique_id=1341099097]
+transform = Transform3D(-4.371139e-09, 0, -4.1, 0, 2.7, 0, 0.1, 0, -1.7921668e-07, 0, 1.3, 2.5)
+material_override = ExtResource("1_u8nhc")
+mesh = SubResource("BoxMesh_ke0wg")
+
+[node name="wall4" type="MeshInstance3D" parent="." unique_id=2055430047]
+transform = Transform3D(-4.371139e-09, 0, -4.1, 0, 2.7, 0, 0.1, 0, -1.7921668e-07, 0, 1.3, -2.5)
+material_override = ExtResource("1_u8nhc")
+mesh = SubResource("BoxMesh_ke0wg")
+
+[node name="Monitor1" parent="." unique_id=470901571 instance=ExtResource("1_g3mwp")]
+transform = Transform3D(-0.20000002, 0, 0.34641019, 0, 0.4, 0, -0.34641019, 0, -0.20000002, 1.3000002, 0.70000005, 2.1)
+
+[node name="Desk" type="MeshInstance3D" parent="." unique_id=582584925]
+transform = Transform3D(0.405, 0, 0, 0, 0.29, 0, 0, 0, 0.338, -1.937151e-07, 0.6, 2)
+mesh = ExtResource("2_ei2s5")
+surface_material_override/0 = SubResource("StandardMaterial3D_u8nhc")
+
+[node name="Monitor2" parent="." unique_id=849655087 instance=ExtResource("1_g3mwp")]
+transform = Transform3D(0.20000003, 0, 0.34641013, 0, 0.39999998, 0, -0.34641013, 0, 0.20000003, -1.3000001, 0.70000005, 2)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=173292340]
+transform = Transform3D(-0.9659258, 1.0240359e-08, 0.25881928, -1.4901161e-08, 1, -1.4116477e-09, -0.25881928, 6.0066824e-08, -0.9659258, 0, 1.2, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1855906269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, -0.6)
+light_energy = 0.317
+omni_range = 11.411
+
+[node name="CeilingLight" parent="." unique_id=291402607 instance=ExtResource("4_43ocd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 2.2, -0.70000017)

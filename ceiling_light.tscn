@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c5uf1757t7yb3"]
+
+[ext_resource type="ArrayMesh" uid="uid://ca3r38crr71cx" path="res://Light.obj" id="1_548kw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mduoy"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.31
+
+[node name="CeilingLight" type="MeshInstance3D" unique_id=291402607]
+mesh = ExtResource("1_548kw")
+surface_material_override/0 = SubResource("StandardMaterial3D_mduoy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1987580254]
+light_energy = 0.2

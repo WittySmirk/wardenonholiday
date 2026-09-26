@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bgu1vgta1djtq"]
+
+[node name="Inmate" type="CharacterBody2D" unique_id=761503897]

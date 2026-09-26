@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bgaivag0km53a"]
 
-[ext_resource type="Script" uid="uid://do4y3v23d2u5o" path="res://enforcer.gd" id="1_uuwdr"]
+[ext_resource type="Script" uid="uid://do4y3v23d2u5o" path="res://guard.gd" id="1_uuwdr"]
 [ext_resource type="Texture2D" uid="uid://i5ba5f2kuc8w" path="res://black_square.png" id="2_dk1vv"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51px8"]
 size = Vector2(8, 8)
