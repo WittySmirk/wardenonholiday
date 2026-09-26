@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+InteractionHandler="*uid://d1agj03vsxnhj"
 GameState="*uid://ss6emu440ght"
 
 [display]
