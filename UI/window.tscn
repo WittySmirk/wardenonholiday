@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://clb0s56e5kiu2"]
+
+[ext_resource type="Script" uid="uid://dxxaaolq2jc6s" path="res://UI/window.gd" id="1_nqacq"]
+
+[node name="ColorRect" type="ColorRect" unique_id=1846275003]
+offset_right = 54.0
+offset_bottom = 32.0
+color = Color(0.09795328, 0.15039033, 0.07888877, 1)
+script = ExtResource("1_nqacq")
+
+[node name="DropShadowTop" type="ColorRect" parent="." unique_id=252259402]
+visible = false
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 2.0
+color = Color(0.010360546, 0.05396197, 0.020723198, 1)
+
+[node name="BorderTop" type="ColorRect" parent="." unique_id=799858246]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 1.0
+color = Color(0.3137255, 0.7294118, 0.46666667, 1)
+
+[node name="DropShadowLeft" type="ColorRect" parent="." unique_id=744364485]
+visible = false
+layout_mode = 0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 32.0
+color = Color(0.010360546, 0.05396197, 0.020723198, 1)
+
+[node name="BorderLeft" type="ColorRect" parent="." unique_id=2040798920]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 32.0
+color = Color(0.3137255, 0.7294118, 0.46666667, 1)
+
+[node name="BorderBottom" type="ColorRect" parent="." unique_id=1339775326]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 31.0
+offset_right = 54.0
+offset_bottom = 32.0
+color = Color(0.3137255, 0.7294118, 0.46666667, 1)
+
+[node name="BorderRight" type="ColorRect" parent="." unique_id=1969436730]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 32.0
+color = Color(0.3137255, 0.7294118, 0.46666667, 1)

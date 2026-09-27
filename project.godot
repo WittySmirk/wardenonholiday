@@ -22,7 +22,7 @@ GameState="*uid://ss6emu440ght"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [physics]
