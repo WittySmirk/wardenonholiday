@@ -241,10 +241,10 @@ font_size = 65
 script = SubResource("GDScript_e0an3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2064648720]
-offset_left = -1101.0
-offset_top = -315.0
-offset_right = 2787.0
-offset_bottom = 2204.0
+offset_left = -1099.0
+offset_top = -347.0
+offset_right = 2789.0
+offset_bottom = 2172.0
 color = Color(0.06666667, 0.101960786, 0.047058824, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=375905567]
