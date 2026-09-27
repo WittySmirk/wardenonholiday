@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bgaivag0km53a" path="res://guard.tscn" id="2_e0an3"]
 [ext_resource type="PackedScene" uid="uid://krut1eodpew1" path="res://move_target.tscn" id="3_e0an3"]
 [ext_resource type="PackedScene" uid="uid://bgu1vgta1djtq" path="res://inmate.tscn" id="4_p5pve"]
+[ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="6_iw27f"]
 
 [sub_resource type="GDScript" id="GDScript_e0an3"]
 script/source = "extends Node2D
@@ -226,12 +227,11 @@ sources/0 = SubResource("TileSetAtlasSource_iw27f")
 script = SubResource("GDScript_e0an3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2064648720]
-visible = false
 offset_left = -1067.0
 offset_top = -324.0
 offset_right = 2821.0
 offset_bottom = 2195.0
-color = Color(0, 0, 0, 1)
+color = Color(0.06253747, 0.11460685, 0.042602614, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2062702629]
 visible = false
@@ -296,3 +296,10 @@ zoom = Vector2(2.665, 2.665)
 [node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(124, 68)
 current_node = NodePath("../movement_nodes/move_target9")
+
+[node name="ReadyButton" parent="." unique_id=1576267881 instance=ExtResource("6_iw27f")]
+offset_left = 164.0
+offset_top = 201.0
+offset_right = 378.0
+offset_bottom = 277.0
+scale = Vector2(0.43874848, 0.4399994)
