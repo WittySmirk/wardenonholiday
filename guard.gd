@@ -12,10 +12,11 @@ func _ready() -> void:
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	current_node.enabled = false
 	nav_agent.path_desired_distance = 4.0
-	nav_agent.target_desired_distance = 4.0
+	nav_agent.target_desired_distance = 1.0
 
 func set_movement_target(movement_target: MoveTarget):
 	nav_agent.set_target_position(movement_target.global_position)
+	print("Target Position: %s" % movement_target.global_position)
 	target = movement_target
 
 func _physics_process(delta):
@@ -25,6 +26,7 @@ func _physics_process(delta):
 	if (nav_agent.is_navigation_finished() or nav_agent.is_target_reached()) and target:
 		current_node = target
 		target = null
+		print("Guard final position:", self.global_position)
 		cooldown_timer.start()
 
 	var next_path_position: Vector2 = nav_agent.get_next_path_position()
