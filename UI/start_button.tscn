@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://rl5m50hnu0ds"]
+
+[ext_resource type="Texture2D" uid="uid://bw5efgubgibth" path="res://sprites/buttons/ButtonUnpressed.png" id="1_d2gxh"]
+[ext_resource type="Texture2D" uid="uid://cfw575d32ergf" path="res://sprites/buttons/ButtonPressed.png" id="2_hlljw"]
+[ext_resource type="Script" uid="uid://ht6tcbnvyhq5" path="res://UI/ready_button.gd" id="3_ouiyu"]
+[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="4_p7mf0"]
+[ext_resource type="Script" uid="uid://du5u44fjopnrw" path="res://UI/label.gd" id="5_obs3c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
+font = ExtResource("4_p7mf0")
+font_size = 54
+
+[node name="TextureButton" type="TextureButton" unique_id=1576267881]
+texture_filter = 1
+offset_right = 162.0
+offset_bottom = 76.0
+texture_normal = ExtResource("1_d2gxh")
+texture_pressed = ExtResource("2_hlljw")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_ouiyu")
+
+[node name="Label" type="Label" parent="." unique_id=867850128]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 159.0
+offset_bottom = 68.0
+text = "Start"
+label_settings = SubResource("LabelSettings_0iomv")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_obs3c")
