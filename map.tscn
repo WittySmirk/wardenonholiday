@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://1nhxait0s5b0"]
 
 [ext_resource type="Texture2D" uid="uid://bgur05tbmvvc8" path="res://pixilart-drawing.png" id="1_wijl4"]
-[ext_resource type="PackedScene" uid="uid://bgaivag0km53a" path="res://guard.tscn" id="2_e0an3"]
 [ext_resource type="PackedScene" uid="uid://krut1eodpew1" path="res://move_target.tscn" id="3_e0an3"]
 [ext_resource type="PackedScene" uid="uid://bgu1vgta1djtq" path="res://inmate.tscn" id="4_p5pve"]
+[ext_resource type="PackedScene" uid="uid://v170rsiq1dig" path="res://guard.tscn" id="4_urblq"]
 
 [sub_resource type="GDScript" id="GDScript_e0an3"]
 script/source = "extends Node2D
@@ -199,7 +199,7 @@ connections = [NodePath("../move_target"), NodePath("../move_target3")]
 
 [node name="move_target3" parent="movement_nodes" unique_id=179874527 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(76, 84)
-connections = [NodePath("../move_target2"), NodePath("../move_target4")]
+connections = [NodePath("../move_target2"), NodePath("../move_target11")]
 
 [node name="move_target4" parent="movement_nodes" unique_id=1376889007 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(172, 84)
@@ -211,11 +211,23 @@ connections = [NodePath("../move_target4"), NodePath("../move_target6")]
 
 [node name="move_target6" parent="movement_nodes" unique_id=991701716 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(156, 52)
-connections = [NodePath("../move_target5"), NodePath("../move_target7"), NodePath("../move_target8")]
+connections = [NodePath("../move_target10"), NodePath("../move_target5"), NodePath("../move_target11")]
+
+[node name="move_target11" parent="movement_nodes" unique_id=836238214 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(156, 84)
+connections = [NodePath("../move_target6"), NodePath("../move_target3"), NodePath("../move_target7"), NodePath("../move_target4")]
+
+[node name="move_target12" parent="movement_nodes" unique_id=1654044055 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(236, 12)
+connections = [NodePath("../move_target10"), NodePath("../move_target9")]
+
+[node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(156, 12)
+connections = [NodePath("../move_target12"), NodePath("../move_target8"), NodePath("../move_target6")]
 
 [node name="move_target8" parent="movement_nodes" unique_id=786757832 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(156, -20)
-connections = [NodePath("../move_target6"), NodePath("../move_target9")]
+connections = [NodePath("../move_target10"), NodePath("../move_target9")]
 
 [node name="move_target9" parent="movement_nodes" unique_id=527621551 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(236, -20)
@@ -223,20 +235,30 @@ connections = [NodePath("../move_target8")]
 
 [node name="move_target7" parent="movement_nodes" unique_id=1284434193 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(156, 164)
-connections = [NodePath("../move_target6")]
-
-[node name="gaurd" parent="." unique_id=749380629 node_paths=PackedStringArray("current_node") instance=ExtResource("2_e0an3")]
-position = Vector2(4, 12)
-current_node = NodePath("../movement_nodes/move_target")
-
-[node name="g2" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("2_e0an3")]
-position = Vector2(156, 164)
-current_node = NodePath("../movement_nodes/move_target7")
+connections = [NodePath("../move_target11")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1000948966]
 position = Vector2(146, 76)
 zoom = Vector2(3, 3)
 
-[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
+[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
 position = Vector2(236, -20)
+collision_mask = 1
+movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target9")
+escapeNodes = [NodePath("../movement_nodes/move_target3")]
+sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+groupType = 1
+
+[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+position = Vector2(156, 164)
+collision_mask = 1
+movement_speed = 30.0
+current_node = NodePath("../movement_nodes/move_target7")
+escapeNodes = [NodePath("../movement_nodes/move_target3")]
+sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+groupType = 1
+
+[node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
+position = Vector2(4, 12)
+current_node = NodePath("../movement_nodes/move_target")

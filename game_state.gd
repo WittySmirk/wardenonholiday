@@ -1,11 +1,17 @@
 extends Node
 
-var selected_guard: Gaurd = null
+var selected_guard: Guard = null
 	
 func set_selected_target(target: MoveTarget):
 	if selected_guard != null:
 		if selected_guard.current_node.connections.find(target) != -1:
 			selected_guard.set_movement_target(target)
+			if target.occupant != null:
+				if target.occupant.groupType == Group.GroupType.INMATE:
+					selected_guard.set_movement_target(target)
+					selected_guard.initiated_fight = true
+					return
+			selected_guard.initiated_fight = false
 			selected_guard = null
 		else:
 			print("cannot set this target")
