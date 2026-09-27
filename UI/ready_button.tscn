@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://sl54q5c6hryb"]
+
+[ext_resource type="Texture2D" uid="uid://bw5efgubgibth" path="res://sprites/buttons/ButtonUnpressed.png" id="1_0qmqc"]
+[ext_resource type="Texture2D" uid="uid://cfw575d32ergf" path="res://sprites/buttons/ButtonPressed.png" id="2_0qmqc"]
+[ext_resource type="Script" uid="uid://ht6tcbnvyhq5" path="res://UI/ready_button.gd" id="3_qecg4"]
+[ext_resource type="Script" uid="uid://du5u44fjopnrw" path="res://UI/label.gd" id="4_3qou5"]
+[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="4_qecg4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
+font = ExtResource("4_qecg4")
+font_size = 54
+
+[node name="TextureButton" type="TextureButton" unique_id=1576267881]
+texture_filter = 1
+offset_right = 162.0
+offset_bottom = 76.0
+texture_normal = ExtResource("1_0qmqc")
+texture_pressed = ExtResource("2_0qmqc")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_qecg4")
+
+[node name="Label" type="Label" parent="." unique_id=867850128]
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 165.0
+offset_bottom = 68.0
+text = "Ready!"
+label_settings = SubResource("LabelSettings_0iomv")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_3qou5")

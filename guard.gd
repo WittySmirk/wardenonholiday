@@ -19,10 +19,11 @@ func _ready() -> void:
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	current_node.enabled = false
 	nav_agent.path_desired_distance = 4.0
-	nav_agent.target_desired_distance = 4.0
+	nav_agent.target_desired_distance = 1.0
 
 func set_movement_target(movement_target: MoveTarget):
 	nav_agent.set_target_position(movement_target.global_position)
+	print("Target Position: %s" % movement_target.global_position)
 	target = movement_target
 
 func retreat(inmates_initiated: bool):
