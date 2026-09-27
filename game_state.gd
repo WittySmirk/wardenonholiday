@@ -5,7 +5,7 @@ signal state_changed(new_state)
 
 # Game States
 enum States { START, DAY, NIGHT, LOSE }
-var current_state = States.START:
+var current_state = States.DAY:
 	set(value):
 		current_state = value
 		state_changed.emit(current_state)
@@ -35,10 +35,11 @@ func get_state_name(state: States) -> String:
 	return States.keys()[state]
 	
 ## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
-#
-#
+func _ready() -> void:
+	# Tell all nodes starting state
+	state_changed.emit(current_state)
+
+
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
