@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://v170rsiq1dig"]
 
 [ext_resource type="Script" uid="uid://do4y3v23d2u5o" path="res://guard.gd" id="1_dk1vv"]
-[ext_resource type="Texture2D" uid="uid://i5ba5f2kuc8w" path="res://black_square.png" id="2_dk1vv"]
+[ext_resource type="Texture2D" uid="uid://b374pot3iqprh" path="res://icon.svg" id="2_30cdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51px8"]
 size = Vector2(8, 8)
@@ -20,7 +20,9 @@ script = ExtResource("1_dk1vv")
 debug_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1577002716]
-texture = ExtResource("2_dk1vv")
+position = Vector2(0.12499833, 0.12499833)
+scale = Vector2(0.060546894, 0.060546894)
+texture = ExtResource("2_30cdx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235998446]
 shape = SubResource("RectangleShape2D_51px8")

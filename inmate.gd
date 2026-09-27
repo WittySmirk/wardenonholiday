@@ -88,7 +88,7 @@ func check_for_adjacent_guard() -> bool:
 
 func escape():
 	#Find path to escape
-	if path.is_empty():
+	if path.is_empty() and not escapeNodes.is_empty():
 		var target_node = escapeNodes[randi_range(0, escapeNodes.size() - 1)]
 		path = findBestPath(current_node, target_node, false)
 		current_path_index = 1

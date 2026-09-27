@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ck17ttwficlx0" path="res://green_square.png" id="2_inva3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0an3"]
-size = Vector2(8, 8)
+size = Vector2(28, 28)
 
 [node name="move_target" type="Node2D" unique_id=1799719153 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_and86")
@@ -16,6 +16,8 @@ sprite = NodePath("Sprite2D")
 shape = SubResource("RectangleShape2D_e0an3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=725191128]
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_inva3")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

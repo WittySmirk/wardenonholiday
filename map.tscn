@@ -27,6 +27,11 @@ script/source = "extends Node2D
 	#pass
 "
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
+vertices = PackedVector2Array(770.96094, 385, 971.60156, 385.04688, 979, 413, 941, 414, 701, 414, 663, 413, 504.0078, 385, 1411.1563, 482.90625, 1322.8203, 481.90625, 1224, 413, 1243.75, 383.96875, 1134, 1109, 1149.7422, 1083, 1375.2188, 952, 1308.1719, 1223, 1148.7031, 1223, 1106, 1232, 1119, 1233, 693, 859, 718.9297, 847.10156, 632.60156, 1241.8906, 652.5625, 1074, 886, 818, 936, 605, 947, 563, 964.5078, 594.21094, 912.5703, 829.9297, 907.89844, 846, 892.6875, 844.8281, 1132.9531, 1307, 1105, 1296, 1190, 564, 1317.7734, 507.14063, 783.8281, 118.890625, 1121.6172, 114.17969, 1102.5, 180, 1015.9297, 180, 828.5703, 135, 272.27344, 400, 26.96875, 400, 31.710938, 382, 63.8125, 382, 77.74219, 382.9297, 59.148438, 1321.0625, 93, 1309, 170, 1308, 159, 1353, 139.11719, 1382, 127.10156, 1432.0625, 23.78125, 1432.8906, 51.0625, 1322.0625, 779.8125, 135, 1405.3438, 506.14063, 1357.0703, 711.03125, 1196.5313, 591.8672, 906, 563, 171, 916, 198, 916, 175, 1012, 157, 1012, 134.4375, 999.7578, 144.99219, 929, 1271.7188, 276.03125, 1461.2813, 276.9297, 116.50781, 664.28906, 255.15625, 482.95313, 282, 470, 376, 470, 354, 564, 343, 606, 140, 673, 662, 563, 627, 562, 1105.5234, 810.0625, 1208.3203, 810.8906, 1186.1094, 903.0625, 1085.2969, 903.8906, 1097.2813, 846, 1099.5313, 831.0469, 1169.5078, 711.9297, 163.50781, 847, 33.546875, 847, 37.007813, 831.8125, 78, 830.8125, 523.6328, 263, 482.5, 263, 512.96875, 128.0625, 536.3906, 262.67188, 51.273438, 264.57813, 80.078125, 131.85938, 179.67969, 130.20313, 151.82031, 265.14844, 101.82031, 266.15625, 92.65625, 266.60938, 277.79688, 384.03906, 288.97656, 385, 31.703125, 662.28906, 75.828125, 483.95313, 1025.4375, 1395.1016, 1159.5391, 1307, 1123.9766, 1467, 1009.46094, 1467, 1036, 1297, 1020, 1369, 295.9922, 131, 396.60156, 131, 367.89844, 263.15625, 321.28125, 264.15625, 265.3672, 266.59375, 306.65625, 268.60938, 901.47656, 1394.1016, 941, 1368, 920.4922, 1310.0938, 961, 1284, 825, 1283, 782.6172, 1309.0938, 857.65625, 1083, 402, 860, 440, 860, 400, 1045, 378.92188, 1074, 748.6328, 1242.8906, 695.9297, 1486.9688, 339.3828, 1486.0313, 392.0703, 1242.9609, 613.96875, 1241.9609, 647, 1045, 613.60156, 128.89063, 584.0078, 264.64844, 494.92188, 385, 118.453125, 998.7578, 134.90625, 929, 297, 413, 328, 674, 107, 818, 1183.7422, 952, 863, 1110, 290, 1353, 312.90625, 1382, 185, 859)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(16, 11, 15, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25, 26, 27, 28), PackedInt32Array(17, 15, 29, 30), PackedInt32Array(31, 9, 8, 32), PackedInt32Array(33, 34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41, 42), PackedInt32Array(43, 44, 45, 46, 47), PackedInt32Array(47, 48, 49, 50, 43), PackedInt32Array(37, 51, 33), PackedInt32Array(31, 32, 52, 53, 54), PackedInt32Array(55, 3, 2, 24, 23), PackedInt32Array(56, 57, 58, 59, 60, 61), PackedInt32Array(62, 63, 7, 10), PackedInt32Array(1, 10, 9, 2), PackedInt32Array(64, 65, 66, 67, 68, 69, 70), PackedInt32Array(5, 4, 71, 72), PackedInt32Array(73, 74, 75, 76, 77), PackedInt32Array(78, 73, 77), PackedInt32Array(53, 79, 54), PackedInt32Array(80, 81, 82, 83), PackedInt32Array(84, 85, 86, 87), PackedInt32Array(88, 89, 90, 91, 92), PackedInt32Array(93, 88, 92), PackedInt32Array(93, 92, 42, 41), PackedInt32Array(38, 42, 94, 95), PackedInt32Array(31, 54, 25, 24), PackedInt32Array(64, 96, 97, 65), PackedInt32Array(98, 29, 99, 100, 101), PackedInt32Array(102, 30, 29, 98, 103), PackedInt32Array(104, 105, 106, 107), PackedInt32Array(108, 104, 107, 109), PackedInt32Array(109, 107, 95, 94), PackedInt32Array(103, 98, 110, 111), PackedInt32Array(111, 110, 112, 113), PackedInt32Array(114, 113, 112, 115), PackedInt32Array(114, 115, 28, 116), PackedInt32Array(117, 118, 119, 120), PackedInt32Array(121, 122, 123, 124, 125, 20), PackedInt32Array(20, 125, 21), PackedInt32Array(126, 18, 21), PackedInt32Array(86, 127, 128, 87), PackedInt32Array(84, 87, 6, 129), PackedInt32Array(126, 21, 120, 119), PackedInt32Array(60, 130, 131, 61), PackedInt32Array(55, 23, 69, 71), PackedInt32Array(72, 71, 69, 68), PackedInt32Array(26, 78, 77, 27), PackedInt32Array(0, 37, 36, 1), PackedInt32Array(6, 5, 132, 129), PackedInt32Array(95, 129, 132, 38), PackedInt32Array(69, 133, 70), PackedInt32Array(65, 38, 132, 66), PackedInt32Array(83, 64, 70, 134), PackedInt32Array(80, 83, 134, 22), PackedInt32Array(12, 135, 13), PackedInt32Array(116, 12, 11, 136), PackedInt32Array(137, 117, 120, 138), PackedInt32Array(137, 138, 47, 46), PackedInt32Array(44, 43, 60, 59), PackedInt32Array(56, 61, 80, 139), PackedInt32Array(118, 117, 139, 80, 22, 19), PackedInt32Array(19, 18, 118), PackedInt32Array(28, 19, 22), PackedInt32Array(28, 27, 116), PackedInt32Array(114, 116, 136)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(72, 122, 39, 274, 80, 276, 56, 372, 24, 372, 14, 410, 260, 410, 247, 473, 68, 474, 19, 672, 104, 674, 70, 821, 29, 822, 21, 857, 151, 857, 137, 919, 127, 919, 106, 1008, 122, 1009, 51, 1312, 43, 1313, 11, 1443, 135, 1442, 147, 1392, 321, 1392, 387, 1084, 640, 1084, 606, 1232, 384, 1233, 327, 1496, 704, 1497, 761, 1233, 645, 1232, 727, 857, 880, 855, 770, 1319, 908, 1320, 889, 1404, 1013, 1405, 997, 1477, 1132, 1477, 1172, 1297, 1145, 1297, 1157, 1233, 1316, 1233, 1388, 942, 1176, 942, 1142, 1073, 870, 1073, 916, 856, 1085, 856, 1073, 914, 1194, 913, 1221, 801, 1098, 800, 1092, 821, 925, 820, 972.5625, 604.13574, 1184, 602, 1157, 722, 1365, 721, 1418, 496, 1330, 497, 1331, 492, 1419, 493, 1474, 267, 1264, 266, 1236, 374, 984, 375, 1024, 190, 1110, 190, 1135, 104, 776, 109, 767, 145, 816, 145, 763, 375, 517, 375, 544, 273, 592, 275, 626, 119, 505, 118, 470, 273, 511, 273, 487, 375, 302, 375, 329, 274, 376, 273, 409, 121, 288, 121, 253, 276, 294, 278, 270, 374, 90, 373, 110, 276, 160, 275, 192, 120)])
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw27f"]
 texture = ExtResource("1_p5pve")
 texture_region_size = Vector2i(64, 64)
@@ -230,9 +235,7 @@ sources/0 = SubResource("TileSetAtlasSource_iw27f")
 
 [sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
 font = ExtResource("9_oysan")
-font_size = 13
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
+font_size = 65
 
 [node name="Node2D" type="Node2D" unique_id=956996686]
 script = SubResource("GDScript_e0an3")
@@ -244,7 +247,57 @@ offset_right = 2787.0
 offset_bottom = 2204.0
 color = Color(0.06666667, 0.101960786, 0.047058824, 1)
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=375905567]
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 1503.0
+offset_bottom = 1499.0
+texture = ExtResource("11_sb2pt")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="TextureRect" unique_id=512665287]
+position = Vector2(-1, -12)
+navigation_polygon = SubResource("NavigationPolygon_sb2pt")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=268241024]
+position = Vector2(271, -27)
+vertices = PackedVector2Array(72, 633, 665, 632, 615, 845, -164, 845, -131, 700, 57, 701)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=2015313385]
+position = Vector2(271, -27)
+vertices = PackedVector2Array(11, 497, 26, 440, 392, 440, 356, 589, 83, 591, 105, 497)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=1103114772]
+position = Vector2(271, -27)
+vertices = PackedVector2Array(430, 441, 670, 441, 635, 590, 391, 590)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D4" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=165413179]
+vertices = PackedVector2Array(979, 413, 1224, 413, 1190, 564, 947, 563)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D5" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=307110291]
+vertices = PackedVector2Array(440, 860, 693, 859, 647, 1045, 400, 1045)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D6" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=602372179]
+vertices = PackedVector2Array(171, 916, 185, 859, 402, 860, 290, 1353, 159, 1353, 170, 1308, 93, 1309, 157, 1012, 175, 1012, 198, 916)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D7" type="NavigationObstacle2D" parent="TextureRect/NavigationRegion2D" unique_id=614348118]
+vertices = PackedVector2Array(863, 1110, 1134, 1109, 1106, 1232, 1119, 1233, 1105, 1296, 1036, 1297, 1020, 1369, 941, 1368, 961, 1284, 825, 1283)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
 [node name="MovementTileMapLayer" type="TileMapLayer" parent="." unique_id=569995376]
+visible = false
 tile_map_data = PackedByteArray("AAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wYAAQAAAAAAAAD+/wcAAQAAAAAAAAD+/wgAAQAAAAAAAAD9/wgAAQAAAAAAAAD8/wgAAQAAAAAAAAD+/wkAAQAAAAAAAAD+/woAAQAAAAAAAAD+/wsAAQAAAAAAAAD+/wwAAQAAAAAAAAD9/wwAAQAAAAAAAAD8/wsAAQAAAAAAAAD7/wsAAQAAAAAAAAD6/wsAAQAAAAAAAAD6/wwAAQAAAAAAAAD7/wwAAQAAAAAAAAD8/wwAAQAAAAAAAAD8/w0AAQAAAAAAAAD7/w0AAQAAAAAAAAD7/w4AAQAAAAAAAAD7/w8AAQAAAAAAAAD6/w0AAQAAAAAAAAD6/w4AAQAAAAAAAAD6/w8AAQAAAAAAAAD6/xAAAQAAAAAAAAD7/xAAAQAAAAAAAAD8/xAAAQAAAAAAAAD8/w8AAQAAAAAAAAD8/w4AAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAACAAQAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAQAAQAAAAAAAAANAAYAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAARAAkAAQAAAAAAAAASAAoAAQAAAAAAAAARAAoAAQAAAAAAAAARAAsAAQAAAAAAAAASAAsAAQAAAAAAAAARAAgAAQAAAAAAAAAQAAsAAQAAAAAAAAAPAAsAAQAAAAAAAAAOAAsAAQAAAAAAAAANAAsAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAYAAQAAAAAAAAAHAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAADAAgAAQAAAAAAAAADAAcAAQAAAAAAAAADAAYAAQAAAAAAAAACAAgAAQAAAAAAAAABAAgAAQAAAAAAAAAAAAgAAQAAAAAAAAD//wgAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAD+/w0AAQAAAAAAAAD+/w4AAQAAAAAAAAD+/w8AAQAAAAAAAAD+/xAAAQAAAAAAAAD+/xEAAQAAAAAAAAD+/xIAAQAAAAAAAAD//xIAAQAAAAAAAAAAABIAAQAAAAAAAAAAABMAAQAAAAAAAAD//xQAAQAAAAAAAAAAABQAAQAAAAAAAAAAABUAAQAAAAAAAAABABQAAQAAAAAAAAABABUAAQAAAAAAAAABABYAAQAAAAAAAAABABcAAQAAAAAAAAAAABcAAQAAAAAAAAAAABYAAQAAAAAAAAD//xYAAQAAAAAAAAD//xUAAQAAAAAAAAD//xcAAQAAAAAAAAADABQAAQAAAAAAAAAEABQAAQAAAAAAAAAFABQAAQAAAAAAAAAGABQAAQAAAAAAAAAHABQAAQAAAAAAAAAIABQAAQAAAAAAAAAIABUAAQAAAAAAAAAHABUAAQAAAAAAAAAGABUAAQAAAAAAAAAFABUAAQAAAAAAAAAEABUAAQAAAAAAAAAEABYAAQAAAAAAAAADABYAAQAAAAAAAAADABUAAQAAAAAAAAAFABYAAQAAAAAAAAAGABYAAQAAAAAAAAAHABYAAQAAAAAAAAAIABYAAQAAAAAAAAAIABcAAQAAAAAAAAAHABcAAQAAAAAAAAAGABcAAQAAAAAAAAAFABcAAQAAAAAAAAAEABcAAQAAAAAAAAADABcAAQAAAAAAAAABABIAAQAAAAAAAAACABIAAQAAAAAAAAADABIAAQAAAAAAAAAEABIAAQAAAAAAAAAFABIAAQAAAAAAAAAFABMAAQAAAAAAAAAFABoAAQAAAAAAAAAFABkAAQAAAAAAAAAEABkAAQAAAAAAAAADABkAAQAAAAAAAAADABoAAQAAAAAAAAACABoAAQAAAAAAAAACABkAAQAAAAAAAAAEABoAAQAAAAAAAAAEABsAAQAAAAAAAAADABsAAQAAAAAAAAACABsAAQAAAAAAAAAFABsAAQAAAAAAAAAGABoAAQAAAAAAAAAHABoAAQAAAAAAAAAIABoAAQAAAAAAAAAJABoAAQAAAAAAAAAKABoAAQAAAAAAAAAKABkAAQAAAAAAAAAKABgAAQAAAAAAAAAKABcAAQAAAAAAAAAKABYAAQAAAAAAAAAKABUAAQAAAAAAAAAKABQAAQAAAAAAAAAKABMAAQAAAAAAAAAKABIAAQAAAAAAAAAKABEAAQAAAAAAAAAKABAAAQAAAAAAAAAKAA8AAQAAAAAAAAAKAA4AAQAAAAAAAAALAA4AAQAAAAAAAAAMAA4AAQAAAAAAAAANAA4AAQAAAAAAAAANAA0AAQAAAAAAAAANAAwAAQAAAAAAAAAOAAwAAQAAAAAAAAAPAAwAAQAAAAAAAAAQAAwAAQAAAAAAAAARAAwAAQAAAAAAAAASAAwAAQAAAAAAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAARAA4AAQAAAAAAAAARAA8AAQAAAAAAAAASAA8AAQAAAAAAAAASABAAAQAAAAAAAAASABEAAQAAAAAAAAARABEAAQAAAAAAAAAQABEAAQAAAAAAAAAPABEAAQAAAAAAAAAOABEAAQAAAAAAAAAOABAAAQAAAAAAAAANABAAAQAAAAAAAAANAA8AAQAAAAAAAAANABEAAQAAAAAAAAAPABAAAQAAAAAAAAAQABAAAQAAAAAAAAARABAAAQAAAAAAAAAPAA8AAQAAAAAAAAAOAA8AAQAAAAAAAAAQAA8AAQAAAAAAAAAPAA4AAQAAAAAAAAAQAA4AAQAAAAAAAAAOAA4AAQAAAAAAAAAQAA0AAQAAAAAAAAAPAA0AAQAAAAAAAAAOAA0AAQAAAAAAAAARAA0AAQAAAAAAAAAJAA4AAQAAAAAAAAAIAA4AAQAAAAAAAAAHAA4AAQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAHABAAAQAAAAAAAAAGABAAAQAAAAAAAAAFABAAAQAAAAAAAAAEABAAAQAAAAAAAAADABAAAQAAAAAAAAACABAAAQAAAAAAAAABABAAAQAAAAAAAAAAABAAAQAAAAAAAAAAAA8AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA0AAQAAAAAAAAAAAAwAAQAAAAAAAAAAAAsAAQAAAAAAAAAHAAsAAQAAAAAAAAAHAAwAAQAAAAAAAAAHAA0AAQAAAAAAAAAHAA8AAQAAAAAAAAAGAA8AAQAAAAAAAAAFAA8AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAA0AAQAAAAAAAAAGAAwAAQAAAAAAAAAGAAsAAQAAAAAAAAAGAA4AAQAAAAAAAAAFAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAFAAsAAQAAAAAAAAAEAA4AAQAAAAAAAAAEAA8AAQAAAAAAAAAEAA0AAQAAAAAAAAAEAAwAAQAAAAAAAAAEAAsAAQAAAAAAAAADAAsAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAADAA0AAQAAAAAAAAADAA4AAQAAAAAAAAADAA8AAQAAAAAAAAACAA8AAQAAAAAAAAABAA8AAQAAAAAAAAABAA4AAQAAAAAAAAACAA4AAQAAAAAAAAACAA0AAQAAAAAAAAABAA0AAQAAAAAAAAABAAwAAQAAAAAAAAABAAsAAQAAAAAAAAAPABIAAQAAAAAAAAAPABMAAQAAAAAAAAAPABQAAQAAAAAAAAAPABUAAQAAAAAAAAAPABYAAQAAAAAAAAAPABcAAQAAAAAAAAAPABgAAQAAAAAAAAAOABkAAQAAAAAAAAAPABkAAQAAAAAAAAAQABkAAQAAAAAAAAARABkAAQAAAAAAAAANABkAAQAAAAAAAAANABoAAQAAAAAAAAAOABoAAQAAAAAAAAAPABoAAQAAAAAAAAAQABoAAQAAAAAAAAAQABsAAQAAAAAAAAARABsAAQAAAAAAAAARABoAAQAAAAAAAAARABwAAQAAAAAAAAAQABwAAQAAAAAAAAAPABwAAQAAAAAAAAAOABwAAQAAAAAAAAANABwAAQAAAAAAAAANABsAAQAAAAAAAAAOABsAAQAAAAAAAAAPABsAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_51px8")
 
@@ -252,103 +305,111 @@ tile_set = SubResource("TileSet_51px8")
 position = Vector2(291, 157)
 
 [node name="move_target" parent="movement_nodes" unique_id=1799719153 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-167, 47)
+position = Vector2(-161, -40)
 connections = [NodePath("../move_target2")]
 
 [node name="move_target2" parent="movement_nodes" unique_id=1227734488 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-167, -41)
+position = Vector2(-226, 220)
 connections = [NodePath("../move_target"), NodePath("../move_target3")]
 
 [node name="move_target3" parent="movement_nodes" unique_id=179874527 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(76, 84)
-connections = [NodePath("../move_target2"), NodePath("../move_target11")]
+position = Vector2(-8, 228)
+connections = [NodePath("../move_target2"), NodePath("../move_target4")]
 
 [node name="move_target4" parent="movement_nodes" unique_id=1376889007 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-303, -89)
+position = Vector2(209, 229)
 connections = [NodePath("../move_target3"), NodePath("../move_target5")]
 
 [node name="move_target5" parent="movement_nodes" unique_id=1321135926 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-303, -57)
+position = Vector2(395, 226)
 connections = [NodePath("../move_target4"), NodePath("../move_target6")]
 
 [node name="move_target6" parent="movement_nodes" unique_id=991701716 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(156, 52)
-connections = [NodePath("../move_target10"), NodePath("../move_target5"), NodePath("../move_target11")]
-
-[node name="move_target11" parent="movement_nodes" unique_id=836238214 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(156, 84)
-connections = [NodePath("../move_target6"), NodePath("../move_target3"), NodePath("../move_target7"), NodePath("../move_target4")]
-
-[node name="move_target12" parent="movement_nodes" unique_id=1654044055 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(236, 12)
-connections = [NodePath("../move_target10"), NodePath("../move_target9")]
-
-[node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(156, 12)
-connections = [NodePath("../move_target12"), NodePath("../move_target8"), NodePath("../move_target6")]
-
-[node name="move_target8" parent="movement_nodes" unique_id=786757832 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(156, -20)
-connections = [NodePath("../move_target10"), NodePath("../move_target9")]
-
-[node name="move_target9" parent="movement_nodes" unique_id=527621551 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-264, -41)
-connections = [NodePath("../move_target8")]
+position = Vector2(491, 223)
+connections = [NodePath("../move_target7"), NodePath("../move_target5"), NodePath("../move_target9")]
 
 [node name="move_target7" parent="movement_nodes" unique_id=1284434193 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(156, 164)
+position = Vector2(549, -41)
+connections = [NodePath("../move_target6"), NodePath("../move_target8")]
+
+[node name="move_target8" parent="movement_nodes" unique_id=786757832 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(726, -42)
+connections = [NodePath("../move_target7"), NodePath("../move_target9")]
+
+[node name="move_target9" parent="movement_nodes" unique_id=527621551 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(670, 226)
+connections = [NodePath("../move_target8"), NodePath("../move_target10")]
+
+[node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(926, 224)
+connections = [NodePath("../move_target9"), NodePath("../move_target11")]
+
+[node name="move_target11" parent="movement_nodes" unique_id=836238214 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(1036, 225)
+connections = [NodePath("../move_target10"), NodePath("../move_target12")]
+
+[node name="move_target12" parent="movement_nodes" unique_id=1654044055 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(1024, 356)
 connections = [NodePath("../move_target11")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1000948966]
-position = Vector2(46, 117)
-zoom = Vector2(2.665, 2.665)
+position = Vector2(713, 438)
+zoom = Vector2(0.645, 0.645)
 
 [node name="ReadyButton" parent="Camera2D" unique_id=1576267881 instance=ExtResource("6_iw27f")]
-offset_left = 138.00002
-offset_top = 83.000015
-offset_right = 299.8239
-offset_bottom = 159.0
-scale = Vector2(0.43874848, 0.4399994)
+offset_left = 606.0
+offset_top = 329.0
+offset_right = 767.824
+offset_bottom = 405.0
+scale = Vector2(1.5954459, 1.5999947)
 
 [node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(236, -20)
+position = Vector2(1313.0001, 513.00006)
+scale = Vector2(2.48, 2.48)
 collision_mask = 1
 movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target9")
-escapeNodes = [NodePath("../movement_nodes/move_target3")]
+current_node = NodePath("../movement_nodes/move_target12")
+escapeNodes = [NodePath("../movement_nodes/move_target8")]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 groupType = 1
 
 [node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(156, 164)
+position = Vector2(131, 116)
+scale = Vector2(2.0799994, 2.0799994)
 collision_mask = 1
 movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target7")
-escapeNodes = [NodePath("../movement_nodes/move_target3")]
+current_node = NodePath("../movement_nodes/move_target")
+escapeNodes = [NodePath("../movement_nodes/move_target8")]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 groupType = 1
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
-position = Vector2(4, 12)
-current_node = NodePath("../movement_nodes/move_target")
-[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
-position = Vector2(124, 68)
-current_node = NodePath("../movement_nodes/move_target9")
+position = Vector2(1016, 114.00003)
+scale = Vector2(3.52, 3.4854977)
+current_node = NodePath("../movement_nodes/move_target8")
+
+[node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
+position = Vector2(500, 385)
+scale = Vector2(2.6399999, 2.6399999)
+current_node = NodePath("../movement_nodes/move_target4")
+groupType = 1
 
 [node name="NightTimerWindow" parent="." unique_id=1846275003 instance=ExtResource("7_71pa8")]
 visible = false
-offset_left = -166.0
-offset_right = -132.5304
-offset_bottom = 18.651896
-scale = Vector2(1.7329158, 1.7156434)
+offset_left = -159.00002
+offset_top = -41.0
+offset_right = 14.62355
+offset_bottom = 55.756706
+scale = Vector2(1.2529145, 1.2404265)
 script = ExtResource("8_oysan")
 
 [node name="NightTimerLabel" type="Label" parent="NightTimerWindow" unique_id=16713579 node_paths=PackedStringArray("timer")]
 texture_filter = 1
 layout_mode = 0
-offset_top = 2.331487
-offset_right = 29.999998
-offset_bottom = 17.331488
+offset_left = 22.505457
+offset_top = 13.406049
+offset_right = 152.50546
+offset_bottom = 78.40605
 text = "00:00"
 label_settings = SubResource("LabelSettings_0iomv")
 horizontal_alignment = 2
@@ -358,15 +419,3 @@ timer = NodePath("../Timer")
 
 [node name="Timer" type="Timer" parent="NightTimerWindow" unique_id=1042690902]
 wait_time = 300.0
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=375905567]
-visible = false
-offset_left = 1.0
-offset_top = 12.0
-offset_right = 1501.0
-offset_bottom = 1512.0
-texture = ExtResource("11_sb2pt")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="TextureRect" unique_id=512665287]
-position = Vector2(-1, -12)
-navigation_polygon = SubResource("NavigationPolygon_sb2pt")
