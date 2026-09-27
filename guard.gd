@@ -7,6 +7,7 @@ var movement_delta: float
 @onready var nav_agent = $NavigationAgent2D
 @export var current_node: MoveTarget
 @onready var cooldown_timer = $Timer
+@onready var animated_sprite = $AnimatedSprite2D
 
 #AI variables
 var previous_node: MoveTarget
@@ -16,6 +17,9 @@ var retreating = false
 
 
 func _ready() -> void:
+	quantity = randi_range(1, 5)
+	animated_sprite.modulate = Color.SKY_BLUE
+	
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	current_node.enabled = false
 	nav_agent.path_desired_distance = 4.0
@@ -111,6 +115,21 @@ func _physics_process(delta):
 func _on_velocity_computed(safe_velocity: Vector2):
 	velocity = safe_velocity
 	move_and_slide()
+	
+	if velocity.length() > 0:
+		if quantity >= 3:
+			animated_sprite.play("moving_large")
+		elif quantity >= 2:
+			animated_sprite.play("moving_medium")
+		else:
+			animated_sprite.play("moving_small")
+	else:
+		if quantity >= 3:
+			animated_sprite.play("idle_large")
+		elif quantity >= 2:
+			animated_sprite.play("idle_medium")
+		else:
+			animated_sprite.play("idle_small")
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
