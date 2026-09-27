@@ -1,3 +1,25 @@
 [gd_scene format=3 uid="uid://bgu1vgta1djtq"]
 
-[node name="inmate" type="CharacterBody2D" unique_id=348266310]
+[ext_resource type="Script" uid="uid://3h2482pgcx6t" path="res://inmate.gd" id="1_gs2f6"]
+[ext_resource type="Texture2D" uid="uid://cm4shphcbfysc" path="res://red_square.png" id="1_wl7jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51px8"]
+size = Vector2(8, 8)
+
+[node name="inmate" type="CharacterBody2D" unique_id=348266310 node_paths=PackedStringArray("cooldown_timer", "nav_agent")]
+script = ExtResource("1_gs2f6")
+cooldown_timer = NodePath("Timer")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=82049794]
+debug_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1943161577]
+shape = SubResource("RectangleShape2D_51px8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=287007751]
+texture = ExtResource("1_wl7jc")
+
+[node name="Timer" type="Timer" parent="." unique_id=1715636088]
+wait_time = 0.5
+one_shot = true
