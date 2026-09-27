@@ -4,6 +4,7 @@ class_name MoveTarget
 @export var connections: Array[MoveTarget] 
 @export var sprite: Sprite2D
 var enabled: bool = true
+var occupant: Group
 
 func _process(delta: float) -> void:
 	if GameState.in_selected_range(self):

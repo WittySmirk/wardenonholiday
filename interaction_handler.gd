@@ -1,11 +1,11 @@
 
-@tool
+#@tool
 extends Node
 
-@export var guard_lower_bound = 0
-@export var guard_upper_bound = 0
-@export var inmate_lower_bound = 0
-@export var inmate_upper_bound = 0
+var guard_lower_bound = 5
+var guard_upper_bound = 20
+var inmate_lower_bound = 1
+var inmate_upper_bound = 3
 
 func getStrength(lowerBound, upperBound, numRolls) -> int:
 	var strength = 0
@@ -23,6 +23,19 @@ func get_interaction_result(numGuards, numInmates) -> String:
 		return "INMATES";
 		
 		
+
+func fight(guard: Group, inmate: Group, did_inmates_initiate: bool):
+	print("Fighting")
+	var result = get_interaction_result(
+		guard.quantity,
+		inmate.quantity
+	)
+	
+	
+	if result == "GUARDS":
+		inmate.retreat(did_inmates_initiate, guard)
+	else:
+		guard.retreat(did_inmates_initiate)
 
 #@export var interaction_test: bool = false:
 	#set(value):
