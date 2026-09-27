@@ -229,7 +229,7 @@ sources/0 = SubResource("TileSetAtlasSource_iw27f")
 
 [sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
 font = ExtResource("9_oysan")
-font_size = 27
+font_size = 13
 
 [node name="Node2D" type="Node2D" unique_id=956996686]
 script = SubResource("GDScript_e0an3")
@@ -313,6 +313,7 @@ offset_bottom = 276.0
 scale = Vector2(0.43874848, 0.4399994)
 
 [node name="NightTimerWindow" parent="." unique_id=1846275003 instance=ExtResource("7_71pa8")]
+visible = false
 offset_left = -166.0
 offset_right = -132.5304
 offset_bottom = 18.651896
@@ -322,12 +323,10 @@ script = ExtResource("8_oysan")
 [node name="NightTimerLabel" type="Label" parent="NightTimerWindow" unique_id=16713579 node_paths=PackedStringArray("timer")]
 texture_filter = 1
 layout_mode = 0
-offset_left = 4.6164923
-offset_top = 2.9143586
-offset_right = 48.616493
-offset_bottom = 30.914358
-scale = Vector2(0.4, 0.4)
-text = "0:00"
+offset_top = 2.331487
+offset_right = 29.999998
+offset_bottom = 17.331488
+text = "00:00"
 label_settings = SubResource("LabelSettings_0iomv")
 horizontal_alignment = 2
 vertical_alignment = 1

@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bus0xjdkpjwa2"]
+
+[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="1_d3352"]
+[ext_resource type="Texture2D" uid="uid://b374pot3iqprh" path="res://icon.svg" id="2_0d5ky"]
+[ext_resource type="Script" uid="uid://blwy8s6g4mpjk" path="res://UI/guards.gd" id="2_lo4tm"]
+[ext_resource type="PackedScene" uid="uid://rl5m50hnu0ds" path="res://UI/start_button.tscn" id="3_0d5ky"]
+[ext_resource type="Script" uid="uid://gwhfibd71eg6" path="res://UI/start_button.gd" id="4_7htnq"]
+[ext_resource type="Script" uid="uid://bdrs0cp03itis" path="res://UI/inmates.gd" id="4_rd8cm"]
+[ext_resource type="Texture2D" uid="uid://cm4shphcbfysc" path="res://red_square.png" id="5_8bi5o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
+font = ExtResource("1_d3352")
+font_size = 48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d5ky"]
+size = Vector2(5, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kvws"]
+size = Vector2(6, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iomv"]
+size = Vector2(657, 2.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dj5al"]
+size = Vector2(3, 35)
+
+[node name="StartMenu" type="ColorRect" unique_id=1462901151]
+offset_right = 433.0
+offset_bottom = 244.0
+color = Color(0.06666667, 0.101960786, 0.047058824, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2020822493]
+position = Vector2(216, 122)
+zoom = Vector2(2.665, 2.665)
+
+[node name="Label" type="Label" parent="." unique_id=1210795762]
+texture_filter = 1
+layout_mode = 0
+offset_left = 53.0
+offset_top = 21.0
+offset_right = 376.0
+offset_bottom = 80.0
+text = "Warden On Holiday"
+label_settings = SubResource("LabelSettings_0iomv")
+
+[node name="Guards" type="CharacterBody2D" parent="." unique_id=932146367]
+position = Vector2(-82, 13)
+script = ExtResource("2_lo4tm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guards" unique_id=889132856]
+position = Vector2(-0.7500038, 179.24998)
+scale = Vector2(0.113281086, 0.113281086)
+texture = ExtResource("2_0d5ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guards" unique_id=439327092]
+position = Vector2(-0.7499924, 179.25)
+shape = SubResource("RectangleShape2D_0d5ky")
+
+[node name="Inmates" type="CharacterBody2D" parent="." unique_id=978191749]
+position = Vector2(-67, 195)
+script = ExtResource("4_rd8cm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inmates" unique_id=1132955366]
+position = Vector2(2.7265701, -1)
+scale = Vector2(0.68164116, 1.7500001)
+texture = ExtResource("5_8bi5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inmates" unique_id=1890336276]
+position = Vector2(2.453125, -1)
+shape = SubResource("RectangleShape2D_3kvws")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=471111673]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1742367663]
+position = Vector2(215.5, 220.125)
+shape = SubResource("RectangleShape2D_0iomv")
+debug_color = Color(0.8804752, 0, 0.35795933, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=858119737]
+offset_left = -3.0
+offset_top = 218.75
+offset_right = 433.0
+offset_bottom = 221.0
+color = Color(0.40784314, 0.6901961, 0.41568628, 1)
+
+[node name="StartButton" parent="." unique_id=1576267881 instance=ExtResource("3_0d5ky")]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 98.00001
+offset_right = 328.0
+offset_bottom = 174.0
+scale = Vector2(0.6400012, 0.6400012)
+script = ExtResource("4_7htnq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=181902083]
+position = Vector2(537, 204)
+shape = SubResource("RectangleShape2D_dj5al")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70060685]
+position = Vector2(-112, 202)
+shape = SubResource("RectangleShape2D_dj5al")
