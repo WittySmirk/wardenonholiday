@@ -25,6 +25,7 @@ func get_interaction_result(numGuards, numInmates) -> String:
 		
 
 func fight(guard: Group, inmate: Group, did_inmates_initiate: bool):
+	await get_tree().create_timer(5.0).timeout
 	print("Fighting")
 	var result = get_interaction_result(
 		guard.quantity,

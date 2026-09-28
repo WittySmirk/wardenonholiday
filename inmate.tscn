@@ -7,6 +7,30 @@
 [ext_resource type="FontFile" uid="uid://d3bwkt6m482pw" path="res://fonts/PressStart2P-Regular.ttf" id="5_ykwrb"]
 [ext_resource type="Texture2D" uid="uid://bg4o0njsjs7t3" path="res://group_outline.png" id="6_g6bix"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_do863"]
+atlas = ExtResource("2_gs2f6")
+region = Rect2(0, 105, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8itb"]
+atlas = ExtResource("2_gs2f6")
+region = Rect2(18, 105, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6bix"]
+atlas = ExtResource("2_gs2f6")
+region = Rect2(0, 63, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vd56"]
+atlas = ExtResource("2_gs2f6")
+region = Rect2(18, 63, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i4au"]
+atlas = ExtResource("2_gs2f6")
+region = Rect2(0, 21, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ksb4"]
+atlas = ExtResource("2_gs2f6")
+region = Rect2(18, 21, 18, 21)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bi5o"]
 atlas = ExtResource("2_gs2f6")
 region = Rect2(0, 84, 18, 21)
@@ -57,6 +81,39 @@ region = Rect2(18, 21, 18, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ke0wg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do863")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8itb")
+}],
+"loop": 1,
+"name": &"fighting_large",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6bix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vd56")
+}],
+"loop": 1,
+"name": &"fighting_medium",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i4au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ksb4")
+}],
+"loop": 1,
+"name": &"fighting_small",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8bi5o")
@@ -207,8 +264,7 @@ avoidance_priority = 0.0
 modulate = Color(1, 0.7529412, 0, 1)
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_ke0wg")
-animation = &"moving_large"
-frame_progress = 0.24588041
+animation = &"fighting_large"
 
 [node name="Timer" type="Timer" parent="." unique_id=1715636088]
 wait_time = 5.0
