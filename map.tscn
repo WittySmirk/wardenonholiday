@@ -19,9 +19,22 @@
 [ext_resource type="Texture2D" uid="uid://bgj5w7eo271bi" path="res://textures/bleacher_outline.png" id="9_wbpbn"]
 [ext_resource type="Texture2D" uid="uid://ctf5sb4q08asi" path="res://textures/rec_center_outline_green.png" id="10_r5om4"]
 [ext_resource type="Script" uid="uid://bgd5xeaj0510w" path="res://night_timer.gd" id="10_sb2pt"]
-[ext_resource type="Texture2D" uid="uid://csr3p2w7svijg" path="res://textures/map.png" id="11_sb2pt"]
-[ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="12_ooc2g"]
-[ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
+[ext_resource type="Texture2D" uid="uid://bb55o2nlbkdo1" path="res://textures/map.png" id="11_sb2pt"]
+
+[sub_resource type="GDScript" id="GDScript_e0an3"]
+script/source = "extends Node2D
+
+
+#
+## Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	GameState.initialize_sabotage_nodes($sabotage_nodes.get_children())
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
+"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
 vertices = PackedVector2Array(770.96094, 385, 971.60156, 385.04688, 979, 413, 941, 414, 701, 414, 663, 413, 504.0078, 385, 1134, 1109, 1149.7422, 1083, 1375.2188, 952, 1308.1719, 1223, 1148.7031, 1223, 1106, 1232, 1119, 1233, 693, 859, 718.9297, 847.10156, 632.60156, 1241.8906, 652.5625, 1074, 886, 818, 936, 605, 947, 563, 964.5078, 594.21094, 912.5703, 829.9297, 907.89844, 846, 892.6875, 844.8281, 1132.9531, 1307, 1105, 1296, 783.8281, 118.890625, 1121.6172, 114.17969, 1102.5, 180, 1015.9297, 180, 828.5703, 135, 272.27344, 400, 26.96875, 400, 31.710938, 382, 64.21094, 382, 77.74219, 382.9297, 59.148438, 1321.0625, 93, 1309, 170, 1308, 159, 1353, 139.11719, 1382, 127.10156, 1432.0625, 23.78125, 1432.8906, 51.0625, 1322.0625, 779.8125, 135, 1196.5313, 591.8672, 1317.7734, 507.14063, 1405.3438, 506.14063, 1357.0703, 711.03125, 1169.5078, 711.9297, 906, 563, 171, 916, 198, 916, 175, 1012, 157, 1012, 134.4375, 999.7578, 144.99219, 929, 1243.75, 383.96875, 1271.7188, 276.03125, 1461.2813, 276.9297, 1411.1563, 482.90625, 1322.8203, 481.90625, 116.50781, 664.28906, 255.15625, 482.95313, 282, 470, 376, 470, 354, 564, 343, 606, 140, 673, 662, 563, 627, 562, 1105.5234, 810.0625, 1208.3203, 810.8906, 1186.1094, 903.0625, 1085.2969, 903.8906, 1097.2813, 846, 1099.5313, 831.0469, 1297, 499, 1204.8516, 498.0078, 1190, 564, 163.50781, 847, 33.546875, 847, 37.007813, 831.8125, 78, 830.8125, 523.6328, 263, 482.5, 263, 512.96875, 128.0625, 536.3906, 262.67188, 1297, 488, 1207.1094, 488, 1224, 413, 51.25, 264.65625, 80.078125, 131.85938, 179.67969, 130.20313, 151.82031, 265.14844, 101.82031, 266.15625, 87.03906, 266.64844, 277.79688, 384.03906, 288.97656, 385, 31.703125, 662.28906, 75.828125, 483.95313, 1025.4375, 1395.1016, 1159.5391, 1307, 1123.9766, 1467, 1009.46094, 1467, 1036, 1297, 1020, 1369, 295.9922, 131, 396.60156, 131, 367.89844, 263.15625, 321.28125, 264.15625, 265.3672, 266.59375, 306.65625, 268.60938, 901.47656, 1394.1016, 941, 1368, 920.4922, 1310.0938, 961, 1284, 825, 1283, 782.6172, 1309.0938, 857.65625, 1083, 402, 860, 440, 860, 400, 1045, 378.92188, 1074, 748.6328, 1242.8906, 695.9297, 1486.9688, 339.3828, 1486.0313, 392.0703, 1242.9609, 613.96875, 1241.9609, 647, 1045, 613.60156, 128.89063, 584.0078, 264.64844, 494.92188, 385, 118.453125, 998.7578, 134.90625, 929, 297, 413, 328, 674, 107, 818, 1183.7422, 952, 863, 1110, 290, 1353, 312.90625, 1382, 185, 859)
@@ -704,19 +717,11 @@ scale = Vector2(1, 0.9999995)
 skew = 0.23561943
 connections = [NodePath("../move_target_station1"), NodePath("../move_target21")]
 
-[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(1313.0001, 513.00006)
 collision_mask = 1
 current_node = NodePath("../movement_nodes/move_target12")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
-
-[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(131, 116)
-collision_mask = 1
-current_node = NodePath("../movement_nodes/move_target")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+quantity = 20
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1019, 114.00003)
