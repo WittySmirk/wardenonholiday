@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="wardenonholiday"
-run/main_scene="uid://bus0xjdkpjwa2"
+run/main_scene="uid://cyyhnufbvq3ti"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,8 +22,11 @@ GameState="*uid://ss6emu440ght"
 
 [display]
 
+window/size/viewport_width=1352
+window/size/viewport_height=760
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [physics]
 

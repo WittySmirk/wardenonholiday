@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cyyhnufbvq3ti"]
+
+[ext_resource type="PackedScene" uid="uid://1nhxait0s5b0" path="res://map.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=86052027]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2012966460]
+offset_left = -3272.0
+offset_top = -2201.0
+offset_right = 3803.0
+offset_bottom = 2524.0
+color = Color(0, 0, 0, 0.9882353)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=713231825]
+
+[node name="CenterContainer" type="CenterContainer" parent="Camera2D" unique_id=966067679]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -380.0
+offset_right = 380.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Camera2D/CenterContainer" unique_id=619496178]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Camera2D/CenterContainer/SubViewportContainer" unique_id=55520886]
+handle_input_locally = false
+size = Vector2i(760, 760)
+render_target_update_mode = 4
+
+[node name="Node2D" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=956996686 instance=ExtResource("1_ig7tw")]
