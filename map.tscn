@@ -5,12 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://krut1eodpew1" path="res://move_target.tscn" id="3_e0an3"]
 [ext_resource type="PackedScene" uid="uid://bgu1vgta1djtq" path="res://inmate.tscn" id="4_p5pve"]
 [ext_resource type="PackedScene" uid="uid://v170rsiq1dig" path="res://guard.tscn" id="4_urblq"]
+[ext_resource type="PackedScene" uid="uid://b5nswe1xuxkof" path="res://scenes/move_targets/move_target_office.tscn" id="5_0t07s"]
+[ext_resource type="Script" uid="uid://c3hueo1sjq2ab" path="res://move_target.gd" id="5_ooc2g"]
+[ext_resource type="Texture2D" uid="uid://b0bl8a42cynxr" path="res://textures/station_3_outline.png" id="6_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://bhxcdef7rgx0s" path="res://textures/station_1_outline.png" id="6_a6rn7"]
 [ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="6_iw27f"]
+[ext_resource type="Texture2D" uid="uid://foedxy8gmo0m" path="res://textures/station_2_outline.png" id="7_4on3e"]
 [ext_resource type="PackedScene" uid="uid://clb0s56e5kiu2" path="res://UI/window.tscn" id="7_71pa8"]
+[ext_resource type="Texture2D" uid="uid://dl2n3emnwkg3w" path="res://textures/cafeteria_select.png" id="7_bssq0"]
+[ext_resource type="Texture2D" uid="uid://b2e13h41qh05y" path="res://textures/basketball_outline.png" id="8_2wwcf"]
 [ext_resource type="Script" uid="uid://dve020okw2dmd" path="res://UI/TimerWindow.gd" id="8_oysan"]
 [ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="9_oysan"]
+[ext_resource type="Texture2D" uid="uid://bgj5w7eo271bi" path="res://textures/bleacher_outline.png" id="9_wbpbn"]
+[ext_resource type="Texture2D" uid="uid://ctf5sb4q08asi" path="res://textures/rec_center_outline_green.png" id="10_r5om4"]
 [ext_resource type="Script" uid="uid://bgd5xeaj0510w" path="res://night_timer.gd" id="10_sb2pt"]
 [ext_resource type="Texture2D" uid="uid://bb55o2nlbkdo1" path="res://textures/map.png" id="11_sb2pt"]
+[ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
 
 [sub_resource type="GDScript" id="GDScript_e0an3"]
 script/source = "extends Node2D
@@ -25,6 +35,10 @@ script/source = "extends Node2D
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
@@ -233,6 +247,30 @@ navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_urblq")
 sources/0 = SubResource("TileSetAtlasSource_iw27f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5om4"]
+size = Vector2(306.73596, 208.76837)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bssq0"]
+size = Vector2(69.6071, 92.55745)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk4ss"]
+size = Vector2(123.39104, 118.26778)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6rn7"]
+size = Vector2(207.24005, 93.58581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sf5t"]
+size = Vector2(216.88284, 472.0428)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iomv"]
+size = Vector2(218.97655, 308.52457)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4on3e"]
+size = Vector2(142.10521, 192.31369)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jky6x"]
+size = Vector2(371.37906, 272.53015)
+
 [sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
 font = ExtResource("9_oysan")
 font_size = 65
@@ -328,71 +366,167 @@ scale = Vector2(3.9247289, 4.783215)
 skew = 0.20943952
 connections = [NodePath("../move_target4")]
 
-[node name="move_target_guard1" parent="movement_nodes" unique_id=786757832 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(732.805, -24.660004)
-scale = Vector2(6.3116636, 2.9665928)
-skew = 0.23561943
-connections = [NodePath("../move_target7"), NodePath("../move_target20")]
-
-[node name="move_target_guard2" parent="movement_nodes" unique_id=166535739 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(857.17993, 686.69495)
-scale = Vector2(3.800005, 3.7199998)
-skew = 0.23561943
-connections = [NodePath("../move_target18")]
-
-[node name="move_target_guard3" parent="movement_nodes" unique_id=1869025233 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-139.565, 793.995)
-scale = Vector2(2.0607347, 2.9153144)
-skew = 0.23561943
-connections = [NodePath("../move_target15"), NodePath("../move_target"), NodePath("../move_target21")]
-
-[node name="move_target_office" parent="movement_nodes" unique_id=1648579529 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-200.51842, 1207.2384)
-scale = Vector2(3.8607361, 4.466408)
-skew = 0.23561943
-connections = [NodePath("../move_target21"), NodePath("../move_target24")]
-
-[node name="move_target_rec_center1" parent="movement_nodes" unique_id=836238214 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(1052.15, 209.41)
-scale = Vector2(6.4400096, 7.4196486)
-skew = 0.23561943
-connections = [NodePath("../move_target10"), NodePath("../move_target_rec_center2")]
-
-[node name="move_target_rec_center2" parent="movement_nodes" unique_id=1654044055 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(997.76, 437.88)
-scale = Vector2(6.43999, 7.440005)
-skew = 0.23561943
-connections = [NodePath("../move_target_rec_center1"), NodePath("../move_target14")]
-
-[node name="move_target_cafeteria" parent="movement_nodes" unique_id=1014014235 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(-93.08499, 401.33997)
-scale = Vector2(9.440002, 6.52)
-skew = 0.23561943
+[node name="move_target_cafeteria" type="Node2D" parent="movement_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(-83, 368)
+script = ExtResource("5_ooc2g")
 connections = [NodePath("../move_target3"), NodePath("../move_target11"), NodePath("../move_target15")]
+sprite = NodePath("Sprite2D")
 
-[node name="move_target_classroom" parent="movement_nodes" unique_id=24169876 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(253.33, 1195.015)
-scale = Vector2(11.782117, 8.72694)
-skew = 0.2146755
-connections = [NodePath("../move_target27")]
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_cafeteria" unique_id=1618140488]
+position = Vector2(7.5, -16)
 
-[node name="move_target_basketball" parent="movement_nodes" unique_id=1882311110 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(957.81, 917.655)
-scale = Vector2(6.719986, 9.680009)
-skew = 0.23561946
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_cafeteria/Area2D" unique_id=998252003]
+position = Vector2(-18.5, 50.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_r5om4")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_cafeteria" unique_id=1239433274]
+position = Vector2(-9, 15)
+texture = ExtResource("7_bssq0")
+
+[node name="move_target_station1" type="Node2D" parent="movement_nodes" unique_id=1630151975 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(-136, 789)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../move_target15"), NodePath("../move_target"), NodePath("../move_target35")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_station1" unique_id=969062427]
+position = Vector2(7.5, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_station1/Area2D" unique_id=231436229]
+position = Vector2(-11.499985, 20)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_bssq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_station1" unique_id=2075900534]
+position = Vector2(10.5, -18)
+texture = ExtResource("6_a6rn7")
+offset = Vector2(0.5, 0.5)
+
+[node name="move_target_station2" type="Node2D" parent="movement_nodes" unique_id=1559069989 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(841, 685)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../move_target18")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_station2" unique_id=843430490]
+position = Vector2(7.5, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_station2/Area2D" unique_id=129293103]
+position = Vector2(9.000122, 18.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_jk4ss")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_station2" unique_id=852083030]
+position = Vector2(10.5, -18)
+texture = ExtResource("7_4on3e")
+offset = Vector2(0, 0.5)
+
+[node name="move_target_station3" type="Node2D" parent="movement_nodes" unique_id=1144123458 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(738, -46)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../move_target7"), NodePath("../move_target20")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_station3" unique_id=1197033976]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_station3/Area2D" unique_id=462081706]
+position = Vector2(-3.5, 18.5)
+scale = Vector2(1, 0.99999964)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_a6rn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_station3" unique_id=1549763613]
+texture = ExtResource("6_2wwcf")
+
+[node name="move_target_rec_center" type="Node2D" parent="movement_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(1026, 335)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../move_target10"), NodePath("../move_target14")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_rec_center" unique_id=788833924]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_rec_center/Area2D" unique_id=1407337766]
+position = Vector2(-0.638916, -13.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_4sf5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_rec_center" unique_id=1659507984]
+position = Vector2(-3, -44)
+texture = ExtResource("10_r5om4")
+
+[node name="move_target_office" parent="movement_nodes" unique_id=1238274734 node_paths=PackedStringArray("connections") instance=ExtResource("5_0t07s")]
+position = Vector2(-188, 1187)
+connections = [NodePath("../move_target24"), NodePath("../move_target21")]
+
+[node name="move_target_basketball" type="Node2D" parent="movement_nodes" unique_id=1054630823 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(983, 910)
+script = ExtResource("5_ooc2g")
 connections = [NodePath("../move_target33")]
+sprite = NodePath("Sprite2D")
 
-[node name="move_target_bleachers" parent="movement_nodes" unique_id=1989690542 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
-position = Vector2(795.155, 1216.395)
-scale = Vector2(4.2400002, 5.8799996)
-skew = 0.21467543
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_basketball" unique_id=151687403]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_basketball/Area2D" unique_id=200201226]
+position = Vector2(-24.5, 4)
+scale = Vector2(1, 0.9999997)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_0iomv")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_basketball" unique_id=543294411]
+texture = ExtResource("8_2wwcf")
+offset = Vector2(0.5, 0.5)
+
+[node name="move_target_bleachers" type="Node2D" parent="movement_nodes" unique_id=2094884420 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(776, 1212)
+script = ExtResource("5_ooc2g")
 connections = [NodePath("../move_target32")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_bleachers" unique_id=382477085]
+position = Vector2(25, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_bleachers/Area2D" unique_id=1631469392]
+position = Vector2(-7.5, 7.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_4on3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_bleachers" unique_id=111557032]
+position = Vector2(28, -6)
+texture = ExtResource("9_wbpbn")
+offset = Vector2(0.5, 0.5)
+
+[node name="move_target_server" type="Node2D" parent="movement_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(323, 1171)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../move_target27")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_server" unique_id=1278940910]
+position = Vector2(25, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_server/Area2D" unique_id=593276290]
+position = Vector2(-93.5, 28.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_jky6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_server" unique_id=350546319]
+position = Vector2(-70, 4)
+texture = ExtResource("13_jk4ss")
+offset = Vector2(0.5, 0)
 
 [node name="move_target" parent="movement_nodes" unique_id=1499236260 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-37, 668)
 scale = Vector2(1, 0.99999976)
 skew = 0.23561943
-connections = [NodePath("../move_target15"), NodePath("../move_target_guard3"), NodePath("../move_target8")]
+connections = [NodePath("../move_target15"), NodePath("../move_target_station1"), NodePath("../move_target8")]
 
 [node name="move_target2" parent="movement_nodes" unique_id=1227734488 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-222, 222)
@@ -422,7 +556,7 @@ connections = [NodePath("../move_target34"), NodePath("../move_target5"), NodePa
 [node name="move_target7" parent="movement_nodes" unique_id=1284434193 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(549, -43)
 skew = 0.20071286
-connections = [NodePath("../move_target6"), NodePath("../move_target_guard1")]
+connections = [NodePath("../move_target6"), NodePath("../move_target_station3")]
 
 [node name="move_target8" parent="movement_nodes" unique_id=1412037645 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(137, 669)
@@ -438,7 +572,7 @@ connections = [NodePath("../move_target20"), NodePath("../move_target10"), NodeP
 [node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(823, 222)
 skew = 0.20071286
-connections = [NodePath("../move_target9"), NodePath("../move_target_rec_center1")]
+connections = [NodePath("../move_target9"), NodePath("../move_target_rec_center")]
 
 [node name="move_target11" parent="movement_nodes" unique_id=1829122239 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(199, 413)
@@ -460,13 +594,13 @@ connections = [NodePath("../move_target12"), NodePath("../move_target14")]
 position = Vector2(671, 414)
 scale = Vector2(1, 0.99999994)
 skew = 0.23561943
-connections = [NodePath("../move_target9"), NodePath("../move_target13"), NodePath("../move_target19"), NodePath("../move_target_rec_center2")]
+connections = [NodePath("../move_target9"), NodePath("../move_target13"), NodePath("../move_target19"), NodePath("../move_target_rec_center")]
 
 [node name="move_target15" parent="movement_nodes" unique_id=2021716493 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-207, 668)
 scale = Vector2(1, 0.9999998)
 skew = 0.23561943
-connections = [NodePath("../move_target_cafeteria"), NodePath("../move_target"), NodePath("../move_target_guard3")]
+connections = [NodePath("../move_target_cafeteria"), NodePath("../move_target"), NodePath("../move_target_station1")]
 
 [node name="move_target16" parent="movement_nodes" unique_id=1841609091 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(288, 669)
@@ -484,7 +618,7 @@ connections = [NodePath("../move_target16"), NodePath("../move_target28"), NodeP
 position = Vector2(614, 669)
 scale = Vector2(1, 0.9999996)
 skew = 0.23561943
-connections = [NodePath("../move_target19"), NodePath("../move_target17"), NodePath("../move_target_guard2"), NodePath("../move_target29")]
+connections = [NodePath("../move_target19"), NodePath("../move_target17"), NodePath("../move_target_station2"), NodePath("../move_target29")]
 
 [node name="move_target19" parent="movement_nodes" unique_id=1616365503 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(641, 546.99994)
@@ -495,7 +629,7 @@ connections = [NodePath("../move_target14"), NodePath("../move_target18")]
 [node name="move_target20" parent="movement_nodes" unique_id=1202337820 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(700, 110)
 skew = 0.2007128
-connections = [NodePath("../move_target_guard1"), NodePath("../move_target9")]
+connections = [NodePath("../move_target_station3"), NodePath("../move_target9")]
 
 [node name="move_target21" parent="movement_nodes" unique_id=717604590 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-194, 1030)
@@ -537,7 +671,7 @@ connections = [NodePath("../move_target23"), NodePath("../move_target27")]
 position = Vector2(373, 896)
 scale = Vector2(1, 0.9999995)
 skew = 0.23561943
-connections = [NodePath("../move_target28"), NodePath("../move_target26"), NodePath("../move_target_classroom")]
+connections = [NodePath("../move_target28"), NodePath("../move_target26"), NodePath("../move_target_server")]
 
 [node name="move_target28" parent="movement_nodes" unique_id=1897795530 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(400, 787)
@@ -584,10 +718,10 @@ connections = [NodePath("../move_target6"), NodePath("../move_target7")]
 position = Vector2(-170, 921)
 scale = Vector2(1, 0.9999995)
 skew = 0.23561943
-connections = [NodePath("../move_target_guard3"), NodePath("../move_target21")]
+connections = [NodePath("../move_target_station1"), NodePath("../move_target21")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1000948966]
-position = Vector2(713, 438)
+position = Vector2(691, 522)
 zoom = Vector2(0.645, 0.645)
 
 [node name="ReadyButton" parent="Camera2D" unique_id=1576267881 instance=ExtResource("6_iw27f")]
@@ -628,8 +762,8 @@ position = Vector2(1313.0001, 513.00006)
 scale = Vector2(2, 2)
 collision_mask = 1
 movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target_rec_center2")
-escapeNodes = [NodePath("../movement_nodes/move_target_guard1")]
+current_node = NodePath("../movement_nodes/move_target_rec_center")
+escapeNodes = [null]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 groupType = 1
 
@@ -639,7 +773,7 @@ scale = Vector2(2.0799994, 2.0799994)
 collision_mask = 1
 movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target_cell1")
-escapeNodes = [NodePath("../movement_nodes/move_target_guard1")]
+escapeNodes = [null]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 groupType = 1
 
@@ -647,10 +781,19 @@ groupType = 1
 position = Vector2(1022, 119)
 scale = Vector2(2, 2)
 movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target_guard1")
+current_node = NodePath("../movement_nodes/move_target_station3")
 
 [node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(503, 374)
 scale = Vector2(2, 2)
 current_node = NodePath("../movement_nodes/move_target4")
 groupType = 1
+
+[connection signal="input_event" from="movement_nodes/move_target_cafeteria/Area2D" to="movement_nodes/move_target_cafeteria" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_station1/Area2D" to="movement_nodes/move_target_station1" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_station2/Area2D" to="movement_nodes/move_target_station2" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_station3/Area2D" to="movement_nodes/move_target_station3" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_rec_center/Area2D" to="movement_nodes/move_target_rec_center" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_basketball/Area2D" to="movement_nodes/move_target_basketball" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_bleachers/Area2D" to="movement_nodes/move_target_bleachers" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="movement_nodes/move_target_server/Area2D" to="movement_nodes/move_target_server" method="_on_area_2d_input_event"]
