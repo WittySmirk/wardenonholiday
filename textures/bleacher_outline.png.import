@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csr3p2w7svijg"
-path="res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"
+uid="uid://bgj5w7eo271bi"
+path="res://.godot/imported/bleacher_outline.png-925373ea2b93f7fd7cbec2bc6ebe3ac0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/map.png"
-dest_files=["res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"]
+source_file="res://textures/bleacher_outline.png"
+dest_files=["res://.godot/imported/bleacher_outline.png-925373ea2b93f7fd7cbec2bc6ebe3ac0.ctex"]
 
 [params]
 

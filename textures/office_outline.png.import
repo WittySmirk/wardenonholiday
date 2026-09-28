@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csr3p2w7svijg"
-path="res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"
+uid="uid://b3xfql1ewmerp"
+path="res://.godot/imported/office_outline.png-9d34eebb114cfc8a62ed85db78167169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/map.png"
-dest_files=["res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"]
+source_file="res://textures/office_outline.png"
+dest_files=["res://.godot/imported/office_outline.png-9d34eebb114cfc8a62ed85db78167169.ctex"]
 
 [params]
 

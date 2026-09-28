@@ -21,7 +21,6 @@ var retreating = false
 var splitting = false
 var merging = false
 
-
 func _ready() -> void:
 	update_animation()
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))

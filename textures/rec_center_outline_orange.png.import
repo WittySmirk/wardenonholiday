@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csr3p2w7svijg"
-path="res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"
+uid="uid://clc75me6qjs6q"
+path="res://.godot/imported/rec_center_outline_orange.png-2709dc5d715d99aa64f41246d601603f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/map.png"
-dest_files=["res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"]
+source_file="res://textures/rec_center_outline_orange.png"
+dest_files=["res://.godot/imported/rec_center_outline_orange.png-2709dc5d715d99aa64f41246d601603f.ctex"]
 
 [params]
 
