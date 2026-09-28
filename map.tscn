@@ -231,6 +231,12 @@ navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_urblq")
 sources/0 = SubResource("TileSetAtlasSource_iw27f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jky6x"]
+size = Vector2(371.37906, 272.53015)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sf5t"]
+size = Vector2(216.88284, 472.0428)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5om4"]
 size = Vector2(306.73596, 208.76837)
 
@@ -243,17 +249,11 @@ size = Vector2(123.39104, 118.26778)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6rn7"]
 size = Vector2(207.24005, 93.58581)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sf5t"]
-size = Vector2(216.88284, 472.0428)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0iomv"]
 size = Vector2(218.97655, 308.52457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4on3e"]
 size = Vector2(142.10521, 192.31369)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jky6x"]
-size = Vector2(371.37906, 272.53015)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6rn7"]
 font = ExtResource("9_oysan")
@@ -329,6 +329,65 @@ visible = false
 tile_map_data = PackedByteArray("AAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wYAAQAAAAAAAAD+/wcAAQAAAAAAAAD+/wgAAQAAAAAAAAD9/wgAAQAAAAAAAAD8/wgAAQAAAAAAAAD+/wkAAQAAAAAAAAD+/woAAQAAAAAAAAD+/wsAAQAAAAAAAAD+/wwAAQAAAAAAAAD9/wwAAQAAAAAAAAD8/wsAAQAAAAAAAAD7/wsAAQAAAAAAAAD6/wsAAQAAAAAAAAD6/wwAAQAAAAAAAAD7/wwAAQAAAAAAAAD8/wwAAQAAAAAAAAD8/w0AAQAAAAAAAAD7/w0AAQAAAAAAAAD7/w4AAQAAAAAAAAD7/w8AAQAAAAAAAAD6/w0AAQAAAAAAAAD6/w4AAQAAAAAAAAD6/w8AAQAAAAAAAAD6/xAAAQAAAAAAAAD7/xAAAQAAAAAAAAD8/xAAAQAAAAAAAAD8/w8AAQAAAAAAAAD8/w4AAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAACAAQAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAQAAQAAAAAAAAANAAYAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAARAAkAAQAAAAAAAAASAAoAAQAAAAAAAAARAAoAAQAAAAAAAAARAAsAAQAAAAAAAAASAAsAAQAAAAAAAAARAAgAAQAAAAAAAAAQAAsAAQAAAAAAAAAPAAsAAQAAAAAAAAAOAAsAAQAAAAAAAAANAAsAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAYAAQAAAAAAAAAHAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAADAAgAAQAAAAAAAAADAAcAAQAAAAAAAAADAAYAAQAAAAAAAAACAAgAAQAAAAAAAAABAAgAAQAAAAAAAAAAAAgAAQAAAAAAAAD//wgAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAD+/w0AAQAAAAAAAAD+/w4AAQAAAAAAAAD+/w8AAQAAAAAAAAD+/xAAAQAAAAAAAAD+/xEAAQAAAAAAAAD+/xIAAQAAAAAAAAD//xIAAQAAAAAAAAAAABIAAQAAAAAAAAAAABMAAQAAAAAAAAD//xQAAQAAAAAAAAAAABQAAQAAAAAAAAAAABUAAQAAAAAAAAABABQAAQAAAAAAAAABABUAAQAAAAAAAAABABYAAQAAAAAAAAABABcAAQAAAAAAAAAAABcAAQAAAAAAAAAAABYAAQAAAAAAAAD//xYAAQAAAAAAAAD//xUAAQAAAAAAAAD//xcAAQAAAAAAAAADABQAAQAAAAAAAAAEABQAAQAAAAAAAAAFABQAAQAAAAAAAAAGABQAAQAAAAAAAAAHABQAAQAAAAAAAAAIABQAAQAAAAAAAAAIABUAAQAAAAAAAAAHABUAAQAAAAAAAAAGABUAAQAAAAAAAAAFABUAAQAAAAAAAAAEABUAAQAAAAAAAAAEABYAAQAAAAAAAAADABYAAQAAAAAAAAADABUAAQAAAAAAAAAFABYAAQAAAAAAAAAGABYAAQAAAAAAAAAHABYAAQAAAAAAAAAIABYAAQAAAAAAAAAIABcAAQAAAAAAAAAHABcAAQAAAAAAAAAGABcAAQAAAAAAAAAFABcAAQAAAAAAAAAEABcAAQAAAAAAAAADABcAAQAAAAAAAAABABIAAQAAAAAAAAACABIAAQAAAAAAAAADABIAAQAAAAAAAAAEABIAAQAAAAAAAAAFABIAAQAAAAAAAAAFABMAAQAAAAAAAAAFABoAAQAAAAAAAAAFABkAAQAAAAAAAAAEABkAAQAAAAAAAAADABkAAQAAAAAAAAADABoAAQAAAAAAAAACABoAAQAAAAAAAAACABkAAQAAAAAAAAAEABoAAQAAAAAAAAAEABsAAQAAAAAAAAADABsAAQAAAAAAAAACABsAAQAAAAAAAAAFABsAAQAAAAAAAAAGABoAAQAAAAAAAAAHABoAAQAAAAAAAAAIABoAAQAAAAAAAAAJABoAAQAAAAAAAAAKABoAAQAAAAAAAAAKABkAAQAAAAAAAAAKABgAAQAAAAAAAAAKABcAAQAAAAAAAAAKABYAAQAAAAAAAAAKABUAAQAAAAAAAAAKABQAAQAAAAAAAAAKABMAAQAAAAAAAAAKABIAAQAAAAAAAAAKABEAAQAAAAAAAAAKABAAAQAAAAAAAAAKAA8AAQAAAAAAAAAKAA4AAQAAAAAAAAALAA4AAQAAAAAAAAAMAA4AAQAAAAAAAAANAA4AAQAAAAAAAAANAA0AAQAAAAAAAAANAAwAAQAAAAAAAAAOAAwAAQAAAAAAAAAPAAwAAQAAAAAAAAAQAAwAAQAAAAAAAAARAAwAAQAAAAAAAAASAAwAAQAAAAAAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAARAA4AAQAAAAAAAAARAA8AAQAAAAAAAAASAA8AAQAAAAAAAAASABAAAQAAAAAAAAASABEAAQAAAAAAAAARABEAAQAAAAAAAAAQABEAAQAAAAAAAAAPABEAAQAAAAAAAAAOABEAAQAAAAAAAAAOABAAAQAAAAAAAAANABAAAQAAAAAAAAANAA8AAQAAAAAAAAANABEAAQAAAAAAAAAPABAAAQAAAAAAAAAQABAAAQAAAAAAAAARABAAAQAAAAAAAAAPAA8AAQAAAAAAAAAOAA8AAQAAAAAAAAAQAA8AAQAAAAAAAAAPAA4AAQAAAAAAAAAQAA4AAQAAAAAAAAAOAA4AAQAAAAAAAAAQAA0AAQAAAAAAAAAPAA0AAQAAAAAAAAAOAA0AAQAAAAAAAAARAA0AAQAAAAAAAAAJAA4AAQAAAAAAAAAIAA4AAQAAAAAAAAAHAA4AAQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAHABAAAQAAAAAAAAAGABAAAQAAAAAAAAAFABAAAQAAAAAAAAAEABAAAQAAAAAAAAADABAAAQAAAAAAAAACABAAAQAAAAAAAAABABAAAQAAAAAAAAAAABAAAQAAAAAAAAAAAA8AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA0AAQAAAAAAAAAAAAwAAQAAAAAAAAAAAAsAAQAAAAAAAAAHAAsAAQAAAAAAAAAHAAwAAQAAAAAAAAAHAA0AAQAAAAAAAAAHAA8AAQAAAAAAAAAGAA8AAQAAAAAAAAAFAA8AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAA0AAQAAAAAAAAAGAAwAAQAAAAAAAAAGAAsAAQAAAAAAAAAGAA4AAQAAAAAAAAAFAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAFAAsAAQAAAAAAAAAEAA4AAQAAAAAAAAAEAA8AAQAAAAAAAAAEAA0AAQAAAAAAAAAEAAwAAQAAAAAAAAAEAAsAAQAAAAAAAAADAAsAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAADAA0AAQAAAAAAAAADAA4AAQAAAAAAAAADAA8AAQAAAAAAAAACAA8AAQAAAAAAAAABAA8AAQAAAAAAAAABAA4AAQAAAAAAAAACAA4AAQAAAAAAAAACAA0AAQAAAAAAAAABAA0AAQAAAAAAAAABAAwAAQAAAAAAAAABAAsAAQAAAAAAAAAPABIAAQAAAAAAAAAPABMAAQAAAAAAAAAPABQAAQAAAAAAAAAPABUAAQAAAAAAAAAPABYAAQAAAAAAAAAPABcAAQAAAAAAAAAPABgAAQAAAAAAAAAOABkAAQAAAAAAAAAPABkAAQAAAAAAAAAQABkAAQAAAAAAAAARABkAAQAAAAAAAAANABkAAQAAAAAAAAANABoAAQAAAAAAAAAOABoAAQAAAAAAAAAPABoAAQAAAAAAAAAQABoAAQAAAAAAAAAQABsAAQAAAAAAAAARABsAAQAAAAAAAAARABoAAQAAAAAAAAARABwAAQAAAAAAAAAQABwAAQAAAAAAAAAPABwAAQAAAAAAAAAOABwAAQAAAAAAAAANABwAAQAAAAAAAAANABsAAQAAAAAAAAAOABsAAQAAAAAAAAAPABsAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_51px8")
 
+[node name="sabotage_nodes" type="Node2D" parent="." unique_id=1922080475]
+
+[node name="move_target_server" type="Node2D" parent="sabotage_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(614, 1328)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../../movement_nodes/move_target27")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_server" unique_id=1278940910]
+position = Vector2(25, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sabotage_nodes/move_target_server/Area2D" unique_id=593276290]
+position = Vector2(-93.5, 28.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_jky6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_server" unique_id=350546319]
+position = Vector2(-70, 4)
+texture = ExtResource("13_jk4ss")
+offset = Vector2(0.5, 0)
+
+[node name="move_target_rec_center" type="Node2D" parent="sabotage_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(1317, 492)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../../movement_nodes/move_target10"), NodePath("../../movement_nodes/move_target14")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_rec_center" unique_id=788833924]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sabotage_nodes/move_target_rec_center/Area2D" unique_id=1407337766]
+position = Vector2(-0.638916, -13.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_4sf5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_rec_center" unique_id=1659507984]
+position = Vector2(-3, -44)
+texture = ExtResource("10_r5om4")
+
+[node name="move_target_cafeteria" type="Node2D" parent="sabotage_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite")]
+position = Vector2(208, 525)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../../movement_nodes/move_target3"), NodePath("../../movement_nodes/move_target11"), NodePath("../../movement_nodes/move_target15")]
+sprite = NodePath("Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=1618140488]
+position = Vector2(7.5, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sabotage_nodes/move_target_cafeteria/Area2D" unique_id=998252003]
+position = Vector2(-18.5, 50.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_r5om4")
+
+[node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=1239433274]
+position = Vector2(-9, 15)
+texture = ExtResource("7_bssq0")
+
 [node name="movement_nodes" type="Node2D" parent="." unique_id=73612697]
 position = Vector2(291, 157)
 
@@ -349,25 +408,6 @@ position = Vector2(259, 25)
 scale = Vector2(3.9247289, 4.783215)
 skew = 0.20943952
 connections = [NodePath("../move_target4")]
-
-[node name="move_target_cafeteria" type="Node2D" parent="movement_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite")]
-position = Vector2(-83, 368)
-script = ExtResource("5_ooc2g")
-connections = [NodePath("../move_target3"), NodePath("../move_target11"), NodePath("../move_target15")]
-sprite = NodePath("Sprite2D")
-
-[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_cafeteria" unique_id=1618140488]
-position = Vector2(7.5, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_cafeteria/Area2D" unique_id=998252003]
-position = Vector2(-18.5, 50.5)
-scale = Vector2(1, 0.9999995)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_r5om4")
-
-[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_cafeteria" unique_id=1239433274]
-position = Vector2(-9, 15)
-texture = ExtResource("7_bssq0")
 
 [node name="move_target_station1" type="Node2D" parent="movement_nodes" unique_id=1630151975 node_paths=PackedStringArray("connections", "sprite")]
 position = Vector2(-136, 789)
@@ -426,24 +466,6 @@ shape = SubResource("RectangleShape2D_a6rn7")
 [node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_station3" unique_id=1549763613]
 texture = ExtResource("6_2wwcf")
 
-[node name="move_target_rec_center" type="Node2D" parent="movement_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite")]
-position = Vector2(1026, 335)
-script = ExtResource("5_ooc2g")
-connections = [NodePath("../move_target10"), NodePath("../move_target14")]
-sprite = NodePath("Sprite2D")
-
-[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_rec_center" unique_id=788833924]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_rec_center/Area2D" unique_id=1407337766]
-position = Vector2(-0.638916, -13.5)
-scale = Vector2(1, 0.9999995)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_4sf5t")
-
-[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_rec_center" unique_id=1659507984]
-position = Vector2(-3, -44)
-texture = ExtResource("10_r5om4")
-
 [node name="move_target_office" parent="movement_nodes" unique_id=1238274734 node_paths=PackedStringArray("connections") instance=ExtResource("5_0t07s")]
 position = Vector2(-188, 1187)
 connections = [NodePath("../move_target24"), NodePath("../move_target21")]
@@ -486,26 +508,6 @@ position = Vector2(28, -6)
 texture = ExtResource("9_wbpbn")
 offset = Vector2(0.5, 0.5)
 
-[node name="move_target_server" type="Node2D" parent="movement_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite")]
-position = Vector2(323, 1171)
-script = ExtResource("5_ooc2g")
-connections = [NodePath("../move_target27")]
-sprite = NodePath("Sprite2D")
-
-[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_server" unique_id=1278940910]
-position = Vector2(25, -4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_server/Area2D" unique_id=593276290]
-position = Vector2(-93.5, 28.5)
-scale = Vector2(1, 0.9999995)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_jky6x")
-
-[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_server" unique_id=350546319]
-position = Vector2(-70, 4)
-texture = ExtResource("13_jk4ss")
-offset = Vector2(0.5, 0)
-
 [node name="move_target" parent="movement_nodes" unique_id=1499236260 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-37, 668)
 scale = Vector2(1, 0.99999976)
@@ -520,7 +522,7 @@ connections = [NodePath("../move_target_cell1"), NodePath("../move_target3")]
 [node name="move_target3" parent="movement_nodes" unique_id=179874527 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-7, 223)
 skew = 0.23561946
-connections = [NodePath("../move_target2"), NodePath("../move_target4"), NodePath("../move_target_cell2"), NodePath("../move_target_cafeteria")]
+connections = [NodePath("../move_target2"), NodePath("../move_target4"), NodePath("../move_target_cell2"), NodePath("../../sabotage_nodes/move_target_cafeteria")]
 
 [node name="move_target4" parent="movement_nodes" unique_id=1376889007 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(209, 223)
@@ -556,12 +558,12 @@ connections = [NodePath("../move_target20"), NodePath("../move_target10"), NodeP
 [node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(823, 222)
 skew = 0.20071286
-connections = [NodePath("../move_target9"), NodePath("../move_target_rec_center")]
+connections = [NodePath("../move_target9"), NodePath("../../sabotage_nodes/move_target_rec_center")]
 
 [node name="move_target11" parent="movement_nodes" unique_id=1829122239 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(199, 413)
 skew = 0.23561943
-connections = [NodePath("../move_target_cafeteria"), NodePath("../move_target12")]
+connections = [NodePath("../../sabotage_nodes/move_target_cafeteria"), NodePath("../move_target12")]
 
 [node name="move_target12" parent="movement_nodes" unique_id=1631996284 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(350, 413)
@@ -578,13 +580,13 @@ connections = [NodePath("../move_target12"), NodePath("../move_target14")]
 position = Vector2(671, 414)
 scale = Vector2(1, 0.99999994)
 skew = 0.23561943
-connections = [NodePath("../move_target9"), NodePath("../move_target13"), NodePath("../move_target19"), NodePath("../move_target_rec_center")]
+connections = [NodePath("../move_target9"), NodePath("../move_target13"), NodePath("../move_target19"), NodePath("../../sabotage_nodes/move_target_rec_center")]
 
 [node name="move_target15" parent="movement_nodes" unique_id=2021716493 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-207, 668)
 scale = Vector2(1, 0.9999998)
 skew = 0.23561943
-connections = [NodePath("../move_target_cafeteria"), NodePath("../move_target"), NodePath("../move_target_station1")]
+connections = [NodePath("../../sabotage_nodes/move_target_cafeteria"), NodePath("../move_target"), NodePath("../move_target_station1")]
 
 [node name="move_target16" parent="movement_nodes" unique_id=1841609091 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(288, 669)
@@ -655,7 +657,7 @@ connections = [NodePath("../move_target23"), NodePath("../move_target27")]
 position = Vector2(373, 896)
 scale = Vector2(1, 0.9999995)
 skew = 0.23561943
-connections = [NodePath("../move_target28"), NodePath("../move_target26"), NodePath("../move_target_server")]
+connections = [NodePath("../move_target28"), NodePath("../move_target26"), NodePath("../../sabotage_nodes/move_target_server")]
 
 [node name="move_target28" parent="movement_nodes" unique_id=1897795530 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(400, 787)
@@ -705,9 +707,9 @@ skew = 0.23561943
 connections = [NodePath("../move_target_station1"), NodePath("../move_target21")]
 
 [node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(1313.0001, 513.00006)
+position = Vector2(548, 186)
 collision_mask = 1
-current_node = NodePath("../movement_nodes/move_target12")
+current_node = NodePath("../movement_nodes/move_target_cell3")
 escapeNodes = [NodePath("../movement_nodes/move_target8")]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
@@ -768,10 +770,10 @@ offset_bottom = 323.0
 scale = Vector2(1.5954459, 1.5999947)
 
 [node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(1313.0001, 513.00006)
+position = Vector2(335, 184)
 collision_mask = 1
 movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target_rec_center")
+current_node = NodePath("../movement_nodes/move_target_cell2")
 escapeNodes = [null]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
@@ -792,11 +794,11 @@ current_node = NodePath("../movement_nodes/move_target_station3")
 position = Vector2(503, 374)
 current_node = NodePath("../movement_nodes/move_target4")
 
-[connection signal="input_event" from="movement_nodes/move_target_cafeteria/Area2D" to="movement_nodes/move_target_cafeteria" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="sabotage_nodes/move_target_server/Area2D" to="sabotage_nodes/move_target_server" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="sabotage_nodes/move_target_rec_center/Area2D" to="sabotage_nodes/move_target_rec_center" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="sabotage_nodes/move_target_cafeteria/Area2D" to="sabotage_nodes/move_target_cafeteria" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station1/Area2D" to="movement_nodes/move_target_station1" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station2/Area2D" to="movement_nodes/move_target_station2" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station3/Area2D" to="movement_nodes/move_target_station3" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="movement_nodes/move_target_rec_center/Area2D" to="movement_nodes/move_target_rec_center" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_basketball/Area2D" to="movement_nodes/move_target_basketball" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_bleachers/Area2D" to="movement_nodes/move_target_bleachers" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="movement_nodes/move_target_server/Area2D" to="movement_nodes/move_target_server" method="_on_area_2d_input_event"]
