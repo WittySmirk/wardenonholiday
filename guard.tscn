@@ -134,7 +134,6 @@ animations = [{
 script = ExtResource("1_dk1vv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=585143583]
-debug_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235998446]
 position = Vector2(0, 2.5)

@@ -18,7 +18,6 @@ var retreating = false
 
 func _ready() -> void:
 	quantity = randi_range(1, 5)
-	animated_sprite.modulate = Color.SKY_BLUE
 	
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	current_node.enabled = false

@@ -36,7 +36,7 @@ var retreating = false
 func _ready() -> void:
 	#Connect nav agent and initialize
 	quantity = randi_range(1, 15)
-	animated_sprite.modulate = Color.ORANGE_RED
+	animated_sprite.modulate = Color.ORANGE
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	current_node.enabled = false
 	nav_agent.path_desired_distance = 4.0
