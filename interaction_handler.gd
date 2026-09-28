@@ -35,7 +35,7 @@ func fight(guard: Group, inmate: Group, did_inmates_initiate: bool):
 	if result == "GUARDS":
 		inmate.retreat(did_inmates_initiate, guard)
 	else:
-		guard.retreat(did_inmates_initiate)
+		guard.retreat(did_inmates_initiate, inmate)
 
 #@export var interaction_test: bool = false:
 	#set(value):

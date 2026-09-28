@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://3h2482pgcx6t" path="res://inmate.gd" id="1_gs2f6"]
 [ext_resource type="Texture2D" uid="uid://5bb3ijimb3kp" path="res://sprites/guy.png" id="2_gs2f6"]
+[ext_resource type="Texture2D" uid="uid://cafb3gauns0fj" path="res://sprites/timer-fixed.png" id="3_7j51r"]
+[ext_resource type="Script" uid="uid://bje2r8tgbkad5" path="res://animate-cooldown.gd" id="4_ykwrb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bi5o"]
 atlas = ExtResource("2_gs2f6")
@@ -123,13 +125,81 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51px8"]
 size = Vector2(8, 17)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay375"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioqu5"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuxdl"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgjdg"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1krou"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(84, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c42mr"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(105, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i81e8"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(126, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1n8b"]
+atlas = ExtResource("3_7j51r")
+region = Rect2(147, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6bix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay375")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioqu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuxdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgjdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1krou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c42mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i81e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1n8b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.0
+}]
+
 [node name="inmate" type="CharacterBody2D" unique_id=348266310]
 collision_mask = 0
 script = ExtResource("1_gs2f6")
+groupType = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=82049794]
+radius = 3.0
+avoidance_priority = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1653947167]
+modulate = Color(1, 0.7529412, 0, 1)
 sprite_frames = SubResource("SpriteFrames_ke0wg")
 animation = &"moving_large"
 frame_progress = 0.24588041
@@ -138,6 +208,13 @@ frame_progress = 0.24588041
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_51px8")
 
-[node name="CooldownTimer" type="Timer" parent="." unique_id=1715636088]
+[node name="Timer" type="Timer" parent="." unique_id=1715636088]
 wait_time = 5.0
 one_shot = true
+
+[node name="AnimatedSpriteCooldown" type="AnimatedSprite2D" parent="." unique_id=1905927597]
+modulate = Color(1, 0.7529412, 0, 1)
+position = Vector2(35.75, -16.75)
+scale = Vector2(0.78571427, 0.78571427)
+sprite_frames = SubResource("SpriteFrames_g6bix")
+script = ExtResource("4_ykwrb")
