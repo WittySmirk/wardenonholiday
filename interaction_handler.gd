@@ -2,7 +2,7 @@
 #@tool
 extends Node
 
-var guard_lower_bound = 1
+var guard_lower_bound = 5
 var guard_upper_bound = 20
 var inmate_lower_bound = 1
 var inmate_upper_bound = 3
@@ -25,7 +25,6 @@ func get_interaction_result(numGuards, numInmates) -> String:
 		
 
 func fight(guard: Group, inmate: Group, did_inmates_initiate: bool):
-	await get_tree().create_timer(5.0).timeout
 	print("Fighting")
 	var result = get_interaction_result(
 		guard.quantity,

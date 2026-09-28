@@ -7,9 +7,6 @@ signal state_changed(new_state)
 
 var guard_kill_count = 0
 var inmate_kill_count = 0
-var objectives_sabotaged = 0
-
-@export var sabotage_nodes: Array[MoveTarget] = []
 
 # Game States
 enum States { START, DAY, NIGHT, LOSE }
@@ -31,8 +28,7 @@ func set_selected_target(target: MoveTarget, doSplit: bool):
 					return
 				
 				selected_guard.splitting = true
-				selected_guard.cooldown_timer.start(selected_guard.base_cooldown + (selected_guard.variable_cooldown_per * selected_guard.quantity))
-				
+				selected_guard.cooldown_timer.start(5.0)
 				var split_quantity = floor(selected_guard.quantity / 2)
 				if split_quantity <= 0:
 					return
@@ -85,12 +81,6 @@ func _ready() -> void:
 	# Tell all nodes starting state
 	state_changed.emit(current_state)
 
-func initialize_sabotage_nodes(nodes):
-	sabotage_nodes.clear()
-
-	for node in nodes:
-		if node is MoveTarget:
-			sabotage_nodes.append(node)
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:

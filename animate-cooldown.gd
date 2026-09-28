@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 			self.frame = 5
 		elif elapsed_percentage < 0.875:
 			self.frame = 6
-		elif elapsed_percentage < 1:
+		elif elapsed_percentage < 0.25:
 			self.frame = 7
 	else:
 		self.hide()

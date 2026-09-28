@@ -3,13 +3,9 @@ class_name Guard
 
 var target: MoveTarget
 var movement_delta: float
-
 @export var movement_speed: float = 50.0
-@export var base_cooldown: float = 8.0
-@export var variable_cooldown_per: float = 1.0
-@export var current_node: MoveTarget
-
 @onready var nav_agent = $NavigationAgent2D
+@export var current_node: MoveTarget
 @onready var cooldown_timer = $Timer
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -82,9 +78,10 @@ func _physics_process(delta):
 		target.occupant = self
 		target = null
 		
-		velocity = Vector2.ZERO
-		
-		cooldown_timer.start(base_cooldown + (variable_cooldown_per * quantity))
+		if retreating:
+			cooldown_timer.start(0.5)
+		else:
+			cooldown_timer.start(0.5)
 	
 	if target == null:
 		return
@@ -102,16 +99,11 @@ func _physics_process(delta):
 	else:
 		_on_velocity_computed(new_velocity)
 
-
-
-func _process(delta: float) -> void:
-	update_animation()
-
-
-
 func _on_velocity_computed(safe_velocity: Vector2):
 	velocity = safe_velocity
 	move_and_slide()
+	
+	update_animation()
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -165,39 +157,17 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				GameState.selected_guard = self
 
 func update_animation():
-	if fighting:
-		if quantity >= 5:
-			animated_sprite.play("fighting_large")
-			return
-		elif quantity >= 3:
-			animated_sprite.play("fighting_medium")
-			return
-		else:
-			animated_sprite.play("fighting_small")
-			return
-		
 	if velocity.length() > 0:
-		if quantity >= 5:
+		if quantity >= 3:
 			animated_sprite.play("moving_large")
-		elif quantity >= 3:
+		elif quantity >= 2:
 			animated_sprite.play("moving_medium")
 		else:
 			animated_sprite.play("moving_small")
 	else:
-		if quantity >= 5:
+		if quantity >= 3:
 			animated_sprite.play("idle_large")
-		elif quantity >= 3:
+		elif quantity >= 2:
 			animated_sprite.play("idle_medium")
 		else:
 			animated_sprite.play("idle_small")
-
-
-func _on_area_2d_mouse_entered() -> void:
-	$Label.visible = true
-	$Label.text = str(quantity)
-	$SelectionBox.visible = true
-
-
-func _on_area_2d_mouse_exited() -> void:
-	$Label.visible = false
-	$SelectionBox.visible = false
