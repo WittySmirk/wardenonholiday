@@ -2,7 +2,7 @@
 #@tool
 extends Node
 
-var guard_lower_bound = 5
+var guard_lower_bound = 1
 var guard_upper_bound = 20
 var inmate_lower_bound = 1
 var inmate_upper_bound = 3

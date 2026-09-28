@@ -3,9 +3,13 @@ class_name Guard
 
 var target: MoveTarget
 var movement_delta: float
+
 @export var movement_speed: float = 50.0
-@onready var nav_agent = $NavigationAgent2D
+@export var base_cooldown: float = 8.0
+@export var variable_cooldown_per: float = 1.0
 @export var current_node: MoveTarget
+
+@onready var nav_agent = $NavigationAgent2D
 @onready var cooldown_timer = $Timer
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -79,10 +83,7 @@ func _physics_process(delta):
 		target.occupant = self
 		target = null
 		
-		if retreating:
-			cooldown_timer.start(0.5)
-		else:
-			cooldown_timer.start(0.5)
+		cooldown_timer.start(base_cooldown + (variable_cooldown_per * quantity))
 	
 	if target == null:
 		return
@@ -172,3 +173,14 @@ func update_animation():
 			animated_sprite.play("idle_medium")
 		else:
 			animated_sprite.play("idle_small")
+
+
+func _on_area_2d_mouse_entered() -> void:
+	$Label.visible = true
+	$Label.text = str(quantity)
+	$SelectionBox.visible = true
+
+
+func _on_area_2d_mouse_exited() -> void:
+	$Label.visible = false
+	$SelectionBox.visible = false

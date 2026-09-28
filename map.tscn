@@ -18,8 +18,8 @@ script/source = "extends Node2D
 
 #
 ## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
+func _ready() -> void:
+	GameState.initialize_sabotage_nodes($sabotage_nodes.get_children())
 #
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -322,7 +322,7 @@ connections = [NodePath("../move_target3"), NodePath("../move_target5")]
 
 [node name="move_target5" parent="movement_nodes" unique_id=1321135926 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(395, 226)
-connections = [NodePath("../move_target4"), NodePath("../move_target6")]
+connections = [NodePath("../move_target4"), NodePath("../move_target6"), NodePath("../../sabotage_nodes/move_target14")]
 
 [node name="move_target6" parent="movement_nodes" unique_id=991701716 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(491, 223)
@@ -338,7 +338,7 @@ connections = [NodePath("../move_target7"), NodePath("../move_target9")]
 
 [node name="move_target9" parent="movement_nodes" unique_id=527621551 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(670, 226)
-connections = [NodePath("../move_target8"), NodePath("../move_target10"), NodePath("../move_target6")]
+connections = [NodePath("../move_target8"), NodePath("../move_target10"), NodePath("../move_target6"), NodePath("../../sabotage_nodes/move_target13")]
 
 [node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(926, 224)
@@ -363,29 +363,15 @@ offset_right = 767.824
 offset_bottom = 405.0
 scale = Vector2(1.5954459, 1.5999947)
 
-[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(1313.0001, 513.00006)
 collision_mask = 1
 current_node = NodePath("../movement_nodes/move_target12")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
-
-[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(131, 116)
-collision_mask = 1
-current_node = NodePath("../movement_nodes/move_target")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1019, 114.00003)
 current_node = NodePath("../movement_nodes/move_target8")
 quantity = 5
-
-[node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
-visible = false
-position = Vector2(500, 385)
-current_node = NodePath("../movement_nodes/move_target4")
 
 [node name="NightTimerWindow" parent="." unique_id=1846275003 instance=ExtResource("7_71pa8")]
 visible = false
@@ -412,3 +398,13 @@ timer = NodePath("../Timer")
 
 [node name="Timer" type="Timer" parent="NightTimerWindow" unique_id=1042690902]
 wait_time = 300.0
+
+[node name="sabotage_nodes" type="Node2D" parent="." unique_id=796868063]
+
+[node name="move_target14" parent="sabotage_nodes" unique_id=631716220 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(642, 568)
+connections = [NodePath("../../movement_nodes/move_target5")]
+
+[node name="move_target13" parent="sabotage_nodes" unique_id=272554940 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
+position = Vector2(930, 567)
+connections = [NodePath("../../movement_nodes/move_target9")]
