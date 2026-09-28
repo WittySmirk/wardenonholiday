@@ -1,5 +1,4 @@
 extends Node
-
 var selected_guard: Guard = null
 const GUARD_SCENE = preload("res://guard.tscn")
 
@@ -15,7 +14,7 @@ var current_state = States.DAY:
 	set(value):
 		current_state = value
 		state_changed.emit(current_state)
-	
+
 func set_selected_target(target: MoveTarget, doSplit: bool):
 	if selected_guard != null:
 		if selected_guard.current_node.connections.find(target) != -1:
