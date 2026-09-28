@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://do4y3v23d2u5o" path="res://guard.gd" id="1_dk1vv"]
 [ext_resource type="Texture2D" uid="uid://5bb3ijimb3kp" path="res://sprites/guy.png" id="2_30cdx"]
+[ext_resource type="Texture2D" uid="uid://bg4o0njsjs7t3" path="res://group_outline.png" id="2_lrhy8"]
+[ext_resource type="FontFile" uid="uid://d3bwkt6m482pw" path="res://fonts/PressStart2P-Regular.ttf" id="3_ay375"]
 [ext_resource type="Texture2D" uid="uid://cafb3gauns0fj" path="res://sprites/timer-fixed.png" id="3_cruxe"]
 [ext_resource type="Script" uid="uid://bje2r8tgbkad5" path="res://animate-cooldown.gd" id="4_lrhy8"]
 
@@ -13,31 +15,7 @@ script/source = "extends Area2D
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqdw"]
-size = Vector2(22, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6uo63"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(0, 84, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpcdi"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(18, 84, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gs2f6"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(0, 42, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykwrb"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(18, 42, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l02mi"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(0, 0, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7j51r"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(18, 0, 18, 21)
+size = Vector2(27, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_do863"]
 atlas = ExtResource("2_30cdx")
@@ -63,8 +41,65 @@ region = Rect2(0, 21, 18, 21)
 atlas = ExtResource("2_30cdx")
 region = Rect2(18, 21, 18, 21)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uo63"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(0, 84, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpcdi"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(18, 84, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs2f6"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(0, 42, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykwrb"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(18, 42, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l02mi"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(0, 0, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j51r"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(18, 0, 18, 21)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ke0wg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do863")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8itb")
+}],
+"loop": 1,
+"name": &"fighting_large",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6bix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vd56")
+}],
+"loop": 1,
+"name": &"fighting_medium",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i4au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ksb4")
+}],
+"loop": 1,
+"name": &"fighting_small",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6uo63")
@@ -204,27 +239,46 @@ radius = 3.0
 avoidance_priority = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=235998446]
-position = Vector2(0, 2.5)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_51px8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=580569208]
+position = Vector2(0.5, -2.5)
 script = SubResource("GDScript_14olt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2078153663]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ujqdw")
 
+[node name="SelectionBox" type="Sprite2D" parent="." unique_id=1316068572]
+visible = false
+position = Vector2(1, 0)
+texture = ExtResource("2_lrhy8")
+
+[node name="Label" type="Label" parent="." unique_id=1238282245]
+visible = false
+offset_left = -9.0
+offset_top = -29.0
+offset_right = 11.0
+offset_bottom = -19.0
+theme_override_fonts/font = ExtResource("3_ay375")
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Timer" type="Timer" parent="." unique_id=565907661]
 wait_time = 0.5
 one_shot = true
-autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=29475373]
+position = Vector2(0.5, -2.5)
 sprite_frames = SubResource("SpriteFrames_ke0wg")
-animation = &"idle_large"
+animation = &"fighting_large"
 
 [node name="AnimatedSpriteCooldown" type="AnimatedSprite2D" parent="." unique_id=619085520]
-position = Vector2(40, -17)
+visible = false
+position = Vector2(34, -27)
 sprite_frames = SubResource("SpriteFrames_mduoy")
 frame_progress = 0.7965352
 script = ExtResource("4_lrhy8")
@@ -232,3 +286,5 @@ script = ExtResource("4_lrhy8")
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
