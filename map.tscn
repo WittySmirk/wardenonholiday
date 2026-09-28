@@ -242,9 +242,9 @@ script = SubResource("GDScript_e0an3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2064648720]
 offset_left = -1099.0
-offset_top = -347.0
+offset_top = -278.0
 offset_right = 2789.0
-offset_bottom = 2172.0
+offset_bottom = 2241.0
 color = Color(0.06666667, 0.101960786, 0.047058824, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=375905567]
@@ -338,7 +338,7 @@ connections = [NodePath("../move_target7"), NodePath("../move_target9")]
 
 [node name="move_target9" parent="movement_nodes" unique_id=527621551 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(670, 226)
-connections = [NodePath("../move_target8"), NodePath("../move_target10")]
+connections = [NodePath("../move_target8"), NodePath("../move_target10"), NodePath("../move_target6")]
 
 [node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(926, 224)
@@ -365,34 +365,27 @@ scale = Vector2(1.5954459, 1.5999947)
 
 [node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
 position = Vector2(1313.0001, 513.00006)
-scale = Vector2(2.48, 2.48)
 collision_mask = 1
-movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target12")
 escapeNodes = [NodePath("../movement_nodes/move_target8")]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
-groupType = 1
 
 [node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
 position = Vector2(131, 116)
-scale = Vector2(2.0799994, 2.0799994)
 collision_mask = 1
-movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target")
 escapeNodes = [NodePath("../movement_nodes/move_target8")]
 sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
-groupType = 1
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1019, 114.00003)
-scale = Vector2(2.1199903, 2.1199903)
 current_node = NodePath("../movement_nodes/move_target8")
+quantity = 5
 
 [node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
+visible = false
 position = Vector2(500, 385)
-scale = Vector2(2.6399999, 2.6399999)
 current_node = NodePath("../movement_nodes/move_target4")
-groupType = 1
 
 [node name="NightTimerWindow" parent="." unique_id=1846275003 instance=ExtResource("7_71pa8")]
 visible = false
