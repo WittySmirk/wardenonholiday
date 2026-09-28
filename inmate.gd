@@ -11,9 +11,13 @@ class_name Inmate
 
 var target: MoveTarget
 var movement_delta: float
+
+@export var engage_probability: float = 0.5
+@export var split_probability: float = 0.2
+
 @export var movement_speed: float = 50.0 
 @export var current_node: MoveTarget
-@onready var cooldown_timer = $CooldownTimer
+@onready var cooldown_timer = $Timer
 @onready var nav_agent = $NavigationAgent2D
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -33,10 +37,12 @@ var previous_node: MoveTarget
 var retreating = false
 
 
+func calculate_probability(chance_of_success: float) -> bool:
+	return randf() < chance_of_success
+
 func _ready() -> void:
 	#Connect nav agent and initialize
 	quantity = randi_range(1, 15)
-	animated_sprite.modulate = Color.ORANGE
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	current_node.enabled = false
 	nav_agent.path_desired_distance = 4.0
@@ -58,20 +64,25 @@ func _ready() -> void:
 			print("SABOTAGING")
 			sabotage()
 
+func rememberNodes() -> void:
+	if current_node:
+		current_node.occupant = null
+		previous_node = current_node
+		current_node = null
 
 func roam():
 	print("roaming")
-	
-	var next_node = null
-	
+
+	var valid_nodes: Array[MoveTarget] = []
+
 	for node in current_node.connections:
-		if node.occupant == null || node.occupant.groupType == GroupType.INMATE:
-			next_node = node
-			break
-	
-	if next_node != null:
-		current_node.occupant = null
+		if node.occupant == null or node.occupant.groupType == GroupType.INMATE:
+			valid_nodes.append(node)
+
+	if not valid_nodes.is_empty():
+		var next_node = valid_nodes.pick_random()
 		
+		rememberNodes()
 		nav_agent.set_target_position(next_node.global_position)
 		target = next_node
 	
@@ -79,11 +90,16 @@ func check_for_adjacent_guard() -> bool:
 	for neighbor in current_node.connections:
 		if neighbor.occupant != null:
 			if neighbor.occupant.groupType == GroupType.GUARD and neighbor.occupant != guard_to_avoid:
-				print("going to fight")
-				nav_agent.set_target_position(neighbor.global_position)
-				initiated_fight = true
-				target = neighbor
-				return true
+				if calculate_probability(engage_probability):
+					print("going to fight")
+					rememberNodes()
+					
+					nav_agent.set_target_position(neighbor.global_position)
+					target = neighbor
+					return true
+				else:
+					print("Don't wanna fight")
+					return false
 	
 	return false
 
@@ -113,40 +129,41 @@ func sabotage():
 
 func retreat(inmates_initiated: bool, guard: Guard):
 	retreating = true
-	path.clear()
+	fighting = false
+	guard.fighting = false
 	guard_to_avoid = guard
 	cooldown_timer.stop()
 	
-	#Return to the tile where the guard was spotted from
-	if inmates_initiated:
-		print("Inmates initiated")
-		if current_node != null:
-			path.append(current_node)
-			
-		if previous_node != null:
-			path.append(previous_node)
+	var retreat_target: MoveTarget = null
+	
+	if !inmates_initiated:
+		#Find a node that isn't where the guard came from
+		
+		#If the current node is null (inmate is currently moving), set its current node to the place it last was
+		if current_node == null:
+			current_node = previous_node
+		
+		for new_node in current_node.connections:
+			if new_node != guard.previous_node:
+				retreat_target = new_node
+				break
 	else:
-		print("Inmates did not initiate")
-		print("Retreat node: ", previous_node)
-		if previous_node != null:
-			path.append(previous_node)
+		#Guard initiated, so go back to previous node
+		print("The inmate chose its previous node")
+		print(previous_node)
+		print(current_node)
+		if previous_node:
+			retreat_target = previous_node
 	
-	# Start following the path
-	current_path_index = 0
-	
-	if path.is_empty():
-		#TODO kill the inmates
+	if retreat_target == null:
 		print("Inmate trapped")
 		retreating = false
-		fighting = false
 		return
 	
-	current_node.occupant = null
+	rememberNodes()
 	
-	var next_node = path[current_path_index]
-	nav_agent.set_target_position(next_node.global_position)
-	target = next_node
-	current_path_index += 1
+	target = retreat_target
+	nav_agent.set_target_position(target.global_position)
 
 
 func _physics_process(delta):
@@ -157,32 +174,22 @@ func _physics_process(delta):
 	#If the current path is finished, set the node states and start the cooldown timer
 	if (nav_agent.is_navigation_finished() or nav_agent.is_target_reached()) and target:
 		#Reached the target
-		previous_node = current_node
 		current_node = target
 		target.occupant = self
 		target = null
 		
 		#Check if this was the final retreat node
-		if retreating and current_path_index >= path.size():
+		if retreating:
 			retreating = false
 			fighting = false
-			path.clear()
-			current_path_index = 1
-			print("humbled")
-			inmateType = inmateTypes.ROAMING
-		
-		if retreating:
-			cooldown_timer.start(0.5)
-		else:
-			cooldown_timer.start(5)
+
+		cooldown_timer.start(5)
 		
 		if current_path_index >= path.size() and inmateType == inmateTypes.SABOTAGING:
 			sabotaging = true
 			#TODO sabotage
 	
 	if cooldown_timer.is_stopped() and target == null:
-		print(self.quantity)
-		
 		#Check if there are any guards nearby to fight
 		if not retreating:
 			if check_for_adjacent_guard():
@@ -190,15 +197,13 @@ func _physics_process(delta):
 		
 		if retreating:
 			#If still following a retreat path, get the next position
-			if current_path_index < path.size():
-				current_node.occupant = null
-				
-				var next_node = path[current_path_index]
-				nav_agent.set_target_position(next_node.global_position)
-				initiated_fight = false
-				target = next_node
-				current_path_index += 1
-				return
+			rememberNodes()
+			
+			var next_node = path[current_path_index]
+			nav_agent.set_target_position(next_node.global_position)
+			target = next_node
+			current_path_index += 1
+			return
 		
 		if sabotaging:
 			sabotaging = false
@@ -207,8 +212,7 @@ func _physics_process(delta):
 		
 		#Keep following the defined path
 		if not path.is_empty() and current_path_index < path.size():
-			print("code ran")
-			current_node.occupant = null
+			rememberNodes()
 
 			var next_node = path[current_path_index]
 			nav_agent.set_target_position(next_node.global_position)
@@ -267,16 +271,20 @@ func _on_velocity_computed(safe_velocity: Vector2):
 		
 		if collider is Group:
 			if collider.groupType == GroupType.GUARD:
-				if not fighting:
+				if not fighting and not retreating and not collider.retreating and target != null:
 					fighting = true
 					collider.fighting = true
-					InteractionHandler.fight(collider, self, initiated_fight)
+					print("Inmate initiated")
+					InteractionHandler.fight(collider, self, true)
 			elif collider.groupType == GroupType.INMATE:
-				#Merge with other inmate group
-				#Prevent both trying to merge into each other
 				if get_instance_id() < collider.get_instance_id():
 					self.quantity += collider.quantity
-					current_node.occupant = self
+					
+					if target != null:
+						target.occupant = self
+					elif current_node != null:
+						current_node.occupant = self
+					
 					collider.queue_free()
 					
 			return
