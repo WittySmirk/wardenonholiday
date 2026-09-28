@@ -272,7 +272,7 @@ one_shot = true
 
 [node name="AnimatedSpriteCooldown" type="AnimatedSprite2D" parent="." unique_id=1905927597]
 modulate = Color(1, 0.7529412, 0, 1)
-position = Vector2(31, -28)
+position = Vector2(31, -27)
 sprite_frames = SubResource("SpriteFrames_g6bix")
 script = ExtResource("4_ykwrb")
 
