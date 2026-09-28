@@ -66,7 +66,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -4, 4, -4, 4, 4, -4
 agent_radius = 0.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oysan"]
-load_path = "res://.godot/imported/pixilart-drawing.png-9e9c431ac86a42d1fefc4da3ac6bc15c.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urblq"]
 texture = SubResource("CompressedTexture2D_oysan")
@@ -236,11 +235,13 @@ offset_left = -379.0
 offset_top = -222.0
 offset_right = 1833.0
 offset_bottom = 1741.0
+mouse_filter = 2
 color = Color(0.06666667, 0.101960786, 0.050980393, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=375905567]
 offset_right = 1500.0
 offset_bottom = 1500.0
+mouse_filter = 2
 texture = ExtResource("11_sb2pt")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="TextureRect" unique_id=512665287]
@@ -357,8 +358,10 @@ sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../moveme
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1019, 114.00003)
+movement_speed = null
 current_node = NodePath("../movement_nodes/move_target8")
 quantity = 5
+groupType = null
 
 [node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 visible = false
@@ -370,11 +373,13 @@ position = Vector2(380, 380)
 script = ExtResource("6_iw27f")
 
 [node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("7_71pa8")]
+visible = false
 offset_left = -370.0
 offset_top = -366.0
 offset_right = -196.37643
 offset_bottom = -269.2433
 scale = Vector2(1.2529145, 1.2404265)
+mouse_filter = 2
 script = ExtResource("8_oysan")
 
 [node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=1722304987 node_paths=PackedStringArray("timer")]
