@@ -721,7 +721,6 @@ connections = [NodePath("../move_target_station1"), NodePath("../move_target21")
 position = Vector2(1313.0001, 513.00006)
 collision_mask = 1
 current_node = NodePath("../movement_nodes/move_target12")
-quantity = 20
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1019, 114.00003)

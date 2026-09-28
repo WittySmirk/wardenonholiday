@@ -17,30 +17,6 @@ script/source = "extends Area2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujqdw"]
 size = Vector2(27, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_do863"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(0, 105, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8itb"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(18, 105, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6bix"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(0, 63, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vd56"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(18, 63, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3i4au"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(0, 21, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ksb4"]
-atlas = ExtResource("2_30cdx")
-region = Rect2(18, 21, 18, 21)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uo63"]
 atlas = ExtResource("2_30cdx")
 region = Rect2(0, 84, 18, 21)
@@ -65,41 +41,32 @@ region = Rect2(0, 0, 18, 21)
 atlas = ExtResource("2_30cdx")
 region = Rect2(18, 0, 18, 21)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_do863"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(0, 105, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8itb"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(18, 105, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6bix"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(0, 63, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vd56"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(18, 63, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i4au"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(0, 21, 18, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ksb4"]
+atlas = ExtResource("2_30cdx")
+region = Rect2(18, 21, 18, 21)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ke0wg"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_do863")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8itb")
-}],
-"loop": 1,
-"name": &"fighting_large",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g6bix")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5vd56")
-}],
-"loop": 1,
-"name": &"fighting_medium",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3i4au")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ksb4")
-}],
-"loop": 1,
-"name": &"fighting_small",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6uo63")
@@ -274,7 +241,7 @@ one_shot = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=29475373]
 position = Vector2(0.5, -2.5)
 sprite_frames = SubResource("SpriteFrames_ke0wg")
-animation = &"fighting_large"
+animation = &"idle_large"
 
 [node name="AnimatedSpriteCooldown" type="AnimatedSprite2D" parent="." unique_id=619085520]
 position = Vector2(34, -27)

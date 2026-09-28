@@ -43,6 +43,8 @@ func calculate_probability(chance_of_success: float) -> bool:
 
 func _ready() -> void:
 	#Connect nav agent and initialize
+	quantity = randi_range(15, 25)
+	
 	nav_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
@@ -362,17 +364,6 @@ func reconstructBestPath(parent_map: Dictionary, startNode: MoveTarget, endNode:
 
 
 func update_animation():
-	if fighting:
-		if quantity >= 15:
-			animated_sprite.play("fighting_large")
-			return
-		elif quantity >= 7:
-			animated_sprite.play("fighting_medium")
-			return
-		else:
-			animated_sprite.play("fighting_small")
-			return
-		
 	if velocity.length() > 0:
 		if quantity >= 15:
 			animated_sprite.play("moving_large")
