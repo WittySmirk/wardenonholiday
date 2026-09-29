@@ -247,7 +247,7 @@ func _physics_process(delta):
 			#Finish the sabotage
 			if sabotaging:
 				sabotaging = false
-				GameState.remove_sabotage(current_sabotage_node)
+				GameState.remove_sabotage(current_node)
 				GameState.objectives_sabotaged += 1
 			
 			#Keep following the defined path
