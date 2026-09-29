@@ -25,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://csr3p2w7svijg" path="res://textures/map.png" id="11_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="12_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
+[ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="15_jky6x"]
+[ext_resource type="PackedScene" uid="uid://dmia5u78lhx27" path="res://scenes/guard_placer.tscn" id="23_4sf5t"]
+[ext_resource type="PackedScene" uid="uid://d2rcrvw350ixb" path="res://static_guard.tscn" id="24_6sq2s"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
 vertices = PackedVector2Array(770.96094, 385, 971.60156, 385.04688, 979, 413, 941, 414, 701, 414, 663, 413, 504.0078, 385, 1134, 1109, 1149.7422, 1083, 1375.2188, 952, 1308.1719, 1223, 1148.7031, 1223, 1106, 1232, 1119, 1233, 693, 859, 718.9297, 847.10156, 632.60156, 1241.8906, 652.5625, 1074, 886, 818, 936, 605, 947, 563, 964.5078, 594.21094, 912.5703, 829.9297, 907.89844, 846, 892.6875, 844.8281, 1132.9531, 1307, 1105, 1296, 783.8281, 118.890625, 1121.6172, 114.17969, 1102.5, 180, 1015.9297, 180, 828.5703, 135, 272.27344, 400, 26.96875, 400, 31.710938, 382, 64.21094, 382, 77.74219, 382.9297, 59.148438, 1321.0625, 93, 1309, 170, 1308, 159, 1353, 139.11719, 1382, 127.10156, 1432.0625, 23.78125, 1432.8906, 51.0625, 1322.0625, 779.8125, 135, 1196.5313, 591.8672, 1317.7734, 507.14063, 1405.3438, 506.14063, 1357.0703, 711.03125, 1169.5078, 711.9297, 906, 563, 171, 916, 198, 916, 175, 1012, 157, 1012, 134.4375, 999.7578, 144.99219, 929, 1243.75, 383.96875, 1271.7188, 276.03125, 1461.2813, 276.9297, 1411.1563, 482.90625, 1322.8203, 481.90625, 116.50781, 664.28906, 255.15625, 482.95313, 282, 470, 376, 470, 354, 564, 343, 606, 140, 673, 662, 563, 627, 562, 1105.5234, 810.0625, 1208.3203, 810.8906, 1186.1094, 903.0625, 1085.2969, 903.8906, 1097.2813, 846, 1099.5313, 831.0469, 1297, 499, 1204.8516, 498.0078, 1190, 564, 163.50781, 847, 33.546875, 847, 37.007813, 831.8125, 78, 830.8125, 523.6328, 263, 482.5, 263, 512.96875, 128.0625, 536.3906, 262.67188, 1297, 488, 1207.1094, 488, 1224, 413, 51.25, 264.65625, 80.078125, 131.85938, 179.67969, 130.20313, 151.82031, 265.14844, 101.82031, 266.15625, 87.03906, 266.64844, 277.79688, 384.03906, 288.97656, 385, 31.703125, 662.28906, 75.828125, 483.95313, 1025.4375, 1395.1016, 1159.5391, 1307, 1123.9766, 1467, 1009.46094, 1467, 1036, 1297, 1020, 1369, 295.9922, 131, 396.60156, 131, 367.89844, 263.15625, 321.28125, 264.15625, 265.3672, 266.59375, 306.65625, 268.60938, 901.47656, 1394.1016, 941, 1368, 920.4922, 1310.0938, 961, 1284, 825, 1283, 782.6172, 1309.0938, 857.65625, 1083, 402, 860, 440, 860, 400, 1045, 378.92188, 1074, 748.6328, 1242.8906, 695.9297, 1486.9688, 339.3828, 1486.0313, 392.0703, 1242.9609, 613.96875, 1241.9609, 647, 1045, 613.60156, 128.89063, 584.0078, 264.64844, 494.92188, 385, 118.453125, 998.7578, 134.90625, 929, 297, 413, 328, 674, 107, 818, 1183.7422, 952, 863, 1110, 290, 1353, 312.90625, 1382, 185, 859)
@@ -260,7 +263,20 @@ size = Vector2(142.10521, 192.31369)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6rn7"]
 font = ExtResource("9_oysan")
-font_size = 65
+font_size = 70
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mr0t"]
+size = Vector2(17.398193, 23.545277)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4sf5t"]
+font = ExtResource("9_oysan")
+font_size = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sq2s"]
+size = Vector2(32.134537, 30.311192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kvws"]
+size = Vector2(52.621155, 23.81593)
 
 [node name="map" type="Node2D" unique_id=956996686]
 script = ExtResource("1_71pa8")
@@ -749,11 +765,6 @@ position = Vector2(131, 116)
 collision_mask = 1
 current_node = NodePath("../movement_nodes/move_target_cell1")
 
-[node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
-position = Vector2(1019, 114.00003)
-current_node = NodePath("../movement_nodes/move_target_station3")
-quantity = 5
-
 [node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 visible = false
 position = Vector2(500, 385)
@@ -765,15 +776,15 @@ script = ExtResource("6_71pa8")
 
 [node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("7_71pa8")]
 visible = false
-offset_left = -370.0
-offset_top = -366.0
-offset_right = -196.37643
-offset_bottom = -269.2433
+offset_left = 134.0
+offset_top = 249.0
+offset_right = 307.62357
+offset_bottom = 345.7567
 scale = Vector2(1.2529145, 1.2404265)
 mouse_filter = 2
 script = ExtResource("8_oysan")
 
-[node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=1722304987]
+[node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=1722304987 node_paths=PackedStringArray("timer")]
 texture_filter = 1
 layout_mode = 0
 offset_left = 22.505457
@@ -785,6 +796,7 @@ label_settings = SubResource("LabelSettings_a6rn7")
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("10_sb2pt")
+timer = NodePath("../Timer")
 
 [node name="Timer" type="Timer" parent="Camera2D/NightTimerWindow" unique_id=1704421551]
 wait_time = 300.0
@@ -795,6 +807,13 @@ offset_top = 247.0
 offset_right = 272.82397
 offset_bottom = 323.0
 scale = Vector2(1.5954459, 1.5999947)
+
+[node name="GuardCounter" parent="Camera2D" unique_id=97217760 instance=ExtResource("15_jky6x")]
+offset_left = -466.0
+offset_top = 364.0
+offset_right = -466.0
+offset_bottom = 364.0
+number_of_guards = 50
 
 [node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(335, 184)
@@ -808,14 +827,104 @@ collision_mask = 1
 movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target_cell1")
 
-[node name="guard2" parent="." unique_id=2134646329 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
-position = Vector2(1022, 119)
-movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target_station3")
-
 [node name="inmate6" parent="." unique_id=642555186 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(503, 374)
 current_node = NodePath("../movement_nodes/move_target4")
+
+[node name="GuardPlacer_station1" parent="." unique_id=1719996851 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+position = Vector2(151, 930)
+guard_counter = NodePath("../Camera2D/GuardCounter")
+area2D = NodePath("Area2D")
+guard_scene = ExtResource("4_urblq")
+static_guard_scene = ExtResource("24_6sq2s")
+count_label = NodePath("Label")
+collision2D = NodePath("Area2D/CollisionShape2D")
+move_target_node = NodePath("../movement_nodes/move_target_station1")
+
+[node name="Area2D" type="Area2D" parent="GuardPlacer_station1" unique_id=1618831489]
+position = Vector2(7, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardPlacer_station1/Area2D" unique_id=1290312263]
+position = Vector2(-6.5, 30.499939)
+scale = Vector2(3.8, 3.8)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_3mr0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station1/Area2D" unique_id=1633756074]
+position = Vector2(8, 8)
+texture = ExtResource("6_a6rn7")
+
+[node name="Label" type="Label" parent="GuardPlacer_station1" unique_id=2046444443]
+offset_left = 64.0
+offset_top = -7.0
+offset_right = 104.0
+offset_bottom = 33.0
+text = "0"
+label_settings = SubResource("LabelSettings_4sf5t")
+vertical_alignment = 1
+
+[node name="GuardPlacer_station2" parent="." unique_id=473221888 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+position = Vector2(1128, 826)
+guard_counter = NodePath("../Camera2D/GuardCounter")
+area2D = NodePath("Area2D")
+guard_scene = ExtResource("4_urblq")
+static_guard_scene = ExtResource("24_6sq2s")
+count_label = NodePath("Label")
+collision2D = NodePath("Area2D/CollisionShape2D")
+move_target_node = NodePath("../movement_nodes/move_target_station2")
+
+[node name="Area2D" type="Area2D" parent="GuardPlacer_station2" unique_id=674736975]
+position = Vector2(7, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardPlacer_station2/Area2D" unique_id=55379475]
+position = Vector2(13.499878, 27)
+scale = Vector2(3.8, 3.8)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_6sq2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station2/Area2D" unique_id=155218452]
+position = Vector2(8, 8)
+texture = ExtResource("7_4on3e")
+
+[node name="Label" type="Label" parent="GuardPlacer_station2" unique_id=578920707]
+offset_left = 112.0
+offset_top = -12.0
+offset_right = 152.0
+offset_bottom = 28.0
+text = "0"
+label_settings = SubResource("LabelSettings_4sf5t")
+vertical_alignment = 1
+
+[node name="GuardPlacer_station3" parent="." unique_id=1979696931 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+position = Vector2(1029, 109)
+guard_counter = NodePath("../Camera2D/GuardCounter")
+area2D = NodePath("Area2D")
+guard_scene = ExtResource("4_urblq")
+static_guard_scene = ExtResource("24_6sq2s")
+count_label = NodePath("Label")
+collision2D = NodePath("Area2D/CollisionShape2D")
+move_target_node = NodePath("../movement_nodes/move_target_station3")
+
+[node name="Area2D" type="Area2D" parent="GuardPlacer_station3" unique_id=1966809267]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardPlacer_station3/Area2D" unique_id=994013262]
+position = Vector2(-6.0197144, 23.000015)
+scale = Vector2(3.8, 3.8)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_3kvws")
+
+[node name="Label" type="Label" parent="GuardPlacer_station3" unique_id=1341917514]
+offset_left = -9.0
+offset_top = -109.0
+offset_right = 31.0
+offset_bottom = -69.0
+text = "0"
+label_settings = SubResource("LabelSettings_4sf5t")
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station3" unique_id=273197751]
+texture = ExtResource("6_2wwcf")
 
 [node name="Timer" type="Timer" parent="." unique_id=902719183]
 wait_time = 0.25
@@ -829,3 +938,6 @@ one_shot = true
 [connection signal="input_event" from="movement_nodes/move_target_station3/Area2D" to="movement_nodes/move_target_station3" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_basketball/Area2D" to="movement_nodes/move_target_basketball" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_bleachers/Area2D" to="movement_nodes/move_target_bleachers" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="GuardPlacer_station1/Area2D" to="GuardPlacer_station1" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="GuardPlacer_station2/Area2D" to="GuardPlacer_station2" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="GuardPlacer_station3/Area2D" to="GuardPlacer_station3" method="_on_area_2d_input_event"]
