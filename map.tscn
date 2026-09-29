@@ -1,48 +1,33 @@
 [gd_scene format=4 uid="uid://1nhxait0s5b0"]
 
+[ext_resource type="Script" uid="uid://nbmmq2yck5nq" path="res://cam_movement.gd" id="1_71pa8"]
 [ext_resource type="Texture2D" uid="uid://csqkq2w26jlvj" path="res://tilesets/Tileset.png" id="1_p5pve"]
-[ext_resource type="Texture2D" uid="uid://bgur05tbmvvc8" path="res://pixilart-drawing.png" id="1_wijl4"]
 [ext_resource type="PackedScene" uid="uid://krut1eodpew1" path="res://move_target.tscn" id="3_e0an3"]
 [ext_resource type="PackedScene" uid="uid://bgu1vgta1djtq" path="res://inmate.tscn" id="4_p5pve"]
 [ext_resource type="PackedScene" uid="uid://v170rsiq1dig" path="res://guard.tscn" id="4_urblq"]
 [ext_resource type="PackedScene" uid="uid://b5nswe1xuxkof" path="res://scenes/move_targets/move_target_office.tscn" id="5_0t07s"]
 [ext_resource type="Script" uid="uid://c3hueo1sjq2ab" path="res://move_target.gd" id="5_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://b0bl8a42cynxr" path="res://textures/station_3_outline.png" id="6_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://3sswttgygege" path="res://textures/server_outline_orange.png" id="6_4sf5t"]
+[ext_resource type="Script" uid="uid://bc6x4r87saesy" path="res://camera_movement.gd" id="6_71pa8"]
 [ext_resource type="Texture2D" uid="uid://bhxcdef7rgx0s" path="res://textures/station_1_outline.png" id="6_a6rn7"]
-[ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="6_iw27f"]
 [ext_resource type="Texture2D" uid="uid://foedxy8gmo0m" path="res://textures/station_2_outline.png" id="7_4on3e"]
 [ext_resource type="PackedScene" uid="uid://clb0s56e5kiu2" path="res://UI/window.tscn" id="7_71pa8"]
 [ext_resource type="Texture2D" uid="uid://dl2n3emnwkg3w" path="res://textures/cafeteria_select.png" id="7_bssq0"]
 [ext_resource type="Texture2D" uid="uid://b2e13h41qh05y" path="res://textures/basketball_outline.png" id="8_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://clc75me6qjs6q" path="res://textures/rec_center_outline_orange.png" id="8_3mr0t"]
 [ext_resource type="Script" uid="uid://dve020okw2dmd" path="res://UI/TimerWindow.gd" id="8_oysan"]
 [ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="9_oysan"]
 [ext_resource type="Texture2D" uid="uid://bgj5w7eo271bi" path="res://textures/bleacher_outline.png" id="9_wbpbn"]
+[ext_resource type="Texture2D" uid="uid://brawu7fswmhhi" path="res://textures/cafeteria_outline_orange.png" id="10_6sq2s"]
 [ext_resource type="Texture2D" uid="uid://ctf5sb4q08asi" path="res://textures/rec_center_outline_green.png" id="10_r5om4"]
 [ext_resource type="Script" uid="uid://bgd5xeaj0510w" path="res://night_timer.gd" id="10_sb2pt"]
-[ext_resource type="Texture2D" uid="uid://bb55o2nlbkdo1" path="res://textures/map.png" id="11_sb2pt"]
+[ext_resource type="Texture2D" uid="uid://csr3p2w7svijg" path="res://textures/map.png" id="11_sb2pt"]
+[ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="12_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
 [ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="15_jky6x"]
 [ext_resource type="PackedScene" uid="uid://dmia5u78lhx27" path="res://scenes/guard_placer.tscn" id="23_4sf5t"]
 [ext_resource type="PackedScene" uid="uid://d2rcrvw350ixb" path="res://static_guard.tscn" id="24_6sq2s"]
-
-[sub_resource type="GDScript" id="GDScript_e0an3"]
-script/source = "extends Node2D
-
-
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
-
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
 vertices = PackedVector2Array(770.96094, 385, 971.60156, 385.04688, 979, 413, 941, 414, 701, 414, 663, 413, 504.0078, 385, 1134, 1109, 1149.7422, 1083, 1375.2188, 952, 1308.1719, 1223, 1148.7031, 1223, 1106, 1232, 1119, 1233, 693, 859, 718.9297, 847.10156, 632.60156, 1241.8906, 652.5625, 1074, 886, 818, 936, 605, 947, 563, 964.5078, 594.21094, 912.5703, 829.9297, 907.89844, 846, 892.6875, 844.8281, 1132.9531, 1307, 1105, 1296, 783.8281, 118.890625, 1121.6172, 114.17969, 1102.5, 180, 1015.9297, 180, 828.5703, 135, 272.27344, 400, 26.96875, 400, 31.710938, 382, 64.21094, 382, 77.74219, 382.9297, 59.148438, 1321.0625, 93, 1309, 170, 1308, 159, 1353, 139.11719, 1382, 127.10156, 1432.0625, 23.78125, 1432.8906, 51.0625, 1322.0625, 779.8125, 135, 1196.5313, 591.8672, 1317.7734, 507.14063, 1405.3438, 506.14063, 1357.0703, 711.03125, 1169.5078, 711.9297, 906, 563, 171, 916, 198, 916, 175, 1012, 157, 1012, 134.4375, 999.7578, 144.99219, 929, 1243.75, 383.96875, 1271.7188, 276.03125, 1461.2813, 276.9297, 1411.1563, 482.90625, 1322.8203, 481.90625, 116.50781, 664.28906, 255.15625, 482.95313, 282, 470, 376, 470, 354, 564, 343, 606, 140, 673, 662, 563, 627, 562, 1105.5234, 810.0625, 1208.3203, 810.8906, 1186.1094, 903.0625, 1085.2969, 903.8906, 1097.2813, 846, 1099.5313, 831.0469, 1297, 499, 1204.8516, 498.0078, 1190, 564, 163.50781, 847, 33.546875, 847, 37.007813, 831.8125, 78, 830.8125, 523.6328, 263, 482.5, 263, 512.96875, 128.0625, 536.3906, 262.67188, 1297, 488, 1207.1094, 488, 1224, 413, 51.25, 264.65625, 80.078125, 131.85938, 179.67969, 130.20313, 151.82031, 265.14844, 101.82031, 266.15625, 87.03906, 266.64844, 277.79688, 384.03906, 288.97656, 385, 31.703125, 662.28906, 75.828125, 483.95313, 1025.4375, 1395.1016, 1159.5391, 1307, 1123.9766, 1467, 1009.46094, 1467, 1036, 1297, 1020, 1369, 295.9922, 131, 396.60156, 131, 367.89844, 263.15625, 321.28125, 264.15625, 265.3672, 266.59375, 306.65625, 268.60938, 901.47656, 1394.1016, 941, 1368, 920.4922, 1310.0938, 961, 1284, 825, 1283, 782.6172, 1309.0938, 857.65625, 1083, 402, 860, 440, 860, 400, 1045, 378.92188, 1074, 748.6328, 1242.8906, 695.9297, 1486.9688, 339.3828, 1486.0313, 392.0703, 1242.9609, 613.96875, 1241.9609, 647, 1045, 613.60156, 128.89063, 584.0078, 264.64844, 494.92188, 385, 118.453125, 998.7578, 134.90625, 929, 297, 413, 328, 674, 107, 818, 1183.7422, 952, 863, 1110, 290, 1353, 312.90625, 1382, 185, 859)
@@ -94,8 +79,10 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)])
 agent_radius = 0.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oysan"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urblq"]
-texture = ExtResource("1_wijl4")
+texture = SubResource("CompressedTexture2D_oysan")
 texture_region_size = Vector2i(8, 8)
 use_texture_padding = false
 1:0/0 = 0
@@ -250,6 +237,12 @@ navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_urblq")
 sources/0 = SubResource("TileSetAtlasSource_iw27f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jky6x"]
+size = Vector2(371.37906, 272.53015)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sf5t"]
+size = Vector2(216.88284, 472.0428)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5om4"]
 size = Vector2(306.73596, 208.76837)
 
@@ -262,19 +255,13 @@ size = Vector2(123.39104, 118.26778)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6rn7"]
 size = Vector2(207.24005, 93.58581)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sf5t"]
-size = Vector2(216.88284, 472.0428)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0iomv"]
 size = Vector2(218.97655, 308.52457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4on3e"]
 size = Vector2(142.10521, 192.31369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jky6x"]
-size = Vector2(371.37906, 272.53015)
-
-[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
+[sub_resource type="LabelSettings" id="LabelSettings_a6rn7"]
 font = ExtResource("9_oysan")
 font_size = 70
 
@@ -291,21 +278,21 @@ size = Vector2(32.134537, 30.311192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kvws"]
 size = Vector2(52.621155, 23.81593)
 
-[node name="Node2D" type="Node2D" unique_id=956996686]
-script = SubResource("GDScript_e0an3")
+[node name="map" type="Node2D" unique_id=956996686]
+script = ExtResource("1_71pa8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2064648720]
-offset_left = -1099.0
-offset_top = -278.0
-offset_right = 2789.0
-offset_bottom = 2241.0
-color = Color(0.06666667, 0.101960786, 0.047058824, 1)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1070408807]
+offset_left = -379.0
+offset_top = -222.0
+offset_right = 1833.0
+offset_bottom = 1741.0
+mouse_filter = 2
+color = Color(0.06666667, 0.101960786, 0.050980393, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=375905567]
-offset_left = 3.0
-offset_top = -1.0
-offset_right = 1503.0
-offset_bottom = 1499.0
+offset_right = 1500.0
+offset_bottom = 1500.0
+mouse_filter = 2
 texture = ExtResource("11_sb2pt")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="TextureRect" unique_id=512665287]
@@ -361,6 +348,95 @@ visible = false
 tile_map_data = PackedByteArray("AAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wYAAQAAAAAAAAD+/wcAAQAAAAAAAAD+/wgAAQAAAAAAAAD9/wgAAQAAAAAAAAD8/wgAAQAAAAAAAAD+/wkAAQAAAAAAAAD+/woAAQAAAAAAAAD+/wsAAQAAAAAAAAD+/wwAAQAAAAAAAAD9/wwAAQAAAAAAAAD8/wsAAQAAAAAAAAD7/wsAAQAAAAAAAAD6/wsAAQAAAAAAAAD6/wwAAQAAAAAAAAD7/wwAAQAAAAAAAAD8/wwAAQAAAAAAAAD8/w0AAQAAAAAAAAD7/w0AAQAAAAAAAAD7/w4AAQAAAAAAAAD7/w8AAQAAAAAAAAD6/w0AAQAAAAAAAAD6/w4AAQAAAAAAAAD6/w8AAQAAAAAAAAD6/xAAAQAAAAAAAAD7/xAAAQAAAAAAAAD8/xAAAQAAAAAAAAD8/w8AAQAAAAAAAAD8/w4AAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAACAAQAAQAAAAAAAAACAAMAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAQAAQAAAAAAAAANAAYAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAARAAkAAQAAAAAAAAASAAoAAQAAAAAAAAARAAoAAQAAAAAAAAARAAsAAQAAAAAAAAASAAsAAQAAAAAAAAARAAgAAQAAAAAAAAAQAAsAAQAAAAAAAAAPAAsAAQAAAAAAAAAOAAsAAQAAAAAAAAANAAsAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAYAAQAAAAAAAAAHAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAADAAgAAQAAAAAAAAADAAcAAQAAAAAAAAADAAYAAQAAAAAAAAACAAgAAQAAAAAAAAABAAgAAQAAAAAAAAAAAAgAAQAAAAAAAAD//wgAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAD+/w0AAQAAAAAAAAD+/w4AAQAAAAAAAAD+/w8AAQAAAAAAAAD+/xAAAQAAAAAAAAD+/xEAAQAAAAAAAAD+/xIAAQAAAAAAAAD//xIAAQAAAAAAAAAAABIAAQAAAAAAAAAAABMAAQAAAAAAAAD//xQAAQAAAAAAAAAAABQAAQAAAAAAAAAAABUAAQAAAAAAAAABABQAAQAAAAAAAAABABUAAQAAAAAAAAABABYAAQAAAAAAAAABABcAAQAAAAAAAAAAABcAAQAAAAAAAAAAABYAAQAAAAAAAAD//xYAAQAAAAAAAAD//xUAAQAAAAAAAAD//xcAAQAAAAAAAAADABQAAQAAAAAAAAAEABQAAQAAAAAAAAAFABQAAQAAAAAAAAAGABQAAQAAAAAAAAAHABQAAQAAAAAAAAAIABQAAQAAAAAAAAAIABUAAQAAAAAAAAAHABUAAQAAAAAAAAAGABUAAQAAAAAAAAAFABUAAQAAAAAAAAAEABUAAQAAAAAAAAAEABYAAQAAAAAAAAADABYAAQAAAAAAAAADABUAAQAAAAAAAAAFABYAAQAAAAAAAAAGABYAAQAAAAAAAAAHABYAAQAAAAAAAAAIABYAAQAAAAAAAAAIABcAAQAAAAAAAAAHABcAAQAAAAAAAAAGABcAAQAAAAAAAAAFABcAAQAAAAAAAAAEABcAAQAAAAAAAAADABcAAQAAAAAAAAABABIAAQAAAAAAAAACABIAAQAAAAAAAAADABIAAQAAAAAAAAAEABIAAQAAAAAAAAAFABIAAQAAAAAAAAAFABMAAQAAAAAAAAAFABoAAQAAAAAAAAAFABkAAQAAAAAAAAAEABkAAQAAAAAAAAADABkAAQAAAAAAAAADABoAAQAAAAAAAAACABoAAQAAAAAAAAACABkAAQAAAAAAAAAEABoAAQAAAAAAAAAEABsAAQAAAAAAAAADABsAAQAAAAAAAAACABsAAQAAAAAAAAAFABsAAQAAAAAAAAAGABoAAQAAAAAAAAAHABoAAQAAAAAAAAAIABoAAQAAAAAAAAAJABoAAQAAAAAAAAAKABoAAQAAAAAAAAAKABkAAQAAAAAAAAAKABgAAQAAAAAAAAAKABcAAQAAAAAAAAAKABYAAQAAAAAAAAAKABUAAQAAAAAAAAAKABQAAQAAAAAAAAAKABMAAQAAAAAAAAAKABIAAQAAAAAAAAAKABEAAQAAAAAAAAAKABAAAQAAAAAAAAAKAA8AAQAAAAAAAAAKAA4AAQAAAAAAAAALAA4AAQAAAAAAAAAMAA4AAQAAAAAAAAANAA4AAQAAAAAAAAANAA0AAQAAAAAAAAANAAwAAQAAAAAAAAAOAAwAAQAAAAAAAAAPAAwAAQAAAAAAAAAQAAwAAQAAAAAAAAARAAwAAQAAAAAAAAASAAwAAQAAAAAAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAARAA4AAQAAAAAAAAARAA8AAQAAAAAAAAASAA8AAQAAAAAAAAASABAAAQAAAAAAAAASABEAAQAAAAAAAAARABEAAQAAAAAAAAAQABEAAQAAAAAAAAAPABEAAQAAAAAAAAAOABEAAQAAAAAAAAAOABAAAQAAAAAAAAANABAAAQAAAAAAAAANAA8AAQAAAAAAAAANABEAAQAAAAAAAAAPABAAAQAAAAAAAAAQABAAAQAAAAAAAAARABAAAQAAAAAAAAAPAA8AAQAAAAAAAAAOAA8AAQAAAAAAAAAQAA8AAQAAAAAAAAAPAA4AAQAAAAAAAAAQAA4AAQAAAAAAAAAOAA4AAQAAAAAAAAAQAA0AAQAAAAAAAAAPAA0AAQAAAAAAAAAOAA0AAQAAAAAAAAARAA0AAQAAAAAAAAAJAA4AAQAAAAAAAAAIAA4AAQAAAAAAAAAHAA4AAQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAHABAAAQAAAAAAAAAGABAAAQAAAAAAAAAFABAAAQAAAAAAAAAEABAAAQAAAAAAAAADABAAAQAAAAAAAAACABAAAQAAAAAAAAABABAAAQAAAAAAAAAAABAAAQAAAAAAAAAAAA8AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA0AAQAAAAAAAAAAAAwAAQAAAAAAAAAAAAsAAQAAAAAAAAAHAAsAAQAAAAAAAAAHAAwAAQAAAAAAAAAHAA0AAQAAAAAAAAAHAA8AAQAAAAAAAAAGAA8AAQAAAAAAAAAFAA8AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAA0AAQAAAAAAAAAGAAwAAQAAAAAAAAAGAAsAAQAAAAAAAAAGAA4AAQAAAAAAAAAFAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAFAAsAAQAAAAAAAAAEAA4AAQAAAAAAAAAEAA8AAQAAAAAAAAAEAA0AAQAAAAAAAAAEAAwAAQAAAAAAAAAEAAsAAQAAAAAAAAADAAsAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAADAA0AAQAAAAAAAAADAA4AAQAAAAAAAAADAA8AAQAAAAAAAAACAA8AAQAAAAAAAAABAA8AAQAAAAAAAAABAA4AAQAAAAAAAAACAA4AAQAAAAAAAAACAA0AAQAAAAAAAAABAA0AAQAAAAAAAAABAAwAAQAAAAAAAAABAAsAAQAAAAAAAAAPABIAAQAAAAAAAAAPABMAAQAAAAAAAAAPABQAAQAAAAAAAAAPABUAAQAAAAAAAAAPABYAAQAAAAAAAAAPABcAAQAAAAAAAAAPABgAAQAAAAAAAAAOABkAAQAAAAAAAAAPABkAAQAAAAAAAAAQABkAAQAAAAAAAAARABkAAQAAAAAAAAANABkAAQAAAAAAAAANABoAAQAAAAAAAAAOABoAAQAAAAAAAAAPABoAAQAAAAAAAAAQABoAAQAAAAAAAAAQABsAAQAAAAAAAAARABsAAQAAAAAAAAARABoAAQAAAAAAAAARABwAAQAAAAAAAAAQABwAAQAAAAAAAAAPABwAAQAAAAAAAAAOABwAAQAAAAAAAAANABwAAQAAAAAAAAANABsAAQAAAAAAAAAOABsAAQAAAAAAAAAPABsAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_51px8")
 
+[node name="sabotage_nodes" type="Node2D" parent="." unique_id=1922080475]
+
+[node name="move_target_server" type="Node2D" parent="sabotage_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite", "sabotage_sprite", "sabotage_timer")]
+position = Vector2(614, 1328)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../../movement_nodes/move_target27")]
+sprite = NodePath("Sprite2D")
+sabotage_sprite = NodePath("Sprite2D2")
+sabotage_timer = NodePath("Timer")
+
+[node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_server" unique_id=1278940910]
+position = Vector2(25, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sabotage_nodes/move_target_server/Area2D" unique_id=593276290]
+position = Vector2(-93.5, 28.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_jky6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_server" unique_id=350546319]
+position = Vector2(-70, 4)
+texture = ExtResource("13_jk4ss")
+offset = Vector2(0.5, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="sabotage_nodes/move_target_server" unique_id=1606267603]
+position = Vector2(-71, 5)
+texture = ExtResource("6_4sf5t")
+
+[node name="Timer" type="Timer" parent="sabotage_nodes/move_target_server" unique_id=2142900518]
+wait_time = 0.25
+one_shot = true
+
+[node name="move_target_rec_center" type="Node2D" parent="sabotage_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite", "sabotage_sprite", "sabotage_timer")]
+position = Vector2(1317, 492)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../../movement_nodes/move_target10"), NodePath("../../movement_nodes/move_target14")]
+sprite = NodePath("Sprite2D")
+sabotage_sprite = NodePath("Sprite2D2")
+sabotage_timer = NodePath("Timer")
+
+[node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_rec_center" unique_id=788833924]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sabotage_nodes/move_target_rec_center/Area2D" unique_id=1407337766]
+position = Vector2(-0.638916, -13.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_4sf5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_rec_center" unique_id=1659507984]
+position = Vector2(-3, -44)
+texture = ExtResource("10_r5om4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="sabotage_nodes/move_target_rec_center" unique_id=902618034]
+position = Vector2(-3, -44)
+texture = ExtResource("8_3mr0t")
+
+[node name="Timer" type="Timer" parent="sabotage_nodes/move_target_rec_center" unique_id=1339702919]
+wait_time = 0.25
+one_shot = true
+
+[node name="move_target_cafeteria" type="Node2D" parent="sabotage_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite", "sabotage_sprite", "sabotage_timer")]
+position = Vector2(208, 525)
+script = ExtResource("5_ooc2g")
+connections = [NodePath("../../movement_nodes/move_target3"), NodePath("../../movement_nodes/move_target11"), NodePath("../../movement_nodes/move_target15")]
+sprite = NodePath("Sprite2D")
+sabotage_sprite = NodePath("Sprite2D2")
+sabotage_timer = NodePath("Timer")
+
+[node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=1618140488]
+position = Vector2(7.5, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sabotage_nodes/move_target_cafeteria/Area2D" unique_id=998252003]
+position = Vector2(-18.5, 50.5)
+scale = Vector2(1, 0.9999995)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_r5om4")
+
+[node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=1239433274]
+position = Vector2(-9, 15)
+texture = ExtResource("7_bssq0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=199689427]
+position = Vector2(-9, 15)
+texture = ExtResource("10_6sq2s")
+
+[node name="Timer" type="Timer" parent="sabotage_nodes/move_target_cafeteria" unique_id=1654021670]
+wait_time = 0.25
+one_shot = true
+
 [node name="movement_nodes" type="Node2D" parent="." unique_id=73612697]
 position = Vector2(291, 157)
 
@@ -381,25 +457,6 @@ position = Vector2(259, 25)
 scale = Vector2(3.9247289, 4.783215)
 skew = 0.20943952
 connections = [NodePath("../move_target4")]
-
-[node name="move_target_cafeteria" type="Node2D" parent="movement_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite")]
-position = Vector2(-83, 368)
-script = ExtResource("5_ooc2g")
-connections = [NodePath("../move_target3"), NodePath("../move_target11"), NodePath("../move_target15")]
-sprite = NodePath("Sprite2D")
-
-[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_cafeteria" unique_id=1618140488]
-position = Vector2(7.5, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_cafeteria/Area2D" unique_id=998252003]
-position = Vector2(-18.5, 50.5)
-scale = Vector2(1, 0.9999995)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_r5om4")
-
-[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_cafeteria" unique_id=1239433274]
-position = Vector2(-9, 15)
-texture = ExtResource("7_bssq0")
 
 [node name="move_target_station1" type="Node2D" parent="movement_nodes" unique_id=1630151975 node_paths=PackedStringArray("connections", "sprite")]
 position = Vector2(-136, 789)
@@ -458,24 +515,6 @@ shape = SubResource("RectangleShape2D_a6rn7")
 [node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_station3" unique_id=1549763613]
 texture = ExtResource("6_2wwcf")
 
-[node name="move_target_rec_center" type="Node2D" parent="movement_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite")]
-position = Vector2(1026, 335)
-script = ExtResource("5_ooc2g")
-connections = [NodePath("../move_target10"), NodePath("../move_target14")]
-sprite = NodePath("Sprite2D")
-
-[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_rec_center" unique_id=788833924]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_rec_center/Area2D" unique_id=1407337766]
-position = Vector2(-0.638916, -13.5)
-scale = Vector2(1, 0.9999995)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_4sf5t")
-
-[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_rec_center" unique_id=1659507984]
-position = Vector2(-3, -44)
-texture = ExtResource("10_r5om4")
-
 [node name="move_target_office" parent="movement_nodes" unique_id=1238274734 node_paths=PackedStringArray("connections") instance=ExtResource("5_0t07s")]
 position = Vector2(-188, 1187)
 connections = [NodePath("../move_target24"), NodePath("../move_target21")]
@@ -518,26 +557,6 @@ position = Vector2(28, -6)
 texture = ExtResource("9_wbpbn")
 offset = Vector2(0.5, 0.5)
 
-[node name="move_target_server" type="Node2D" parent="movement_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite")]
-position = Vector2(323, 1171)
-script = ExtResource("5_ooc2g")
-connections = [NodePath("../move_target27")]
-sprite = NodePath("Sprite2D")
-
-[node name="Area2D" type="Area2D" parent="movement_nodes/move_target_server" unique_id=1278940910]
-position = Vector2(25, -4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement_nodes/move_target_server/Area2D" unique_id=593276290]
-position = Vector2(-93.5, 28.5)
-scale = Vector2(1, 0.9999995)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_jky6x")
-
-[node name="Sprite2D" type="Sprite2D" parent="movement_nodes/move_target_server" unique_id=350546319]
-position = Vector2(-70, 4)
-texture = ExtResource("13_jk4ss")
-offset = Vector2(0.5, 0)
-
 [node name="move_target" parent="movement_nodes" unique_id=1499236260 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-37, 668)
 scale = Vector2(1, 0.99999976)
@@ -552,7 +571,7 @@ connections = [NodePath("../move_target_cell1"), NodePath("../move_target3")]
 [node name="move_target3" parent="movement_nodes" unique_id=179874527 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-7, 223)
 skew = 0.23561946
-connections = [NodePath("../move_target2"), NodePath("../move_target4"), NodePath("../move_target_cell2"), NodePath("../move_target_cafeteria")]
+connections = [NodePath("../move_target2"), NodePath("../move_target4"), NodePath("../move_target_cell2"), NodePath("../../sabotage_nodes/move_target_cafeteria")]
 
 [node name="move_target4" parent="movement_nodes" unique_id=1376889007 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(209, 223)
@@ -588,12 +607,12 @@ connections = [NodePath("../move_target20"), NodePath("../move_target10"), NodeP
 [node name="move_target10" parent="movement_nodes" unique_id=504399860 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(823, 222)
 skew = 0.20071286
-connections = [NodePath("../move_target9"), NodePath("../move_target_rec_center")]
+connections = [NodePath("../move_target9"), NodePath("../../sabotage_nodes/move_target_rec_center")]
 
 [node name="move_target11" parent="movement_nodes" unique_id=1829122239 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(199, 413)
 skew = 0.23561943
-connections = [NodePath("../move_target_cafeteria"), NodePath("../move_target12")]
+connections = [NodePath("../../sabotage_nodes/move_target_cafeteria"), NodePath("../move_target12")]
 
 [node name="move_target12" parent="movement_nodes" unique_id=1631996284 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(350, 413)
@@ -610,13 +629,13 @@ connections = [NodePath("../move_target12"), NodePath("../move_target14")]
 position = Vector2(671, 414)
 scale = Vector2(1, 0.99999994)
 skew = 0.23561943
-connections = [NodePath("../move_target9"), NodePath("../move_target13"), NodePath("../move_target19"), NodePath("../move_target_rec_center")]
+connections = [NodePath("../move_target9"), NodePath("../move_target13"), NodePath("../move_target19"), NodePath("../../sabotage_nodes/move_target_rec_center")]
 
 [node name="move_target15" parent="movement_nodes" unique_id=2021716493 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(-207, 668)
 scale = Vector2(1, 0.9999998)
 skew = 0.23561943
-connections = [NodePath("../move_target_cafeteria"), NodePath("../move_target"), NodePath("../move_target_station1")]
+connections = [NodePath("../../sabotage_nodes/move_target_cafeteria"), NodePath("../move_target"), NodePath("../move_target_station1")]
 
 [node name="move_target16" parent="movement_nodes" unique_id=1841609091 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(288, 669)
@@ -687,7 +706,7 @@ connections = [NodePath("../move_target23"), NodePath("../move_target27")]
 position = Vector2(373, 896)
 scale = Vector2(1, 0.9999995)
 skew = 0.23561943
-connections = [NodePath("../move_target28"), NodePath("../move_target26"), NodePath("../move_target_server")]
+connections = [NodePath("../move_target28"), NodePath("../move_target26"), NodePath("../../sabotage_nodes/move_target_server")]
 
 [node name="move_target28" parent="movement_nodes" unique_id=1897795530 node_paths=PackedStringArray("connections") instance=ExtResource("3_e0an3")]
 position = Vector2(400, 787)
@@ -736,84 +755,77 @@ scale = Vector2(1, 0.9999995)
 skew = 0.23561943
 connections = [NodePath("../move_target_station1"), NodePath("../move_target21")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1000948966]
-position = Vector2(695, 495)
-zoom = Vector2(0.645, 0.645)
-
-[node name="GuardCounter" parent="Camera2D" unique_id=97217760 instance=ExtResource("15_jky6x")]
-offset_left = -866.0
-offset_top = 376.0
-offset_right = -866.0
-offset_bottom = 376.0
-number_of_guards = 50
-
-[node name="ReadyButton" parent="Camera2D" unique_id=1576267881 instance=ExtResource("6_iw27f")]
-offset_left = 606.0
-offset_top = 329.0
-offset_right = 767.824
-offset_bottom = 405.0
-scale = Vector2(1.5954459, 1.5999947)
-
-[node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("7_71pa8")]
-visible = false
-offset_left = -869.0
-offset_top = -469.0
-offset_right = -695.37646
-offset_bottom = -372.2433
-script = ExtResource("8_oysan")
-border_width = 4
-
-[node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=16713579 node_paths=PackedStringArray("timer")]
-texture_filter = 1
-layout_mode = 0
-offset_left = 17.0
-offset_top = 14.0
-offset_right = 157.0
-offset_bottom = 84.0
-text = "00:00"
-label_settings = SubResource("LabelSettings_0iomv")
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("10_sb2pt")
-timer = NodePath("../Timer")
-
-[node name="Timer" type="Timer" parent="Camera2D/NightTimerWindow" unique_id=1042690902]
-wait_time = 300.0
-
-[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(1313.0001, 513.00006)
+[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
+position = Vector2(548, 186)
 collision_mask = 1
-current_node = NodePath("../movement_nodes/move_target12")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+current_node = NodePath("../movement_nodes/move_target_cell3")
 
-[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(131, 116)
 collision_mask = 1
-current_node = NodePath("../movement_nodes/move_target")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+current_node = NodePath("../movement_nodes/move_target_cell1")
 
 [node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 visible = false
 position = Vector2(500, 385)
 current_node = NodePath("../movement_nodes/move_target4")
 
-[node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
-position = Vector2(1313.0001, 513.00006)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1928117086]
+position = Vector2(380, 380)
+script = ExtResource("6_71pa8")
+
+[node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("7_71pa8")]
+visible = false
+offset_left = 134.0
+offset_top = 249.0
+offset_right = 307.62357
+offset_bottom = 345.7567
+scale = Vector2(1.2529145, 1.2404265)
+mouse_filter = 2
+script = ExtResource("8_oysan")
+
+[node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=1722304987 node_paths=PackedStringArray("timer")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.505457
+offset_top = 13.406049
+offset_right = 152.50546
+offset_bottom = 78.40605
+text = "00:00"
+label_settings = SubResource("LabelSettings_a6rn7")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("10_sb2pt")
+timer = NodePath("../Timer")
+
+[node name="Timer" type="Timer" parent="Camera2D/NightTimerWindow" unique_id=1704421551]
+wait_time = 300.0
+
+[node name="ReadyButton" parent="Camera2D" unique_id=1576267881 instance=ExtResource("12_ooc2g")]
+offset_left = 111.0
+offset_top = 247.0
+offset_right = 272.82397
+offset_bottom = 323.0
+scale = Vector2(1.5954459, 1.5999947)
+
+[node name="GuardCounter" parent="Camera2D" unique_id=97217760 instance=ExtResource("15_jky6x")]
+offset_left = -466.0
+offset_top = 364.0
+offset_right = -466.0
+offset_bottom = 364.0
+number_of_guards = 50
+
+[node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
+position = Vector2(335, 184)
 collision_mask = 1
 movement_speed = 30.0
-current_node = NodePath("../movement_nodes/move_target_rec_center")
-escapeNodes = [null]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+current_node = NodePath("../movement_nodes/move_target_cell2")
 
-[node name="inmate5" parent="." unique_id=425030430 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate5" parent="." unique_id=425030430 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(122, 168)
 collision_mask = 1
 movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target_cell1")
-escapeNodes = [null]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
 [node name="inmate6" parent="." unique_id=642555186 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(503, 374)
@@ -914,14 +926,18 @@ vertical_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station3" unique_id=273197751]
 texture = ExtResource("6_2wwcf")
 
-[connection signal="input_event" from="movement_nodes/move_target_cafeteria/Area2D" to="movement_nodes/move_target_cafeteria" method="_on_area_2d_input_event"]
+[node name="Timer" type="Timer" parent="." unique_id=902719183]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="input_event" from="sabotage_nodes/move_target_server/Area2D" to="sabotage_nodes/move_target_server" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="sabotage_nodes/move_target_rec_center/Area2D" to="sabotage_nodes/move_target_rec_center" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="sabotage_nodes/move_target_cafeteria/Area2D" to="sabotage_nodes/move_target_cafeteria" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station1/Area2D" to="movement_nodes/move_target_station1" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station2/Area2D" to="movement_nodes/move_target_station2" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station3/Area2D" to="movement_nodes/move_target_station3" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="movement_nodes/move_target_rec_center/Area2D" to="movement_nodes/move_target_rec_center" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_basketball/Area2D" to="movement_nodes/move_target_basketball" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_bleachers/Area2D" to="movement_nodes/move_target_bleachers" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="movement_nodes/move_target_server/Area2D" to="movement_nodes/move_target_server" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="GuardPlacer_station1/Area2D" to="GuardPlacer_station1" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="GuardPlacer_station2/Area2D" to="GuardPlacer_station2" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="GuardPlacer_station3/Area2D" to="GuardPlacer_station3" method="_on_area_2d_input_event"]

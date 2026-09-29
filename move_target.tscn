@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://krut1eodpew1"]
 
 [ext_resource type="Script" uid="uid://c3hueo1sjq2ab" path="res://move_target.gd" id="1_and86"]
-[ext_resource type="Texture2D" uid="uid://dmxfaoc2pj0do" path="res://textures/select_node_basic.png" id="2_inva3"]
+[ext_resource type="Texture2D" uid="uid://cxwvojp136rlr" path="res://sprites/select_node_basic.png" id="2_inva3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0an3"]
-size = Vector2(32, 32)
+size = Vector2(28, 28)
 
 [node name="move_target" type="Node2D" unique_id=1799719153 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_and86")
@@ -13,13 +13,10 @@ sprite = NodePath("Sprite2D")
 [node name="Area2D" type="Area2D" parent="." unique_id=649144022]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1910419176]
-position = Vector2(2.9802322e-07, -1.3113022e-06)
-scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_e0an3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=725191128]
-position = Vector2(-4.172325e-07, -1.5497208e-06)
-scale = Vector2(0.765, 0.765)
+position = Vector2(9.536743e-07, 9.536743e-07)
 texture = ExtResource("2_inva3")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

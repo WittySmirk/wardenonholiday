@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csr3p2w7svijg"
-path="res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"
+uid="uid://c8l70ps3je75s"
+path="res://.godot/imported/arrow_alert.png-f48ee40339cadd8b180c711a6c4dcccb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/map.png"
-dest_files=["res://.godot/imported/map.png-ff68979d6ed0ef9c028c97cbe0769d2a.ctex"]
+source_file="res://sprites/buttons/arrow_alert.png"
+dest_files=["res://.godot/imported/arrow_alert.png-f48ee40339cadd8b180c711a6c4dcccb.ctex"]
 
 [params]
 

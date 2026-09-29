@@ -1,5 +1,4 @@
 extends Node
-
 var selected_guard: Guard = null
 const GUARD_SCENE = preload("res://guard.tscn")
 
@@ -8,6 +7,11 @@ signal state_changed(new_state)
 
 var guard_kill_count = 0
 var inmate_kill_count = 0
+var objectives_sabotaged = 0
+
+var current_sabotage: Array[StringName] = []
+
+var sabotage_nodes: Array[MoveTarget] = []
 
 # Game States
 enum States { START, DAY, NIGHT, LOSE }
@@ -15,7 +19,7 @@ var current_state = States.DAY:
 	set(value):
 		current_state = value
 		state_changed.emit(current_state)
-	
+
 func set_selected_target(target: MoveTarget, doSplit: bool):
 	if selected_guard != null:
 		if selected_guard.current_node.connections.find(target) != -1:
@@ -29,7 +33,8 @@ func set_selected_target(target: MoveTarget, doSplit: bool):
 					return
 				
 				selected_guard.splitting = true
-				selected_guard.cooldown_timer.start(5.0)
+				selected_guard.cooldown_timer.start(selected_guard.base_cooldown + (selected_guard.variable_cooldown_per * selected_guard.quantity))
+				
 				var split_quantity = floor(selected_guard.quantity / 2)
 				if split_quantity <= 0:
 					return
@@ -62,6 +67,20 @@ func set_selected_target(target: MoveTarget, doSplit: bool):
 		else:
 			print("cannot set this target")
 
+
+
+func add_sabotage(t: MoveTarget) -> void:
+	current_sabotage.append(t.name)
+
+func remove_sabotage(t: MoveTarget) -> void:
+	current_sabotage.erase(t.name)
+
+func is_getting_sabotaged(t: MoveTarget) -> bool:
+	if not is_instance_valid(t):
+		return false
+
+	return t.name in current_sabotage
+
 func in_selected_range(t: MoveTarget):
 	if selected_guard and selected_guard.current_node:
 		if selected_guard.current_node.connections.find(t) != -1 and t != selected_guard.current_node:
@@ -82,6 +101,12 @@ func _ready() -> void:
 	# Tell all nodes starting state
 	state_changed.emit(current_state)
 
+func initialize_sabotage_nodes(nodes):
+	sabotage_nodes.clear()
+
+	for node in nodes:
+		if node is MoveTarget:
+			sabotage_nodes.append(node)
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
