@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckel35dgtfwd7" path="res://sprites/buttons/arrow_normal.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://otp8opg5hyub" path="res://sprites/buttons/alert_arrow_0002.png" id="3_1bvp3"]
 [ext_resource type="Shader" uid="uid://d1ifxgvpbjdbu" path="res://crt.gdshader" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="4_lquwl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hrpl4"]
 shader = ExtResource("4_1bvp3")
@@ -147,6 +148,13 @@ rotation = 1.5707964
 disabled = true
 texture_normal = ExtResource("2_h2yge")
 texture_hover = ExtResource("3_1bvp3")
+
+[node name="GuardCounter" parent="Camera2D" unique_id=97217760 instance=ExtResource("4_lquwl")]
+offset_left = -424.0
+offset_top = 332.0
+offset_right = -424.0
+offset_bottom = 332.0
+number_of_guards = 50
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=1236399080]
 material = SubResource("ShaderMaterial_hrpl4")

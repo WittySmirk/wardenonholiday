@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var guard_counter: GuardCounter		# Custom counter node
 @export var area2D: Area2D		# Defines clickable area
 @export var guard_scene: PackedScene	# Guard to spawn in
 @export var static_guard_scene: PackedScene # Static guard for UI effect
@@ -28,7 +27,7 @@ func _ready() -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			var result = guard_counter.decrement_counter(1)
+			var result = GameState.decrement_guard_counter(1)
 			
 			# If false, no more guards are left to allocated
 			if (result == false):
