@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 InteractionHandler="*uid://d1agj03vsxnhj"
 GameState="*uid://ss6emu440ght"
+AudioPlayer="*uid://d2wsgeg3e3rlc"
 
 [display]
 

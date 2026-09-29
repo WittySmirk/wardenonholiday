@@ -202,8 +202,6 @@ func split():
 	new_inmate.nav_agent.set_target_position(target_node.global_position)
 	new_inmate.target = target_node
 
-
-
 func _physics_process(delta):
 	if GameState.current_state == GameState.States.NIGHT:
 		# Do not query when the map has never synchronized and is empty.
@@ -227,6 +225,7 @@ func _physics_process(delta):
 			if current_node in GameState.sabotage_nodes:
 				print("Starting sabotage")
 				sabotaging = true
+				AudioPlayer.play_alert_sound()
 				GameState.add_sabotage(current_node)
 				cooldown_timer.start(sabotage_cooldown - (variable_cooldown_per * quantity))
 				return
