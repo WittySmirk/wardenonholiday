@@ -201,8 +201,7 @@ avoidance_priority = 0.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1653947167]
 modulate = Color(1, 0.7529412, 0, 1)
 sprite_frames = SubResource("SpriteFrames_ke0wg")
-animation = &"moving_large"
-frame_progress = 0.24588041
+animation = &"moving_small"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1943161577]
 position = Vector2(0, 2.5)

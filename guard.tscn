@@ -198,6 +198,8 @@ animations = [{
 
 [node name="guard" type="CharacterBody2D" unique_id=1635901800]
 script = ExtResource("1_dk1vv")
+movement_speed = null
+quantity = null
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=585143583]
 radius = 3.0

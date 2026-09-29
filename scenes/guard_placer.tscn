@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dmia5u78lhx27"]
+
+[ext_resource type="Script" uid="uid://4xwb5i5f3v8i" path="res://scenes/guard_placer.gd" id="1_yuw5m"]
+
+[node name="GuardPlacer" type="Node2D" unique_id=1979696931]
+script = ExtResource("1_yuw5m")
