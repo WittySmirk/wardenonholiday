@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_state_change(state: GameState.States):
-	if state == GameState.States.START:
+	if state == GameState.States.START || state == GameState.States.LOSE || state == GameState.States.WIN:
 		self.visible = false
 	else:
 		self.visible = true

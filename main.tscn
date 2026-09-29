@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dufr6aey54yba" path="res://scenes/ClickToContinue.tscn" id="3_dg77c"]
 [ext_resource type="Shader" uid="uid://d1ifxgvpbjdbu" path="res://crt.gdshader" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bt4us81c36a01" path="res://WinScreen.tscn" id="4_vivmo"]
+[ext_resource type="PackedScene" uid="uid://cnuccholiwv7g" path="res://LoseScreen.tscn" id="5_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://clb0s56e5kiu2" path="res://UI/window.tscn" id="5_4c57u"]
 [ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dve020okw2dmd" path="res://UI/TimerWindow.gd" id="6_efxa6"]
@@ -92,6 +94,22 @@ offset_top = -119.0
 offset_right = -75.0
 offset_bottom = -119.0
 scale = Vector2(3.6399975, 3.6399975)
+
+[node name="WinScreen" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=269819634 instance=ExtResource("4_vivmo")]
+visible = false
+offset_left = -44.0
+offset_top = -48.0
+offset_right = 200.0
+offset_bottom = 196.0
+scale = Vector2(3.6399999, 3.6399999)
+
+[node name="LoseScreen" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=1994496048 instance=ExtResource("5_2cqfq")]
+visible = false
+offset_left = -46.0
+offset_top = -36.0
+offset_right = 198.0
+offset_bottom = 208.0
+scale = Vector2(3.5600038, 3.5600038)
 
 [node name="q1_right" type="TextureButton" parent="Camera2D" unique_id=199929991]
 visible = false

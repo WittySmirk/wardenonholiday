@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		# Change state when timer runs out
 		if minutes_left == 0 && seconds_left == 0:
 			timer.stop()
-			GameState.change_game_state(GameState.States.DAY)
+			GameState.change_game_state(GameState.States.WIN)
 
 # State change callback
 # If state is NIGHT, make timer appear and start timer

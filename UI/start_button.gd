@@ -21,7 +21,7 @@ func _pressed():
 	
 	# Change scene
 	get_parent().visible = false
-	
+		
 # Called when button is pressed
 func _on_button_up():
 	self.position += press_offset

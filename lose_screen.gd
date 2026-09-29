@@ -1,15 +1,16 @@
-extends Button
+extends ColorRect
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioPlayer.play_crt_start_up()
-
+	GameState.state_changed.connect(_on_state_change)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func _pressed():
-	# Change scene
-	get_parent().visible = false
+
+func _on_state_change(state: GameState.States):
+	if (state == GameState.States.LOSE):
+		self.visible = true
+	else:
+		self.visible = false
