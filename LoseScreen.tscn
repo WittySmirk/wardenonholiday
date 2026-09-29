@@ -318,6 +318,7 @@ position = Vector2(-13, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1742367663]
 position = Vector2(96.5, 220.125)
 shape = SubResource("RectangleShape2D_0iomv")
+disabled = true
 debug_color = Color(0.8804752, 0, 0.35795933, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="Node2D/StaticBody2D" unique_id=858119737]
@@ -330,10 +331,12 @@ color = Color(0.40784314, 0.6901961, 0.41568628, 1)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D" unique_id=181902083]
 position = Vector2(290, 198)
 shape = SubResource("RectangleShape2D_dj5al")
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=70060685]
 position = Vector2(-125, 194)
 shape = SubResource("RectangleShape2D_dj5al")
+disabled = true
 
 [node name="EmailWindow" type="Node2D" parent="." unique_id=1144836155]
 

@@ -37,4 +37,16 @@ func _handle_game_state_change(state: GameState.States):
 		self.visible = true
 	else:
 		self.visible = false
+		disable_all_collisions(get_parent())
+
+func disable_all_collisions(parent_node: Node = self) -> void:
+	for child in parent_node.get_children():
+		# Check if the child is a 2D collision shape or polygon
+		if child is CollisionShape2D or child is CollisionPolygon2D:
+			# Use set_deferred to safely change physics properties during frame processing
+			child.set_deferred("disabled", true)
+		
+		# Recursively check deeper child nodes (e.g., if collision shapes are inside sub-nodes)
+		if child.get_child_count() > 0:
+			disable_all_collisions(child)
 		

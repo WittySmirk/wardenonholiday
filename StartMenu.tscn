@@ -334,10 +334,12 @@ color = Color(0.40784314, 0.6901961, 0.41568628, 1)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D" unique_id=181902083]
 position = Vector2(290, 198)
 shape = SubResource("RectangleShape2D_dj5al")
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=70060685]
 position = Vector2(-125, 194)
 shape = SubResource("RectangleShape2D_dj5al")
+disabled = true
 
 [node name="EmailWindow" type="Node2D" parent="." unique_id=1144836155]
 
