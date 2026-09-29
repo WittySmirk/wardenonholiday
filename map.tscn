@@ -8,15 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://b5nswe1xuxkof" path="res://scenes/move_targets/move_target_office.tscn" id="5_0t07s"]
 [ext_resource type="Script" uid="uid://c3hueo1sjq2ab" path="res://move_target.gd" id="5_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://b0bl8a42cynxr" path="res://textures/station_3_outline.png" id="6_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://3sswttgygege" path="res://textures/server_outline_orange.png" id="6_4sf5t"]
 [ext_resource type="Script" uid="uid://bc6x4r87saesy" path="res://camera_movement.gd" id="6_71pa8"]
 [ext_resource type="Texture2D" uid="uid://bhxcdef7rgx0s" path="res://textures/station_1_outline.png" id="6_a6rn7"]
 [ext_resource type="Texture2D" uid="uid://foedxy8gmo0m" path="res://textures/station_2_outline.png" id="7_4on3e"]
 [ext_resource type="PackedScene" uid="uid://clb0s56e5kiu2" path="res://UI/window.tscn" id="7_71pa8"]
 [ext_resource type="Texture2D" uid="uid://dl2n3emnwkg3w" path="res://textures/cafeteria_select.png" id="7_bssq0"]
 [ext_resource type="Texture2D" uid="uid://b2e13h41qh05y" path="res://textures/basketball_outline.png" id="8_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://clc75me6qjs6q" path="res://textures/rec_center_outline_orange.png" id="8_3mr0t"]
 [ext_resource type="Script" uid="uid://dve020okw2dmd" path="res://UI/TimerWindow.gd" id="8_oysan"]
 [ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="9_oysan"]
 [ext_resource type="Texture2D" uid="uid://bgj5w7eo271bi" path="res://textures/bleacher_outline.png" id="9_wbpbn"]
+[ext_resource type="Texture2D" uid="uid://brawu7fswmhhi" path="res://textures/cafeteria_outline_orange.png" id="10_6sq2s"]
 [ext_resource type="Texture2D" uid="uid://ctf5sb4q08asi" path="res://textures/rec_center_outline_green.png" id="10_r5om4"]
 [ext_resource type="Script" uid="uid://bgd5xeaj0510w" path="res://night_timer.gd" id="10_sb2pt"]
 [ext_resource type="Texture2D" uid="uid://csr3p2w7svijg" path="res://textures/map.png" id="11_sb2pt"]
@@ -331,11 +334,13 @@ tile_set = SubResource("TileSet_51px8")
 
 [node name="sabotage_nodes" type="Node2D" parent="." unique_id=1922080475]
 
-[node name="move_target_server" type="Node2D" parent="sabotage_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite")]
+[node name="move_target_server" type="Node2D" parent="sabotage_nodes" unique_id=1388759132 node_paths=PackedStringArray("connections", "sprite", "sabotage_sprite", "sabotage_timer")]
 position = Vector2(614, 1328)
 script = ExtResource("5_ooc2g")
 connections = [NodePath("../../movement_nodes/move_target27")]
 sprite = NodePath("Sprite2D")
+sabotage_sprite = NodePath("Sprite2D2")
+sabotage_timer = NodePath("Timer")
 
 [node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_server" unique_id=1278940910]
 position = Vector2(25, -4)
@@ -351,11 +356,21 @@ position = Vector2(-70, 4)
 texture = ExtResource("13_jk4ss")
 offset = Vector2(0.5, 0)
 
-[node name="move_target_rec_center" type="Node2D" parent="sabotage_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite")]
+[node name="Sprite2D2" type="Sprite2D" parent="sabotage_nodes/move_target_server" unique_id=1606267603]
+position = Vector2(-71, 5)
+texture = ExtResource("6_4sf5t")
+
+[node name="Timer" type="Timer" parent="sabotage_nodes/move_target_server" unique_id=2142900518]
+wait_time = 0.25
+one_shot = true
+
+[node name="move_target_rec_center" type="Node2D" parent="sabotage_nodes" unique_id=1226105580 node_paths=PackedStringArray("connections", "sprite", "sabotage_sprite", "sabotage_timer")]
 position = Vector2(1317, 492)
 script = ExtResource("5_ooc2g")
 connections = [NodePath("../../movement_nodes/move_target10"), NodePath("../../movement_nodes/move_target14")]
 sprite = NodePath("Sprite2D")
+sabotage_sprite = NodePath("Sprite2D2")
+sabotage_timer = NodePath("Timer")
 
 [node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_rec_center" unique_id=788833924]
 
@@ -369,11 +384,21 @@ shape = SubResource("RectangleShape2D_4sf5t")
 position = Vector2(-3, -44)
 texture = ExtResource("10_r5om4")
 
-[node name="move_target_cafeteria" type="Node2D" parent="sabotage_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite")]
+[node name="Sprite2D2" type="Sprite2D" parent="sabotage_nodes/move_target_rec_center" unique_id=902618034]
+position = Vector2(-3, -44)
+texture = ExtResource("8_3mr0t")
+
+[node name="Timer" type="Timer" parent="sabotage_nodes/move_target_rec_center" unique_id=1339702919]
+wait_time = 0.25
+one_shot = true
+
+[node name="move_target_cafeteria" type="Node2D" parent="sabotage_nodes" unique_id=495452848 node_paths=PackedStringArray("connections", "sprite", "sabotage_sprite", "sabotage_timer")]
 position = Vector2(208, 525)
 script = ExtResource("5_ooc2g")
 connections = [NodePath("../../movement_nodes/move_target3"), NodePath("../../movement_nodes/move_target11"), NodePath("../../movement_nodes/move_target15")]
 sprite = NodePath("Sprite2D")
+sabotage_sprite = NodePath("Sprite2D2")
+sabotage_timer = NodePath("Timer")
 
 [node name="Area2D" type="Area2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=1618140488]
 position = Vector2(7.5, -16)
@@ -387,6 +412,14 @@ shape = SubResource("RectangleShape2D_r5om4")
 [node name="Sprite2D" type="Sprite2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=1239433274]
 position = Vector2(-9, 15)
 texture = ExtResource("7_bssq0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="sabotage_nodes/move_target_cafeteria" unique_id=199689427]
+position = Vector2(-9, 15)
+texture = ExtResource("10_6sq2s")
+
+[node name="Timer" type="Timer" parent="sabotage_nodes/move_target_cafeteria" unique_id=1654021670]
+wait_time = 0.25
+one_shot = true
 
 [node name="movement_nodes" type="Node2D" parent="." unique_id=73612697]
 position = Vector2(291, 157)
@@ -706,26 +739,20 @@ scale = Vector2(1, 0.9999995)
 skew = 0.23561943
 connections = [NodePath("../move_target_station1"), NodePath("../move_target21")]
 
-[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate" parent="." unique_id=348266310 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(548, 186)
 collision_mask = 1
 current_node = NodePath("../movement_nodes/move_target_cell3")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
-[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate2" parent="." unique_id=726671681 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(131, 116)
 collision_mask = 1
-current_node = NodePath("../movement_nodes/move_target")
-escapeNodes = [NodePath("../movement_nodes/move_target8")]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
+current_node = NodePath("../movement_nodes/move_target_cell1")
 
 [node name="guard" parent="." unique_id=1635901800 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1019, 114.00003)
-movement_speed = null
 current_node = NodePath("../movement_nodes/move_target_station3")
 quantity = 5
-groupType = null
 
 [node name="inmate3" parent="." unique_id=1407711138 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 visible = false
@@ -769,21 +796,17 @@ offset_right = 272.82397
 offset_bottom = 323.0
 scale = Vector2(1.5954459, 1.5999947)
 
-[node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(335, 184)
 collision_mask = 1
 movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target_cell2")
-escapeNodes = [null]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
-[node name="inmate5" parent="." unique_id=425030430 node_paths=PackedStringArray("current_node", "escapeNodes", "sabotageNodes") instance=ExtResource("4_p5pve")]
+[node name="inmate5" parent="." unique_id=425030430 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(122, 168)
 collision_mask = 1
 movement_speed = 30.0
 current_node = NodePath("../movement_nodes/move_target_cell1")
-escapeNodes = [null]
-sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../movement_nodes/move_target7")]
 
 [node name="guard2" parent="." unique_id=2134646329 node_paths=PackedStringArray("current_node") instance=ExtResource("4_urblq")]
 position = Vector2(1022, 119)
@@ -793,6 +816,10 @@ current_node = NodePath("../movement_nodes/move_target_station3")
 [node name="inmate6" parent="." unique_id=642555186 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(503, 374)
 current_node = NodePath("../movement_nodes/move_target4")
+
+[node name="Timer" type="Timer" parent="." unique_id=902719183]
+wait_time = 0.25
+one_shot = true
 
 [connection signal="input_event" from="sabotage_nodes/move_target_server/Area2D" to="sabotage_nodes/move_target_server" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="sabotage_nodes/move_target_rec_center/Area2D" to="sabotage_nodes/move_target_rec_center" method="_on_area_2d_input_event"]
