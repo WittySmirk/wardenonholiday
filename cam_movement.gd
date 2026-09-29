@@ -10,14 +10,20 @@ extends Node2D
 @export var q4_left: TextureButton
 @export var q4_up: TextureButton
 
-@onready var blink_timer: Timer = $Timer
+@onready var blink_timer: Timer = $BlinkTimer
+@onready var spawn_timer: Timer = $SpawnTimer
 @onready var server: MoveTarget = $sabotage_nodes/move_target_server
 @onready var caffeteria: MoveTarget = $sabotage_nodes/move_target_cafeteria
 @onready var rec_center: MoveTarget = $sabotage_nodes/move_target_rec_center
+@onready var cell_one: MoveTarget = $movement_nodes/move_target_cell1
+@onready var cell_two: MoveTarget = $movement_nodes/move_target_cell2
+@onready var cell_three: MoveTarget = $movement_nodes/move_target_cell3
+
 
 const alert_arrow = preload("res://sprites/buttons/arrow_alert.png")
 const blink_arrow = preload("res://sprites/buttons/alert_arrow_0002.png")
 const normal_arrow = preload("res://sprites/buttons/arrow_normal.png")
+const inmate = preload("res://inmate.tscn")
 
 var camera_tween: Tween
 var blink: bool = true
@@ -33,7 +39,6 @@ var quadrant: int = 1
 
 func _ready() -> void:
 	GameState.initialize_sabotage_nodes($sabotage_nodes.get_children())
-
 
 func move_camera(q: int):
 	if camera_tween and camera_tween.is_running():
@@ -55,7 +60,27 @@ func set_arrow(arrow: TextureButton, sabotaged: bool) -> void:
 	else:
 		arrow.texture_normal = normal_arrow
 
+
 func _process(delta: float) -> void:
+	if spawn_timer.is_stopped():
+		print("spawning")
+		var amm = randi_range(5, 15)
+		var cell = randi_range(1,3)
+		
+		var i = inmate.instantiate()
+		if cell == 1:
+			i.current_node = cell_one
+			i.global_position = cell_one.global_position
+		elif cell == 2:
+			i.current_node = cell_two
+			i.global_position = cell_two.global_position
+		elif cell == 3:
+			i.current_node = cell_three
+			i.global_position = cell_three.global_position
+		i.quantity = amm
+		spawn_timer.start()
+		add_child(i)
+		
 	# Update blink state
 	if blink_timer.is_stopped():
 		blink = !blink
