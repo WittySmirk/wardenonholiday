@@ -3,6 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://1nhxait0s5b0" path="res://map.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://ckel35dgtfwd7" path="res://sprites/buttons/arrow_normal.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://otp8opg5hyub" path="res://sprites/buttons/alert_arrow_0002.png" id="3_1bvp3"]
+[ext_resource type="Shader" uid="uid://d1ifxgvpbjdbu" path="res://crt.gdshader" id="4_1bvp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrpl4"]
+shader = ExtResource("4_1bvp3")
+shader_parameter/curvature = 0.1
+shader_parameter/corner_radius = 0.06
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/scanlines = 0.35
+shader_parameter/scanline_size = 3.0
+shader_parameter/vignette = 0.35
+shader_parameter/brightness = 1.1
+shader_parameter/rgb_mask = false
+shader_parameter/mask_strength = 0.3
 
 [node name="Main" type="Node2D" unique_id=86052027]
 
@@ -134,6 +147,14 @@ rotation = 1.5707964
 disabled = true
 texture_normal = ExtResource("2_h2yge")
 texture_hover = ExtResource("3_1bvp3")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=1236399080]
+material = SubResource("ShaderMaterial_hrpl4")
+offset_left = -516.0
+offset_top = -473.0
+offset_right = 524.0
+offset_bottom = 527.0
+mouse_filter = 2
 
 [connection signal="pressed" from="Camera2D/q1_right" to="Camera2D/CenterContainer/SubViewportContainer/SubViewport/Node2D" method="_on_q_1_right_pressed"]
 [connection signal="pressed" from="Camera2D/q3_right" to="Camera2D/CenterContainer/SubViewportContainer/SubViewport/Node2D" method="_on_q_3_right_pressed"]
