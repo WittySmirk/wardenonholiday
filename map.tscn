@@ -916,8 +916,12 @@ vertical_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station3" unique_id=273197751]
 texture = ExtResource("6_2wwcf")
 
-[node name="Timer" type="Timer" parent="." unique_id=902719183]
+[node name="BlinkTimer" type="Timer" parent="." unique_id=902719183]
 wait_time = 0.25
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2091544922]
+wait_time = 5.0
 one_shot = true
 
 [connection signal="input_event" from="sabotage_nodes/move_target_server/Area2D" to="sabotage_nodes/move_target_server" method="_on_area_2d_input_event"]
