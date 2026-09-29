@@ -2,6 +2,12 @@ extends Node
 var selected_guard: Guard = null
 const GUARD_SCENE = preload("res://guard.tscn")
 
+var suspicion_meter: Label
+var suspicion_max = 50
+var suspicion_amount = 0
+
+var dayCount = 1
+
 # Signal emitter for other nodes when GameState changes
 signal state_changed(new_state)
 
@@ -72,6 +78,7 @@ func add_sabotage(t: MoveTarget) -> void:
 
 func remove_sabotage(t: MoveTarget) -> void:
 	current_sabotage.erase(t.name)
+	sabotage_nodes.erase(t)
 
 func is_getting_sabotaged(t: MoveTarget) -> bool:
 	if not is_instance_valid(t):
@@ -88,6 +95,26 @@ func in_selected_range(t: MoveTarget):
 ## Switch from Day state to Night state
 func change_game_state(state: States):
 	print("Changing gamestate to: ", get_state_name(state))
+	if state == States.DAY:
+		suspicion_amount += guard_kill_count * 4
+		suspicion_amount += inmate_kill_count * 1
+		suspicion_amount += objectives_sabotaged * 10
+		
+		dayCount+=1
+		if suspicion_amount < 10:
+			suspicion_meter.text == "Suspicion level: very low"
+		elif suspicion_amount < 20:
+			suspicion_meter.text == "Suspicion level: low"
+		elif suspicion_amount < 30:
+			suspicion_meter.text == "Suspicion level: medium"
+		elif suspicion_amount < 40:
+			suspicion_meter.text == "Suspicion level: high"
+		elif suspicion_amount < 50:
+			suspicion_meter.text == "Suspicion level: very high"
+		else:
+			#TODO Switch to lose state
+			current_state = States.LOSE
+	
 	current_state = state
 
 ## Get human readable state enum
@@ -106,6 +133,9 @@ func initialize_sabotage_nodes(nodes):
 	for node in nodes:
 		if node is MoveTarget:
 			sabotage_nodes.append(node)
+			
+func initialize_suspicion_meter(meter: Label):
+	suspicion_meter = meter
 
 
 ## Guard placement state---------------------------------------------------------
