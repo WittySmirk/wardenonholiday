@@ -129,6 +129,7 @@ func get_guard_count() -> int:
 	
 func set_guard_count(amount: int):
 	guard_count = amount
+	guard_count_signal.emit(guard_count)
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.

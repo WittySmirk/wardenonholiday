@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dufr6aey54yba"]
+
+[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="2_7pewg"]
+[ext_resource type="Texture2D" uid="uid://bgur05tbmvvc8" path="res://pixilart-drawing.png" id="3_7pewg"]
+[ext_resource type="Script" uid="uid://bybj1a43yinme" path="res://scenes/button.gd" id="4_ba48s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
+font = ExtResource("2_7pewg")
+font_color = Color(1, 1, 1, 0.72156864)
+
+[node name="Control" type="Control" unique_id=1896274848]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1156771827]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 250.0
+color = Color(0.06666667, 0.101960786, 0.047058824, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=661120344]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 187.0
+offset_right = 208.0
+offset_bottom = 210.0
+text = "> click to continue"
+label_settings = SubResource("LabelSettings_0iomv")
+
+[node name="Button" type="Button" parent="." unique_id=486911468]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(2.32, 2.32)
+icon = ExtResource("3_7pewg")
+script = ExtResource("4_ba48s")

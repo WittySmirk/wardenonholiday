@@ -7,10 +7,6 @@
 [ext_resource type="Script" uid="uid://gwhfibd71eg6" path="res://UI/start_button.gd" id="4_7htnq"]
 [ext_resource type="Script" uid="uid://bdrs0cp03itis" path="res://UI/inmates.gd" id="4_rd8cm"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
-font = ExtResource("1_d3352")
-font_size = 48
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d5ky"]
 size = Vector2(5, 14)
 
@@ -252,13 +248,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0iomv"]
-size = Vector2(657, 2.25)
+size = Vector2(419, 2.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj5al"]
 size = Vector2(3, 35)
 
+[sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
+font = ExtResource("1_d3352")
+font_size = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_lo4tm"]
+font = ExtResource("1_d3352")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rd8cm"]
+font = ExtResource("1_d3352")
+font_size = 7
+
 [node name="StartMenu" type="ColorRect" unique_id=1462901151]
-offset_right = 433.0
+offset_right = 244.0
 offset_bottom = 244.0
 color = Color(0.06666667, 0.101960786, 0.047058824, 1)
 
@@ -266,70 +273,154 @@ color = Color(0.06666667, 0.101960786, 0.047058824, 1)
 position = Vector2(216, 122)
 zoom = Vector2(2.665, 2.665)
 
-[node name="Label" type="Label" parent="." unique_id=1210795762]
-texture_filter = 1
+[node name="StartButton" parent="." unique_id=1576267881 instance=ExtResource("3_0d5ky")]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 21.0
-offset_right = 376.0
-offset_bottom = 80.0
-text = "Warden On Holiday"
-label_settings = SubResource("LabelSettings_0iomv")
+offset_left = 77.0
+offset_top = 132.0
+offset_right = 239.0
+offset_bottom = 208.0
+scale = Vector2(0.5599987, 0.5599987)
+script = ExtResource("4_7htnq")
 
-[node name="Guards" type="CharacterBody2D" parent="." unique_id=932146367]
-position = Vector2(-82, 13)
+[node name="Node2D" type="Node2D" parent="." unique_id=798688539]
+position = Vector2(13, 8)
+
+[node name="Guards" type="CharacterBody2D" parent="Node2D" unique_id=932146367]
+position = Vector2(-30, 15)
 script = ExtResource("2_lo4tm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Guards" unique_id=439327092]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Guards" unique_id=439327092]
 position = Vector2(-0.7499924, 179.25)
 shape = SubResource("RectangleShape2D_0d5ky")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guards" unique_id=1657084264]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Guards" unique_id=1657084264]
 position = Vector2(-1, 176)
 sprite_frames = SubResource("SpriteFrames_rd8cm")
 animation = &"moving_small"
 
-[node name="Inmates" type="CharacterBody2D" parent="." unique_id=978191749]
-position = Vector2(-58, 194)
+[node name="Inmates" type="CharacterBody2D" parent="Node2D" unique_id=978191749]
+position = Vector2(-18, 195)
 script = ExtResource("4_rd8cm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Inmates" unique_id=1890336276]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Inmates" unique_id=1890336276]
 position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_3kvws")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inmates" unique_id=207991906]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Inmates" unique_id=207991906]
 modulate = Color(0.93211424, 0.5971355, 1.92523e-06, 1)
 position = Vector2(3, -4)
 sprite_frames = SubResource("SpriteFrames_wrs3v")
 animation = &"moving_small"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=471111673]
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=471111673]
+position = Vector2(-13, -8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1742367663]
-position = Vector2(215.5, 220.125)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1742367663]
+position = Vector2(96.5, 220.125)
 shape = SubResource("RectangleShape2D_0iomv")
 debug_color = Color(0.8804752, 0, 0.35795933, 0.41960785)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=858119737]
+[node name="ColorRect" type="ColorRect" parent="Node2D/StaticBody2D" unique_id=858119737]
 offset_left = -3.0
 offset_top = 218.75
-offset_right = 433.0
+offset_right = 249.0
 offset_bottom = 221.0
 color = Color(0.40784314, 0.6901961, 0.41568628, 1)
 
-[node name="StartButton" parent="." unique_id=1576267881 instance=ExtResource("3_0d5ky")]
-layout_mode = 0
-offset_left = 166.0
-offset_top = 98.00001
-offset_right = 328.0
-offset_bottom = 174.0
-scale = Vector2(0.6400012, 0.6400012)
-script = ExtResource("4_7htnq")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=181902083]
-position = Vector2(537, 204)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D" unique_id=181902083]
+position = Vector2(290, 198)
 shape = SubResource("RectangleShape2D_dj5al")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70060685]
-position = Vector2(-112, 202)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=70060685]
+position = Vector2(-125, 194)
 shape = SubResource("RectangleShape2D_dj5al")
+
+[node name="EmailWindow" type="Node2D" parent="." unique_id=1144836155]
+
+[node name="Label" type="Label" parent="EmailWindow" unique_id=1022628714]
+modulate = Color(0.30980393, 0.72156864, 0.4627451, 1)
+texture_filter = 1
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 38.0
+offset_bottom = 21.0
+text = "Email"
+label_settings = SubResource("LabelSettings_0iomv")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="EmailWindow" unique_id=1210795762]
+texture_filter = 1
+offset_left = 19.0
+offset_top = 29.0
+offset_right = 264.0
+offset_bottom = 51.0
+text = "Re: Warden On Holiday"
+label_settings = SubResource("LabelSettings_lo4tm")
+
+[node name="Label2" type="Label" parent="EmailWindow" unique_id=262372090]
+texture_filter = 1
+offset_left = 19.0
+offset_top = 51.0
+offset_right = 231.0
+offset_bottom = 73.0
+text = "Ayyyy, Just got married! :)
+Don't get shutdown"
+label_settings = SubResource("LabelSettings_rd8cm")
+
+[node name="ColorRect8" type="ColorRect" parent="EmailWindow" unique_id=1303051727]
+offset_left = 218.33458
+offset_top = 17.665428
+offset_right = 226.46118
+offset_bottom = 18.665428
+rotation = -0.7853982
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="EmailWindow" unique_id=1240610205]
+offset_left = 219.0
+offset_top = 12.000008
+offset_right = 226.59149
+offset_bottom = 13.000008
+rotation = 0.7853982
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="EmailWindow" unique_id=2016893125]
+offset_left = 14.0
+offset_top = 20.0
+offset_right = 229.0
+offset_bottom = 21.0
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="EmailWindow" unique_id=90150410]
+offset_left = 14.0
+offset_top = 46.0
+offset_right = 229.0
+offset_bottom = 47.0
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="EmailWindow" unique_id=108510548]
+offset_left = 14.0
+offset_top = 191.0
+offset_right = 229.0
+offset_bottom = 192.0
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect" type="ColorRect" parent="EmailWindow" unique_id=1026317392]
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 228.0
+offset_bottom = 10.0
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="EmailWindow" unique_id=1994173935]
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 14.0
+offset_bottom = 192.0
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="EmailWindow" unique_id=856136603]
+offset_left = 228.0
+offset_top = 9.0
+offset_right = 229.0
+offset_bottom = 192.0
+color = Color(0.30980393, 0.72156864, 0.4627451, 1)

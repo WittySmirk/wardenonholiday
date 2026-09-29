@@ -12,18 +12,14 @@
 [ext_resource type="Script" uid="uid://bc6x4r87saesy" path="res://camera_movement.gd" id="6_71pa8"]
 [ext_resource type="Texture2D" uid="uid://bhxcdef7rgx0s" path="res://textures/station_1_outline.png" id="6_a6rn7"]
 [ext_resource type="Texture2D" uid="uid://foedxy8gmo0m" path="res://textures/station_2_outline.png" id="7_4on3e"]
-[ext_resource type="PackedScene" uid="uid://clb0s56e5kiu2" path="res://UI/window.tscn" id="7_71pa8"]
 [ext_resource type="Texture2D" uid="uid://dl2n3emnwkg3w" path="res://textures/cafeteria_select.png" id="7_bssq0"]
 [ext_resource type="Texture2D" uid="uid://b2e13h41qh05y" path="res://textures/basketball_outline.png" id="8_2wwcf"]
 [ext_resource type="Texture2D" uid="uid://clc75me6qjs6q" path="res://textures/rec_center_outline_orange.png" id="8_3mr0t"]
-[ext_resource type="Script" uid="uid://dve020okw2dmd" path="res://UI/TimerWindow.gd" id="8_oysan"]
 [ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="9_oysan"]
 [ext_resource type="Texture2D" uid="uid://bgj5w7eo271bi" path="res://textures/bleacher_outline.png" id="9_wbpbn"]
 [ext_resource type="Texture2D" uid="uid://brawu7fswmhhi" path="res://textures/cafeteria_outline_orange.png" id="10_6sq2s"]
 [ext_resource type="Texture2D" uid="uid://ctf5sb4q08asi" path="res://textures/rec_center_outline_green.png" id="10_r5om4"]
-[ext_resource type="Script" uid="uid://bgd5xeaj0510w" path="res://night_timer.gd" id="10_sb2pt"]
 [ext_resource type="Texture2D" uid="uid://csr3p2w7svijg" path="res://textures/map.png" id="11_sb2pt"]
-[ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="12_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
 [ext_resource type="PackedScene" uid="uid://dmia5u78lhx27" path="res://scenes/guard_placer.tscn" id="23_4sf5t"]
 [ext_resource type="PackedScene" uid="uid://d2rcrvw350ixb" path="res://static_guard.tscn" id="24_6sq2s"]
@@ -259,10 +255,6 @@ size = Vector2(218.97655, 308.52457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4on3e"]
 size = Vector2(142.10521, 192.31369)
-
-[sub_resource type="LabelSettings" id="LabelSettings_a6rn7"]
-font = ExtResource("9_oysan")
-font_size = 70
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mr0t"]
 size = Vector2(17.398193, 23.545277)
@@ -773,40 +765,6 @@ current_node = NodePath("../movement_nodes/move_target4")
 position = Vector2(380, 380)
 zoom = Vector2(0.875, 0.875)
 script = ExtResource("6_71pa8")
-
-[node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("7_71pa8")]
-visible = false
-offset_left = 134.0
-offset_top = 249.0
-offset_right = 307.62357
-offset_bottom = 345.7567
-scale = Vector2(1.2529145, 1.2404265)
-mouse_filter = 2
-script = ExtResource("8_oysan")
-
-[node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=1722304987 node_paths=PackedStringArray("timer")]
-texture_filter = 1
-layout_mode = 0
-offset_left = 22.505457
-offset_top = 13.406049
-offset_right = 152.50546
-offset_bottom = 78.40605
-text = "00:00"
-label_settings = SubResource("LabelSettings_a6rn7")
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("10_sb2pt")
-timer = NodePath("../Timer")
-
-[node name="Timer" type="Timer" parent="Camera2D/NightTimerWindow" unique_id=1704421551]
-wait_time = 300.0
-
-[node name="ReadyButton" parent="Camera2D" unique_id=1576267881 instance=ExtResource("12_ooc2g")]
-offset_left = 111.0
-offset_top = 247.0
-offset_right = 272.82397
-offset_bottom = 323.0
-scale = Vector2(1.5954459, 1.5999947)
 
 [node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(335, 184)

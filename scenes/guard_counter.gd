@@ -20,6 +20,7 @@ func _ready() -> void:
 	label.text = str(guard_count)
 	
 	# Set counter update
+	GameState.set_guard_count(number_of_guards)
 	GameState.guard_count_signal.connect(_on_guard_count_signal)
 	
 	
