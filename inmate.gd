@@ -205,82 +205,83 @@ func split():
 
 
 func _physics_process(delta):
-	# Do not query when the map has never synchronized and is empty.
-	if NavigationServer2D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
-		return
-		
-	#If the current path is finished, set the node states and start the cooldown timer
-	if (nav_agent.is_navigation_finished() or nav_agent.is_target_reached()) and target:
-		#Reached the target
-		current_node = target
-		target.occupant = self
-		target = null
-		
-		#Check if this was the final retreat node
-		if retreating:
-			retreating = false
-			fighting = false
-		
-		
-		#If on a sabotage node, start the cooldown to sabotage
-		if current_node in GameState.sabotage_nodes:
-			print("Starting sabotage")
-			sabotaging = true
-			GameState.add_sabotage(current_node)
-			cooldown_timer.start(sabotage_cooldown - (variable_cooldown_per * quantity))
+	if GameState.current_state == GameState.States.NIGHT:
+		# Do not query when the map has never synchronized and is empty.
+		if NavigationServer2D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
 			return
-		
-		cooldown_timer.start(base_cooldown + (variable_cooldown_per * quantity))
-	
-	if cooldown_timer.is_stopped() and target == null:
-		#Maybe split up the group?
-		if quantity > 15 and calculate_probability(split_probability):
-			split()
-			return
-		
-		#Check if there are any guards nearby to fight
-		if not retreating:
-			if check_for_adjacent_guard():
+			
+		#If the current path is finished, set the node states and start the cooldown timer
+		if (nav_agent.is_navigation_finished() or nav_agent.is_target_reached()) and target:
+			#Reached the target
+			current_node = target
+			target.occupant = self
+			target = null
+			
+			#Check if this was the final retreat node
+			if retreating:
+				retreating = false
+				fighting = false
+			
+			
+			#If on a sabotage node, start the cooldown to sabotage
+			if current_node in GameState.sabotage_nodes:
+				print("Starting sabotage")
+				sabotaging = true
+				GameState.add_sabotage(current_node)
+				cooldown_timer.start(sabotage_cooldown - (variable_cooldown_per * quantity))
 				return
+			
+			cooldown_timer.start(base_cooldown + (variable_cooldown_per * quantity))
 		
-		#Finish the sabotage
-		if sabotaging:
-			sabotaging = false
-			GameState.remove_sabotage(current_sabotage_node)
-			GameState.objectives_sabotaged += 1
+		if cooldown_timer.is_stopped() and target == null:
+			#Maybe split up the group?
+			if quantity > 15 and calculate_probability(split_probability):
+				split()
+				return
+			
+			#Check if there are any guards nearby to fight
+			if not retreating:
+				if check_for_adjacent_guard():
+					return
+			
+			#Finish the sabotage
+			if sabotaging:
+				sabotaging = false
+				GameState.remove_sabotage(current_sabotage_node)
+				GameState.objectives_sabotaged += 1
+			
+			#Keep following the defined path
+			if not path.is_empty() and current_path_index < path.size():
+				rememberNodes()
+
+				var next_node = path[current_path_index]
+				nav_agent.set_target_position(next_node.global_position)
+				target = next_node
+				current_path_index += 1
+
+			else:
+				#Otherwise, make a new path
+				path.clear()
+				current_path_index = 1
+
+				match inmateType:
+					inmateTypes.ROAMING:
+						roam()
+					inmateTypes.SABOTAGING:
+						sabotage()
 		
-		#Keep following the defined path
-		if not path.is_empty() and current_path_index < path.size():
-			rememberNodes()
-
-			var next_node = path[current_path_index]
-			nav_agent.set_target_position(next_node.global_position)
-			target = next_node
-			current_path_index += 1
-
+		var next_path_position: Vector2 = nav_agent.get_next_path_position()
+		var new_velocity: Vector2 = global_position.direction_to(next_path_position) * movement_speed
+		
+		var distance_to_target = global_position.distance_to(next_path_position)
+		
+		if distance_to_target < (movement_speed * delta):
+			new_velocity = global_position.direction_to(next_path_position) * (distance_to_target / delta)
+		
+		if nav_agent.avoidance_enabled:
+			nav_agent.set_velocity(new_velocity)
 		else:
-			#Otherwise, make a new path
-			path.clear()
-			current_path_index = 1
-
-			match inmateType:
-				inmateTypes.ROAMING:
-					roam()
-				inmateTypes.SABOTAGING:
-					sabotage()
-	
-	var next_path_position: Vector2 = nav_agent.get_next_path_position()
-	var new_velocity: Vector2 = global_position.direction_to(next_path_position) * movement_speed
-	
-	var distance_to_target = global_position.distance_to(next_path_position)
-	
-	if distance_to_target < (movement_speed * delta):
-		new_velocity = global_position.direction_to(next_path_position) * (distance_to_target / delta)
-	
-	if nav_agent.avoidance_enabled:
-		nav_agent.set_velocity(new_velocity)
-	else:
-		_on_velocity_computed(new_velocity)
+			_on_velocity_computed(new_velocity)
 		
 
 

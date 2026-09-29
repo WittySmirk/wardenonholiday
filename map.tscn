@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://csr3p2w7svijg" path="res://textures/map.png" id="11_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="12_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
-[ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="15_jky6x"]
 [ext_resource type="PackedScene" uid="uid://dmia5u78lhx27" path="res://scenes/guard_placer.tscn" id="23_4sf5t"]
 [ext_resource type="PackedScene" uid="uid://d2rcrvw350ixb" path="res://static_guard.tscn" id="24_6sq2s"]
 [ext_resource type="FontFile" uid="uid://d3bwkt6m482pw" path="res://fonts/PressStart2P-Regular.ttf" id="29_h75vw"]
@@ -774,6 +773,7 @@ current_node = NodePath("../movement_nodes/move_target4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1928117086]
 position = Vector2(380, 380)
+zoom = Vector2(0.875, 0.875)
 script = ExtResource("6_71pa8")
 
 [node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("7_71pa8")]
@@ -810,13 +810,6 @@ offset_right = 272.82397
 offset_bottom = 323.0
 scale = Vector2(1.5954459, 1.5999947)
 
-[node name="GuardCounter" parent="Camera2D" unique_id=97217760 instance=ExtResource("15_jky6x")]
-offset_left = -466.0
-offset_top = 364.0
-offset_right = -466.0
-offset_bottom = 364.0
-number_of_guards = 50
-
 [node name="inmate4" parent="." unique_id=181540762 node_paths=PackedStringArray("current_node") instance=ExtResource("4_p5pve")]
 position = Vector2(335, 184)
 collision_mask = 1
@@ -833,9 +826,8 @@ current_node = NodePath("../movement_nodes/move_target_cell1")
 position = Vector2(503, 374)
 current_node = NodePath("../movement_nodes/move_target4")
 
-[node name="GuardPlacer_station1" parent="." unique_id=1719996851 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+[node name="GuardPlacer_station1" parent="." unique_id=1719996851 node_paths=PackedStringArray("area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
 position = Vector2(151, 930)
-guard_counter = NodePath("../Camera2D/GuardCounter")
 area2D = NodePath("Area2D")
 guard_scene = ExtResource("4_urblq")
 static_guard_scene = ExtResource("24_6sq2s")
@@ -865,9 +857,8 @@ text = "0"
 label_settings = SubResource("LabelSettings_4sf5t")
 vertical_alignment = 1
 
-[node name="GuardPlacer_station2" parent="." unique_id=473221888 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+[node name="GuardPlacer_station2" parent="." unique_id=473221888 node_paths=PackedStringArray("area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
 position = Vector2(1128, 826)
-guard_counter = NodePath("../Camera2D/GuardCounter")
 area2D = NodePath("Area2D")
 guard_scene = ExtResource("4_urblq")
 static_guard_scene = ExtResource("24_6sq2s")
@@ -897,9 +888,8 @@ text = "0"
 label_settings = SubResource("LabelSettings_4sf5t")
 vertical_alignment = 1
 
-[node name="GuardPlacer_station3" parent="." unique_id=1979696931 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+[node name="GuardPlacer_station3" parent="." unique_id=1979696931 node_paths=PackedStringArray("area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
 position = Vector2(1029, 109)
-guard_counter = NodePath("../Camera2D/GuardCounter")
 area2D = NodePath("Area2D")
 guard_scene = ExtResource("4_urblq")
 static_guard_scene = ExtResource("24_6sq2s")
@@ -928,7 +918,7 @@ vertical_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station3" unique_id=273197751]
 texture = ExtResource("6_2wwcf")
 
-[node name="Timer" type="Timer" parent="." unique_id=902719183]
+[node name="BlinkTimer" type="Timer" parent="." unique_id=902719183]
 wait_time = 0.25
 one_shot = true
 
@@ -940,6 +930,10 @@ offset_bottom = 45.0
 theme_override_colors/font_color = Color(0.3137255, 0.7294118, 0.46666667, 1)
 theme_override_fonts/font = ExtResource("29_h75vw")
 text = "Suspicion level: High"
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2091544922]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="input_event" from="sabotage_nodes/move_target_server/Area2D" to="sabotage_nodes/move_target_server" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="sabotage_nodes/move_target_rec_center/Area2D" to="sabotage_nodes/move_target_rec_center" method="_on_area_2d_input_event"]

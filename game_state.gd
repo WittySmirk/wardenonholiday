@@ -127,6 +127,7 @@ func get_state_name(state: States) -> String:
 func _ready() -> void:
 	# Tell all nodes starting state
 	state_changed.emit(current_state)
+	
 
 func initialize_sabotage_nodes(nodes):
 	sabotage_nodes.clear()
@@ -137,6 +138,28 @@ func initialize_sabotage_nodes(nodes):
 			
 func initialize_suspicion_meter(meter: Label):
 	suspicion_meter = meter
+
+
+## Guard placement state---------------------------------------------------------
+# Public functions for this class
+	# Returns false when guards cannot be allocated, true if successful
+# The count of guards
+var guard_count: int = 50
+signal guard_count_signal(guard_count)
+func decrement_guard_counter(decrement_amt: int) -> bool:
+	if guard_count >= decrement_amt:
+		guard_count = guard_count - decrement_amt
+		guard_count_signal.emit(guard_count)
+		return true
+	return false
+
+# Returns current number of guards left
+func get_guard_count() -> int:
+	return guard_count
+	
+func set_guard_count(amount: int):
+	guard_count = amount
+
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
