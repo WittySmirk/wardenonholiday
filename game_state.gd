@@ -9,7 +9,9 @@ var guard_kill_count = 0
 var inmate_kill_count = 0
 var objectives_sabotaged = 0
 
-@export var sabotage_nodes: Array[MoveTarget] = []
+var current_sabotage: Array[StringName] = []
+
+var sabotage_nodes: Array[MoveTarget] = []
 
 # Game States
 enum States { START, DAY, NIGHT, LOSE }
@@ -64,6 +66,20 @@ func set_selected_target(target: MoveTarget, doSplit: bool):
 			selected_guard = null
 		else:
 			print("cannot set this target")
+
+
+
+func add_sabotage(t: MoveTarget) -> void:
+	current_sabotage.append(t.name)
+
+func remove_sabotage(t: MoveTarget) -> void:
+	current_sabotage.erase(t.name)
+
+func is_getting_sabotaged(t: MoveTarget) -> bool:
+	if not is_instance_valid(t):
+		return false
+
+	return t.name in current_sabotage
 
 func in_selected_range(t: MoveTarget):
 	if selected_guard and selected_guard.current_node:

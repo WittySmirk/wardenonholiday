@@ -114,6 +114,7 @@ func sabotage():
 		current_sabotage_node = target_node
 		
 		path = findBestPath(current_node, target_node, false)
+		print(path)
 		current_path_index = 1
 	
 	if path.is_empty():
@@ -225,6 +226,7 @@ func _physics_process(delta):
 		if current_node in GameState.sabotage_nodes:
 			print("Starting sabotage")
 			sabotaging = true
+			GameState.add_sabotage(current_node)
 			cooldown_timer.start(sabotage_cooldown - (variable_cooldown_per * quantity))
 			return
 		
@@ -244,7 +246,7 @@ func _physics_process(delta):
 		#Finish the sabotage
 		if sabotaging:
 			sabotaging = false
-			GameState.sabotage_nodes.erase(current_sabotage_node)
+			GameState.remove_sabotage(current_sabotage_node)
 			GameState.objectives_sabotaged += 1
 		
 		#Keep following the defined path
