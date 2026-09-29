@@ -10,7 +10,7 @@ extends Node2D
 
 # Number of guards allocated to this node
 var _node_guard_count: int = 0
-var _random_guard_instances: Array[PackedScene] = []
+var _random_guard_instances: Array[Node] = []
 var _guards: Array[Guard] = []
 
 # Called when the node enters the scene tree for the first time.
@@ -75,7 +75,7 @@ func _spawn_random_guards() -> void:
 	var global_spawn_pos = collision2D.global_position + local_spawn_pos
 	
 	# Instantiate and add the sprite scene
-	var instance = static_guard_scene.instantiate()
+	var instance = static_guard_scene.instantiate() as Node
 	instance.global_position = global_spawn_pos
 	get_parent().add_child(instance)
 	_random_guard_instances.append(instance)

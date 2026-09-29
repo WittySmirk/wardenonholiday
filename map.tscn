@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dg2ucpkvk6oul" path="res://textures/server_outline_green.png" id="13_jk4ss"]
 [ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="15_jky6x"]
 [ext_resource type="PackedScene" uid="uid://dmia5u78lhx27" path="res://scenes/guard_placer.tscn" id="23_4sf5t"]
-[ext_resource type="Texture2D" uid="uid://5bb3ijimb3kp" path="res://sprites/guy.png" id="24_3mr0t"]
+[ext_resource type="PackedScene" uid="uid://d2rcrvw350ixb" path="res://static_guard.tscn" id="24_6sq2s"]
 
 [sub_resource type="GDScript" id="GDScript_e0an3"]
 script/source = "extends Node2D
@@ -278,150 +278,18 @@ size = Vector2(371.37906, 272.53015)
 font = ExtResource("9_oysan")
 font_size = 70
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51px8"]
-size = Vector2(8, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6uo63"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(0, 84, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpcdi"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(18, 84, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gs2f6"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(0, 42, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykwrb"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(18, 42, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l02mi"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(0, 0, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7j51r"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(18, 0, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_do863"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(0, 105, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8itb"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(18, 105, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6bix"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(0, 63, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vd56"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(18, 63, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3i4au"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(0, 21, 18, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ksb4"]
-atlas = ExtResource("24_3mr0t")
-region = Rect2(18, 21, 18, 21)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ke0wg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6uo63")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gpcdi")
-}],
-"loop": 1,
-"name": &"idle_large",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gs2f6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ykwrb")
-}],
-"loop": 1,
-"name": &"idle_medium",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l02mi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7j51r")
-}],
-"loop": 1,
-"name": &"idle_small",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_do863")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8itb")
-}],
-"loop": 1,
-"name": &"moving_large",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g6bix")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5vd56")
-}],
-"loop": 1,
-"name": &"moving_medium",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3i4au")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ksb4")
-}],
-"loop": 1,
-"name": &"moving_small",
-"speed": 5.0
-}]
-
-[sub_resource type="PackedScene" id="PackedScene_3mr0t"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [],
-"names": PackedStringArray("StaticGuard", "CharacterBody2D", "CollisionShape2D", "position", "shape", "AnimatedSprite2D", "sprite_frames", "animation"),
-"node_count": 3,
-"node_ids": PackedInt32Array(1635901800, 235998446, 29475373),
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 2, 2, -1, 2, 3, 0, 4, 1, 0, 0, 0, 5, 5, -1, 2, 6, 2, 7, 3, 0),
-"variants": [Vector2(0, 2.5), SubResource("RectangleShape2D_51px8"), SubResource("SpriteFrames_ke0wg"), &"idle_large"],
-"version": 3
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kvws"]
-size = Vector2(52.621155, 23.81593)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mr0t"]
+size = Vector2(17.398193, 23.545277)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4sf5t"]
 font = ExtResource("9_oysan")
 font_size = 40
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mr0t"]
-size = Vector2(17.398193, 23.545277)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sq2s"]
+size = Vector2(32.134537, 30.311192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kvws"]
+size = Vector2(52.621155, 23.81593)
 
 [node name="Node2D" type="Node2D" unique_id=956996686]
 script = SubResource("GDScript_e0an3")
@@ -951,17 +819,76 @@ sabotageNodes = [NodePath("../movement_nodes/move_target5"), NodePath("../moveme
 position = Vector2(503, 374)
 current_node = NodePath("../movement_nodes/move_target4")
 
-[node name="guard" parent="." unique_id=1635901800 instance=ExtResource("4_urblq")]
-position = Vector2(991, 112)
-movement_speed = null
-quantity = null
+[node name="GuardPlacer_station1" parent="." unique_id=1719996851 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+position = Vector2(151, 930)
+guard_counter = NodePath("../Camera2D/GuardCounter")
+area2D = NodePath("Area2D")
+guard_scene = ExtResource("4_urblq")
+static_guard_scene = ExtResource("24_6sq2s")
+count_label = NodePath("Label")
+collision2D = NodePath("Area2D/CollisionShape2D")
+move_target_node = NodePath("../movement_nodes/move_target_station1")
+
+[node name="Area2D" type="Area2D" parent="GuardPlacer_station1" unique_id=1618831489]
+position = Vector2(7, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardPlacer_station1/Area2D" unique_id=1290312263]
+position = Vector2(-6.5, 30.499939)
+scale = Vector2(3.8, 3.8)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_3mr0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station1/Area2D" unique_id=1633756074]
+position = Vector2(8, 8)
+texture = ExtResource("6_a6rn7")
+
+[node name="Label" type="Label" parent="GuardPlacer_station1" unique_id=2046444443]
+offset_left = 64.0
+offset_top = -7.0
+offset_right = 104.0
+offset_bottom = 33.0
+text = "0"
+label_settings = SubResource("LabelSettings_4sf5t")
+vertical_alignment = 1
+
+[node name="GuardPlacer_station2" parent="." unique_id=473221888 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
+position = Vector2(1128, 826)
+guard_counter = NodePath("../Camera2D/GuardCounter")
+area2D = NodePath("Area2D")
+guard_scene = ExtResource("4_urblq")
+static_guard_scene = ExtResource("24_6sq2s")
+count_label = NodePath("Label")
+collision2D = NodePath("Area2D/CollisionShape2D")
+move_target_node = NodePath("../movement_nodes/move_target_station2")
+
+[node name="Area2D" type="Area2D" parent="GuardPlacer_station2" unique_id=674736975]
+position = Vector2(7, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardPlacer_station2/Area2D" unique_id=55379475]
+position = Vector2(13.499878, 27)
+scale = Vector2(3.8, 3.8)
+skew = 0.23561943
+shape = SubResource("RectangleShape2D_6sq2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station2/Area2D" unique_id=155218452]
+position = Vector2(8, 8)
+texture = ExtResource("7_4on3e")
+
+[node name="Label" type="Label" parent="GuardPlacer_station2" unique_id=578920707]
+offset_left = 112.0
+offset_top = -12.0
+offset_right = 152.0
+offset_bottom = 28.0
+text = "0"
+label_settings = SubResource("LabelSettings_4sf5t")
+vertical_alignment = 1
 
 [node name="GuardPlacer_station3" parent="." unique_id=1979696931 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
 position = Vector2(1029, 109)
 guard_counter = NodePath("../Camera2D/GuardCounter")
 area2D = NodePath("Area2D")
 guard_scene = ExtResource("4_urblq")
-static_guard_scene = SubResource("PackedScene_3mr0t")
+static_guard_scene = ExtResource("24_6sq2s")
 count_label = NodePath("Label")
 collision2D = NodePath("Area2D/CollisionShape2D")
 move_target_node = NodePath("../movement_nodes/move_target_station3")
@@ -987,38 +914,6 @@ vertical_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station3" unique_id=273197751]
 texture = ExtResource("6_2wwcf")
 
-[node name="GuardPlacer_station4" parent="." unique_id=1719996851 node_paths=PackedStringArray("guard_counter", "area2D", "count_label", "collision2D", "move_target_node") instance=ExtResource("23_4sf5t")]
-position = Vector2(151, 930)
-guard_counter = NodePath("../Camera2D/GuardCounter")
-area2D = NodePath("Area2D")
-guard_scene = ExtResource("4_urblq")
-static_guard_scene = SubResource("PackedScene_3mr0t")
-count_label = NodePath("Label")
-collision2D = NodePath("Area2D/CollisionShape2D")
-move_target_node = NodePath("../movement_nodes/move_target_station1")
-
-[node name="Area2D" type="Area2D" parent="GuardPlacer_station4" unique_id=1618831489]
-position = Vector2(7, -9)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardPlacer_station4/Area2D" unique_id=1290312263]
-position = Vector2(-6.5, 30.499939)
-scale = Vector2(3.8, 3.8)
-skew = 0.23561943
-shape = SubResource("RectangleShape2D_3mr0t")
-
-[node name="Sprite2D" type="Sprite2D" parent="GuardPlacer_station4/Area2D" unique_id=1633756074]
-position = Vector2(8, 8)
-texture = ExtResource("6_a6rn7")
-
-[node name="Label" type="Label" parent="GuardPlacer_station4" unique_id=2046444443]
-offset_left = 64.0
-offset_top = -7.0
-offset_right = 104.0
-offset_bottom = 33.0
-text = "0"
-label_settings = SubResource("LabelSettings_4sf5t")
-vertical_alignment = 1
-
 [connection signal="input_event" from="movement_nodes/move_target_cafeteria/Area2D" to="movement_nodes/move_target_cafeteria" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station1/Area2D" to="movement_nodes/move_target_station1" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_station2/Area2D" to="movement_nodes/move_target_station2" method="_on_area_2d_input_event"]
@@ -1027,5 +922,6 @@ vertical_alignment = 1
 [connection signal="input_event" from="movement_nodes/move_target_basketball/Area2D" to="movement_nodes/move_target_basketball" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_bleachers/Area2D" to="movement_nodes/move_target_bleachers" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="movement_nodes/move_target_server/Area2D" to="movement_nodes/move_target_server" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="GuardPlacer_station1/Area2D" to="GuardPlacer_station1" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="GuardPlacer_station2/Area2D" to="GuardPlacer_station2" method="_on_area_2d_input_event"]
 [connection signal="input_event" from="GuardPlacer_station3/Area2D" to="GuardPlacer_station3" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="GuardPlacer_station4/Area2D" to="GuardPlacer_station4" method="_on_area_2d_input_event"]
