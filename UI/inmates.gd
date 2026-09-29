@@ -2,18 +2,17 @@ extends CharacterBody2D
 
 
 const SPEED = 20.0
-const JUMP_VELOCITY = -150.0
+const JUMP_VELOCITY = -250.0
 const GRAVITY = Vector2(0.0, 750)
-const LEFT_THRESHOLD_POS = -30
-const RIGHT_THRESHOLD_POS = 420
+const LEFT_THRESHOLD_POS = -20
+const RIGHT_THRESHOLD_POS = 250
 
-var direction = -1
+var direction = 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += GRAVITY * delta
-		print(get_gravity())
 
 	# Handle jump
 	if is_on_floor():
@@ -32,7 +31,6 @@ func _physics_process(delta: float) -> void:
 ## Handle animation loop for hopping left and right
 func change_directions():
 	position = self.position
-	print(position)
 	if position.x > RIGHT_THRESHOLD_POS:
 		direction = -1
 	elif position.x < LEFT_THRESHOLD_POS:

@@ -20,7 +20,7 @@ var current_sabotage: Array[StringName] = []
 var sabotage_nodes: Array[MoveTarget] = []
 
 # Game States
-enum States { START, DAY, NIGHT, LOSE }
+enum States { START, DAY, NIGHT, LOSE, WIN }
 var current_state = States.DAY:
 	set(value):
 		current_state = value
@@ -98,7 +98,7 @@ func change_game_state(state: States):
 	if state == States.DAY:
 		suspicion_amount += guard_kill_count * 4
 		suspicion_amount += inmate_kill_count * 1
-		suspicion_amount += objectives_sabotaged * 10
+		suspicion_amount += objectives_sabotaged * 100
 		
 		dayCount+=1
 		if suspicion_amount < 10:
@@ -113,7 +113,7 @@ func change_game_state(state: States):
 			suspicion_meter.text == "Suspicion level: very high"
 		else:
 			#TODO Switch to lose state
-			current_state = States.LOSE
+			change_game_state(States.LOSE)
 	
 	current_state = state
 
@@ -157,8 +157,16 @@ func get_guard_count() -> int:
 	
 func set_guard_count(amount: int):
 	guard_count = amount
+	guard_count_signal.emit(guard_count)
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func _process(delta: float) -> void:
+	suspicion_amount += guard_kill_count * 4
+	suspicion_amount += inmate_kill_count * 1
+	suspicion_amount += objectives_sabotaged * 100
+	
+	dayCount+=1
+	if objectives_sabotaged == 2:
+		#TODO Switch to lose state
+		change_game_state(States.LOSE)

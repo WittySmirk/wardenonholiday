@@ -48,3 +48,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			click_sound.play()
+
+func _process(delta: float) -> void:
+	await crt_start_up.finished
+	crt_static.play()
+	

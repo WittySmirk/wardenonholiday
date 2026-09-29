@@ -1,61 +1,60 @@
-[gd_scene format=3 uid="uid://bus0xjdkpjwa2"]
+[gd_scene format=3 uid="uid://bt4us81c36a01"]
 
-[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="1_d3352"]
-[ext_resource type="Script" uid="uid://blwy8s6g4mpjk" path="res://UI/guards.gd" id="2_lo4tm"]
-[ext_resource type="PackedScene" uid="uid://rl5m50hnu0ds" path="res://UI/start_button.tscn" id="3_0d5ky"]
-[ext_resource type="Texture2D" uid="uid://5bb3ijimb3kp" path="res://sprites/guy.png" id="3_lo4tm"]
-[ext_resource type="Script" uid="uid://gwhfibd71eg6" path="res://UI/start_button.gd" id="4_7htnq"]
-[ext_resource type="Script" uid="uid://bdrs0cp03itis" path="res://UI/inmates.gd" id="4_rd8cm"]
+[ext_resource type="Script" uid="uid://d3aprgcf2v24g" path="res://win_screen.gd" id="1_ddy7k"]
+[ext_resource type="Script" uid="uid://blwy8s6g4mpjk" path="res://UI/guards.gd" id="3_ujsyp"]
+[ext_resource type="Texture2D" uid="uid://5bb3ijimb3kp" path="res://sprites/guy.png" id="4_vr2rx"]
+[ext_resource type="Script" uid="uid://bdrs0cp03itis" path="res://UI/inmates.gd" id="5_urab4"]
+[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="6_4sxsc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d5ky"]
 size = Vector2(5, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uo63"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 84, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpcdi"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 84, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gs2f6"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 42, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykwrb"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 42, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l02mi"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 0, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j51r"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 0, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_do863"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 105, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8itb"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 105, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6bix"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 63, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vd56"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 63, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3i4au"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 21, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ksb4"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 21, 18, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rd8cm"]
@@ -131,51 +130,51 @@ animations = [{
 size = Vector2(6, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bi5o"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 84, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_627k2"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 84, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ht3pi"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 42, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ms31j"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 42, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tywi8"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 0, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuc80"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 0, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aa878"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 105, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1tr0"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 105, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6et0"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 63, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7oljx"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 63, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ei3k"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(0, 21, 18, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jysj"]
-atlas = ExtResource("3_lo4tm")
+atlas = ExtResource("4_vr2rx")
 region = Rect2(18, 21, 18, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrs3v"]
@@ -254,44 +253,36 @@ size = Vector2(419, 2.25)
 size = Vector2(3, 35)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0iomv"]
-font = ExtResource("1_d3352")
+font = ExtResource("6_4sxsc")
 font_size = 7
 
 [sub_resource type="LabelSettings" id="LabelSettings_lo4tm"]
-font = ExtResource("1_d3352")
+font = ExtResource("6_4sxsc")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8bi5o"]
-font = ExtResource("1_d3352")
+font = ExtResource("6_4sxsc")
 font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_rd8cm"]
-font = ExtResource("1_d3352")
+font = ExtResource("6_4sxsc")
 font_size = 7
 
 [node name="StartMenu" type="ColorRect" unique_id=1462901151]
 offset_right = 244.0
 offset_bottom = 244.0
 color = Color(0.06666667, 0.101960786, 0.047058824, 1)
+script = ExtResource("1_ddy7k")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2020822493]
 position = Vector2(216, 122)
 zoom = Vector2(2.665, 2.665)
-
-[node name="StartButton" parent="." unique_id=1576267881 instance=ExtResource("3_0d5ky")]
-layout_mode = 0
-offset_left = 77.0
-offset_top = 132.0
-offset_right = 239.0
-offset_bottom = 208.0
-scale = Vector2(0.5599987, 0.5599987)
-script = ExtResource("4_7htnq")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=798688539]
 position = Vector2(13, 8)
 
 [node name="Guards" type="CharacterBody2D" parent="Node2D" unique_id=932146367]
 position = Vector2(-30, 15)
-script = ExtResource("2_lo4tm")
+script = ExtResource("3_ujsyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Guards" unique_id=439327092]
 position = Vector2(-0.7499924, 179.25)
@@ -304,7 +295,7 @@ animation = &"moving_small"
 
 [node name="Inmates" type="CharacterBody2D" parent="Node2D" unique_id=978191749]
 position = Vector2(-18, 195)
-script = ExtResource("4_rd8cm")
+script = ExtResource("5_urab4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Inmates" unique_id=1890336276]
 position = Vector2(3, -1)
@@ -367,7 +358,7 @@ offset_left = 19.0
 offset_top = 49.0
 offset_right = 264.0
 offset_bottom = 71.0
-text = "Re: Warden On Holiday"
+text = "Re: Warden Back"
 label_settings = SubResource("LabelSettings_8bi5o")
 
 [node name="Label2" type="Label" parent="EmailWindow" unique_id=262372090]
@@ -376,8 +367,11 @@ offset_left = 19.0
 offset_top = 69.0
 offset_right = 231.0
 offset_bottom = 99.0
-text = "Ayyyy, Just got married! :)
-Don't get shutdown"
+text = "Honeymoon was good! 'Preciate the help, maybe a promotion next
+quarter.
+
+Stay safe,
+Warden"
 label_settings = SubResource("LabelSettings_rd8cm")
 
 [node name="ColorRect8" type="ColorRect" parent="EmailWindow" unique_id=1303051727]

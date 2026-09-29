@@ -45,6 +45,7 @@ func _on_state_change(state: GameState.States):
 	if (GameState.current_state == GameState.States.DAY):
 		self.visible = true
 		_node_guard_count = 0
+		count_label.text = str(_node_guard_count)
 		_clear_all_guards()
 	elif (GameState.current_state == GameState.States.NIGHT):
 		self.visible = false
@@ -83,7 +84,7 @@ func _spawn_random_guards() -> void:
 func _clear_all_random_guards() -> void:
 	for guard in _random_guard_instances:
 		guard.queue_free()
-		
+	_random_guard_instances.clear()
 
 # Spawn playable guards for the night
 func _spawn_playable_guard():
@@ -101,3 +102,4 @@ func _spawn_playable_guard():
 func _clear_all_guards():
 	for guard in _guards:
 		guard.queue_free()
+	_guards.clear()

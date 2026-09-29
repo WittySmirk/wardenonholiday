@@ -20,8 +20,8 @@ func _pressed():
 	GameState.change_game_state(GameState.States.DAY)
 	
 	# Change scene
-	get_tree().change_scene_to_file("res://map.tscn")
-	
+	get_parent().visible = false
+		
 # Called when button is pressed
 func _on_button_up():
 	self.position += press_offset
@@ -30,7 +30,6 @@ func _on_button_up():
 func _on_button_down():
 	# Do little press animation
 	self.position -= press_offset
-	print("Pressed!")
 
 # Handle GameState changes
 func _handle_game_state_change(state: GameState.States):

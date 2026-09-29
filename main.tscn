@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://cyyhnufbvq3ti"]
 
 [ext_resource type="PackedScene" uid="uid://1nhxait0s5b0" path="res://map.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bus0xjdkpjwa2" path="res://StartMenu.tscn" id="2_efxa6"]
 [ext_resource type="Texture2D" uid="uid://ckel35dgtfwd7" path="res://sprites/buttons/arrow_normal.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://otp8opg5hyub" path="res://sprites/buttons/alert_arrow_0002.png" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dufr6aey54yba" path="res://scenes/ClickToContinue.tscn" id="3_dg77c"]
 [ext_resource type="Shader" uid="uid://d1ifxgvpbjdbu" path="res://crt.gdshader" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://5ucsogkoi64b" path="res://scenes/guard_counter.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bt4us81c36a01" path="res://WinScreen.tscn" id="4_vivmo"]
+[ext_resource type="PackedScene" uid="uid://cnuccholiwv7g" path="res://LoseScreen.tscn" id="5_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://clb0s56e5kiu2" path="res://UI/window.tscn" id="5_4c57u"]
+[ext_resource type="PackedScene" uid="uid://sl54q5c6hryb" path="res://UI/ready_button.tscn" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://dve020okw2dmd" path="res://UI/TimerWindow.gd" id="6_efxa6"]
+[ext_resource type="Script" uid="uid://skft15j6bpw2" path="res://q_1_right.gd" id="6_ycdy4"]
+[ext_resource type="FontFile" uid="uid://bd0kqkelb7mol" path="res://fonts/VT323-Regular.ttf" id="7_dg77c"]
+[ext_resource type="Script" uid="uid://bgd5xeaj0510w" path="res://night_timer.gd" id="8_ycdy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w48qg"]
+font = ExtResource("7_dg77c")
+font_size = 70
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hrpl4"]
 shader = ExtResource("4_1bvp3")
@@ -67,7 +81,38 @@ q3_up = NodePath("../../../../q3_up")
 q4_left = NodePath("../../../../q4_left")
 q4_up = NodePath("../../../../q4_up")
 
+[node name="StartMenu" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=1462901151 instance=ExtResource("2_efxa6")]
+offset_left = -38.999996
+offset_top = -53.0
+offset_right = 202.0
+offset_bottom = 191.0
+scale = Vector2(3.5999982, 3.5999982)
+
+[node name="ClickToContinue" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=1896274848 instance=ExtResource("3_dg77c")]
+offset_left = -75.0
+offset_top = -119.0
+offset_right = -75.0
+offset_bottom = -119.0
+scale = Vector2(3.6399975, 3.6399975)
+
+[node name="WinScreen" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=269819634 instance=ExtResource("4_vivmo")]
+visible = false
+offset_left = -44.0
+offset_top = -48.0
+offset_right = 200.0
+offset_bottom = 196.0
+scale = Vector2(3.6399999, 3.6399999)
+
+[node name="LoseScreen" parent="Camera2D/CenterContainer/SubViewportContainer/SubViewport" unique_id=1994496048 instance=ExtResource("5_2cqfq")]
+visible = false
+offset_left = -46.0
+offset_top = -36.0
+offset_right = 198.0
+offset_bottom = 208.0
+scale = Vector2(3.5600038, 3.5600038)
+
 [node name="q1_right" type="TextureButton" parent="Camera2D" unique_id=199929991]
+visible = false
 offset_left = 363.0
 offset_top = -32.0
 offset_right = 466.0
@@ -75,6 +120,7 @@ offset_bottom = 32.0
 texture_normal = ExtResource("2_h2yge")
 texture_hover = ExtResource("3_1bvp3")
 flip_h = true
+script = ExtResource("6_ycdy4")
 
 [node name="q3_right" type="TextureButton" parent="Camera2D" unique_id=505195577]
 visible = false
@@ -108,6 +154,7 @@ texture_normal = ExtResource("2_h2yge")
 texture_hover = ExtResource("3_1bvp3")
 
 [node name="q1_down" type="TextureButton" parent="Camera2D" unique_id=1520060151]
+visible = false
 offset_left = -31.0
 offset_top = 464.0
 offset_right = 72.0
@@ -115,6 +162,7 @@ offset_bottom = 528.0
 rotation = 4.712389
 texture_normal = ExtResource("2_h2yge")
 texture_hover = ExtResource("3_1bvp3")
+script = ExtResource("6_ycdy4")
 
 [node name="q2_down" type="TextureButton" parent="Camera2D" unique_id=1289928554]
 visible = false
@@ -149,14 +197,50 @@ disabled = true
 texture_normal = ExtResource("2_h2yge")
 texture_hover = ExtResource("3_1bvp3")
 
+[node name="NightTimerWindow" parent="Camera2D" unique_id=1846275003 instance=ExtResource("5_4c57u")]
+visible = false
+offset_left = 208.00003
+offset_top = 322.99994
+offset_right = 381.62363
+offset_bottom = 419.75665
+scale = Vector2(1.2529145, 1.2404265)
+mouse_filter = 2
+script = ExtResource("6_efxa6")
+
+[node name="NightTimerLabel" type="Label" parent="Camera2D/NightTimerWindow" unique_id=1724865374 node_paths=PackedStringArray("timer")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.505457
+offset_top = 13.406049
+offset_right = 152.50546
+offset_bottom = 78.40605
+text = "00:00"
+label_settings = SubResource("LabelSettings_w48qg")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("8_ycdy4")
+timer = NodePath("../Timer")
+
+[node name="Timer" type="Timer" parent="Camera2D/NightTimerWindow" unique_id=2002143672]
+wait_time = 300.0
+
+[node name="ReadyButton" parent="Camera2D" unique_id=1576267881 instance=ExtResource("5_7mycd")]
+visible = false
+offset_left = 183.0
+offset_top = 321.0
+offset_right = 344.82397
+offset_bottom = 397.0
+scale = Vector2(1.5954459, 1.5999947)
+
 [node name="GuardCounter" parent="Camera2D" unique_id=97217760 instance=ExtResource("4_lquwl")]
+visible = false
 offset_left = -424.0
 offset_top = 332.0
 offset_right = -424.0
 offset_bottom = 332.0
-number_of_guards = 50
+number_of_guards = 10
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=1236399080]
+[node name="ColorRect2" type="ColorRect" parent="Camera2D" unique_id=1236399080]
 material = SubResource("ShaderMaterial_hrpl4")
 offset_left = -516.0
 offset_top = -473.0
