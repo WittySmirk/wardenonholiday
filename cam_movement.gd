@@ -39,6 +39,7 @@ var quadrant: int = 1
 
 func _ready() -> void:
 	GameState.initialize_sabotage_nodes($sabotage_nodes.get_children())
+	GameState.initialize_suspicion_meter($SuspicionMeter)
 
 func move_camera(q: int):
 	if camera_tween and camera_tween.is_running():
