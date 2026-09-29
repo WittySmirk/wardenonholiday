@@ -67,8 +67,6 @@ func set_selected_target(target: MoveTarget, doSplit: bool):
 		else:
 			print("cannot set this target")
 
-
-
 func add_sabotage(t: MoveTarget) -> void:
 	current_sabotage.append(t.name)
 
